@@ -99,10 +99,11 @@
 		FDC4E84524E2C35F00392432 /* GamePartner */ = {
 			isa = PBXGroup;
 			children = (
+				FDC4E87A24E2C83700392432 /* Model */,
+				FDC4E87824E2C81700392432 /* ViewModel */,
+				FDC4E87724E2C80E00392432 /* View */,
 				FDC4E84624E2C35F00392432 /* AppDelegate.swift */,
 				FDC4E84824E2C35F00392432 /* SceneDelegate.swift */,
-				FDC4E84A24E2C35F00392432 /* ViewController.swift */,
-				FDC4E84C24E2C35F00392432 /* Main.storyboard */,
 				FDC4E84F24E2C36000392432 /* Assets.xcassets */,
 				FDC4E85124E2C36000392432 /* LaunchScreen.storyboard */,
 				FDC4E85424E2C36000392432 /* Info.plist */,
@@ -126,6 +127,29 @@
 				FDC4E86A24E2C36000392432 /* Info.plist */,
 			);
 			path = GamePartnerUITests;
+			sourceTree = "<group>";
+		};
+		FDC4E87724E2C80E00392432 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FDC4E84A24E2C35F00392432 /* ViewController.swift */,
+				FDC4E84C24E2C35F00392432 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FDC4E87824E2C81700392432 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FDC4E87A24E2C83700392432 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
