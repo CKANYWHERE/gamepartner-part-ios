@@ -1,17 +1,19 @@
 //
-//  RegisterBasicVC.swift
+//  RegisterDetailVC.swift
 //  GamePartner
 //
-//  Created by 민창경 on 2020/08/19.
+//  Created by 민창경 on 2020/08/22.
 //
 
 import UIKit
 
-class RegisterBaiscVC: UIViewController {
+class RegisterDetailVC : UIViewController{
+    
+    @IBOutlet weak var lblMainNickName: UILabel!
+    @IBOutlet weak var lblIntroduce: UILabel!
+    @IBOutlet weak var vTxtIntroduce: UITextView!
+    
     @IBOutlet weak var btnNext: UIButton!
-    @IBOutlet weak var lblGuide: UILabel!
-    @IBOutlet weak var txtId: UITextField!
-    @IBOutlet weak var txtPw: UITextField!
     
     override func viewDidLoad() {
        
@@ -23,18 +25,12 @@ class RegisterBaiscVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         animate()
-      
     }
- 
-    @IBAction func btnNextPressed(_ sender: Any) {
-        performSegue(withIdentifier: "moveToSexRegister", sender: nil)
-    }
-    
     private func initControl(){
-        self.lblGuide.font = UIFont.boldSystemFont(ofSize: 30)
-        self.txtId.layer.cornerRadius = 50
-        self.txtPw.layer.cornerRadius = 50
         self.btnNext.alpha = 0.0
+        self.lblMainNickName.font = UIFont.boldSystemFont(ofSize: 30)
+        self.lblIntroduce.font = UIFont.boldSystemFont(ofSize: 30)
+        self.vTxtIntroduce.layer.cornerRadius = 10
     }
     
     private func animate(){

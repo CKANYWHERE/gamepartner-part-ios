@@ -1,17 +1,16 @@
 //
-//  RegisterBasicVC.swift
+//  RegisterBirthVC.swift
 //  GamePartner
 //
-//  Created by 민창경 on 2020/08/19.
+//  Created by 민창경 on 2020/08/22.
 //
 
 import UIKit
 
-class RegisterBaiscVC: UIViewController {
+class RegisterBirthVC : UIViewController{
+    
+    @IBOutlet weak var lblMain: UILabel!
     @IBOutlet weak var btnNext: UIButton!
-    @IBOutlet weak var lblGuide: UILabel!
-    @IBOutlet weak var txtId: UITextField!
-    @IBOutlet weak var txtPw: UITextField!
     
     override func viewDidLoad() {
        
@@ -23,18 +22,19 @@ class RegisterBaiscVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         animate()
-      
     }
- 
+    
+    @IBAction func changeDatePicker(_ sender: UIDatePicker) {
+    
+    }
+    
     @IBAction func btnNextPressed(_ sender: Any) {
-        performSegue(withIdentifier: "moveToSexRegister", sender: nil)
+        performSegue(withIdentifier: "moveToRegisterDetail", sender: nil)
     }
     
     private func initControl(){
-        self.lblGuide.font = UIFont.boldSystemFont(ofSize: 30)
-        self.txtId.layer.cornerRadius = 50
-        self.txtPw.layer.cornerRadius = 50
         self.btnNext.alpha = 0.0
+        self.lblMain.font = UIFont.boldSystemFont(ofSize: 30)
     }
     
     private func animate(){

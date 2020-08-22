@@ -10,9 +10,18 @@
 		6CC888021FA0DEAB26E08ACD /* Pods_GamePartner_GamePartnerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2097B673F66240741A6D111A /* Pods_GamePartner_GamePartnerUITests.framework */; };
 		90BE1DC974467D29FAEEC47A /* Pods_GamePartnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13948EF6251CDCEBABF7A334 /* Pods_GamePartnerTests.framework */; };
 		DBA5FA33B942AF76D572058D /* Pods_GamePartner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30B5D33568CFDDD55CD070C2 /* Pods_GamePartner.framework */; };
+		FD3DF50824F0F31700EF8307 /* RegisterSexVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3DF50724F0F31700EF8307 /* RegisterSexVC.swift */; };
+		FD3DF50A24F10BD200EF8307 /* RegisterBirthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3DF50924F10BD200EF8307 /* RegisterBirthVC.swift */; };
+		FD3DF50E24F11DA900EF8307 /* RegisterDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3DF50D24F11DA900EF8307 /* RegisterDetailVC.swift */; };
 		FD5C431D24ED4D31000C2FE1 /* RegisterBasicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5C431C24ED4D31000C2FE1 /* RegisterBasicVC.swift */; };
 		FD5C432024ED6D8E000C2FE1 /* MainStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5C431F24ED6D8E000C2FE1 /* MainStoryBoard.storyboard */; };
 		FD5C432224ED6DC5000C2FE1 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5C432124ED6DC5000C2FE1 /* MainVC.swift */; };
+		FD8F3B6F24F0D9D40080EE2E /* man.png in Resources */ = {isa = PBXBuildFile; fileRef = FD8F3B6D24F0D9D30080EE2E /* man.png */; };
+		FD8F3B7024F0D9D40080EE2E /* woman.png in Resources */ = {isa = PBXBuildFile; fileRef = FD8F3B6E24F0D9D40080EE2E /* woman.png */; };
+		FD8F3B7524F0E3830080EE2E /* radio_checked_woman.png in Resources */ = {isa = PBXBuildFile; fileRef = FD8F3B7124F0E3830080EE2E /* radio_checked_woman.png */; };
+		FD8F3B7624F0E3830080EE2E /* radio_woman.png in Resources */ = {isa = PBXBuildFile; fileRef = FD8F3B7224F0E3830080EE2E /* radio_woman.png */; };
+		FD8F3B7724F0E3830080EE2E /* radio_man.png in Resources */ = {isa = PBXBuildFile; fileRef = FD8F3B7324F0E3830080EE2E /* radio_man.png */; };
+		FD8F3B7824F0E3830080EE2E /* radio_cheked_man.png in Resources */ = {isa = PBXBuildFile; fileRef = FD8F3B7424F0E3830080EE2E /* radio_cheked_man.png */; };
 		FDB4D90224EFF7080009776D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB4D90124EFF7080009776D /* UserModel.swift */; };
 		FDC4E84724E2C35F00392432 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC4E84624E2C35F00392432 /* AppDelegate.swift */; };
 		FDC4E84924E2C35F00392432 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC4E84824E2C35F00392432 /* SceneDelegate.swift */; };
@@ -51,9 +60,18 @@
 		867AC30093D85EE94734C19C /* Pods-GamePartner-GamePartnerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamePartner-GamePartnerUITests.release.xcconfig"; path = "Target Support Files/Pods-GamePartner-GamePartnerUITests/Pods-GamePartner-GamePartnerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E550CB09867F7AC8F608973F /* Pods-GamePartner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamePartner.debug.xcconfig"; path = "Target Support Files/Pods-GamePartner/Pods-GamePartner.debug.xcconfig"; sourceTree = "<group>"; };
 		F82A7C72CF796A20260C9311 /* Pods-GamePartnerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamePartnerTests.release.xcconfig"; path = "Target Support Files/Pods-GamePartnerTests/Pods-GamePartnerTests.release.xcconfig"; sourceTree = "<group>"; };
+		FD3DF50724F0F31700EF8307 /* RegisterSexVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSexVC.swift; sourceTree = "<group>"; };
+		FD3DF50924F10BD200EF8307 /* RegisterBirthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBirthVC.swift; sourceTree = "<group>"; };
+		FD3DF50D24F11DA900EF8307 /* RegisterDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDetailVC.swift; sourceTree = "<group>"; };
 		FD5C431C24ED4D31000C2FE1 /* RegisterBasicVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBasicVC.swift; sourceTree = "<group>"; };
 		FD5C431F24ED6D8E000C2FE1 /* MainStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainStoryBoard.storyboard; sourceTree = "<group>"; };
 		FD5C432124ED6DC5000C2FE1 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		FD8F3B6D24F0D9D30080EE2E /* man.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = man.png; sourceTree = "<group>"; };
+		FD8F3B6E24F0D9D40080EE2E /* woman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = woman.png; sourceTree = "<group>"; };
+		FD8F3B7124F0E3830080EE2E /* radio_checked_woman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radio_checked_woman.png; sourceTree = "<group>"; };
+		FD8F3B7224F0E3830080EE2E /* radio_woman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radio_woman.png; sourceTree = "<group>"; };
+		FD8F3B7324F0E3830080EE2E /* radio_man.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radio_man.png; sourceTree = "<group>"; };
+		FD8F3B7424F0E3830080EE2E /* radio_cheked_man.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radio_cheked_man.png; sourceTree = "<group>"; };
 		FDB4D90124EFF7080009776D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		FDC4E84324E2C35F00392432 /* GamePartner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamePartner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDC4E84624E2C35F00392432 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +146,9 @@
 				FDC4E84C24E2C35F00392432 /* Main.storyboard */,
 				FDC4E84A24E2C35F00392432 /* ViewController.swift */,
 				FD5C431C24ED4D31000C2FE1 /* RegisterBasicVC.swift */,
+				FD3DF50724F0F31700EF8307 /* RegisterSexVC.swift */,
+				FD3DF50924F10BD200EF8307 /* RegisterBirthVC.swift */,
+				FD3DF50D24F11DA900EF8307 /* RegisterDetailVC.swift */,
 			);
 			path = RegisterView;
 			sourceTree = "<group>";
@@ -139,6 +160,19 @@
 				FD5C432124ED6DC5000C2FE1 /* MainVC.swift */,
 			);
 			path = MainView;
+			sourceTree = "<group>";
+		};
+		FD8F3B6824F0179C0080EE2E /* ImageAssets */ = {
+			isa = PBXGroup;
+			children = (
+				FD8F3B7124F0E3830080EE2E /* radio_checked_woman.png */,
+				FD8F3B7424F0E3830080EE2E /* radio_cheked_man.png */,
+				FD8F3B7324F0E3830080EE2E /* radio_man.png */,
+				FD8F3B7224F0E3830080EE2E /* radio_woman.png */,
+				FD8F3B6D24F0D9D30080EE2E /* man.png */,
+				FD8F3B6E24F0D9D40080EE2E /* woman.png */,
+			);
+			path = ImageAssets;
 			sourceTree = "<group>";
 		};
 		FDC4E83A24E2C35F00392432 = {
@@ -166,6 +200,7 @@
 		FDC4E84524E2C35F00392432 /* GamePartner */ = {
 			isa = PBXGroup;
 			children = (
+				FD8F3B6824F0179C0080EE2E /* ImageAssets */,
 				FDC4E87A24E2C83700392432 /* Model */,
 				FDC4E87824E2C81700392432 /* ViewModel */,
 				FDC4E87724E2C80E00392432 /* View */,
@@ -329,9 +364,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDC4E85324E2C36000392432 /* LaunchScreen.storyboard in Resources */,
+				FD8F3B7724F0E3830080EE2E /* radio_man.png in Resources */,
+				FD8F3B6F24F0D9D40080EE2E /* man.png in Resources */,
+				FD8F3B7624F0E3830080EE2E /* radio_woman.png in Resources */,
+				FD8F3B7824F0E3830080EE2E /* radio_cheked_man.png in Resources */,
 				FDC4E85024E2C36000392432 /* Assets.xcassets in Resources */,
 				FD5C432024ED6D8E000C2FE1 /* MainStoryBoard.storyboard in Resources */,
+				FD8F3B7024F0D9D40080EE2E /* woman.png in Resources */,
 				FDC4E84E24E2C35F00392432 /* Main.storyboard in Resources */,
+				FD8F3B7524F0E3830080EE2E /* radio_checked_woman.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,8 +504,11 @@
 				FD5C432224ED6DC5000C2FE1 /* MainVC.swift in Sources */,
 				FDC4E84B24E2C35F00392432 /* ViewController.swift in Sources */,
 				FDC4E84724E2C35F00392432 /* AppDelegate.swift in Sources */,
+				FD3DF50824F0F31700EF8307 /* RegisterSexVC.swift in Sources */,
 				FDB4D90224EFF7080009776D /* UserModel.swift in Sources */,
+				FD3DF50E24F11DA900EF8307 /* RegisterDetailVC.swift in Sources */,
 				FDC4E84924E2C35F00392432 /* SceneDelegate.swift in Sources */,
+				FD3DF50A24F10BD200EF8307 /* RegisterBirthVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
