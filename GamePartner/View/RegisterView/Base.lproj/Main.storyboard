@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17147" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17120"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -355,7 +356,7 @@
                     <connections>
                         <outlet property="btnNext" destination="zFv-SR-25w" id="USl-55-7Cd"/>
                         <outlet property="lblMain" destination="9H3-kC-vjy" id="yGV-Io-eQq"/>
-                        <segue destination="ciV-nU-Yt9" kind="showDetail" identifier="moveToRegisterDetail" id="1Wf-gy-yny"/>
+                        <segue destination="tJt-l8-XXf" kind="showDetail" identifier="moveToGameRegister" id="VGV-bD-d70"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TeL-br-J0v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -412,6 +413,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCT-gn-qYb">
                                 <rect key="frame" x="180.66666666666666" y="656" width="53" height="30"/>
                                 <state key="normal" title="NEXT &gt;"/>
+                                <connections>
+                                    <action selector="btnNextPressed:" destination="ciV-nU-Yt9" eventType="touchUpInside" id="zKF-Ff-DbR"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="ex) 안녕하세요! 25 살 남자이고 롤을 즐겨하는 골드 미드라이너 입니다. 같이 하실분은 DM 주세요 :)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Q0k-GO-0Qc">
                                 <rect key="frame" x="42" y="454" width="330" height="94"/>
@@ -447,11 +451,164 @@
                         <outlet property="lblIntroduce" destination="EKI-uB-ar1" id="8Bg-JR-QTl"/>
                         <outlet property="lblMainNickName" destination="xTs-6D-c4e" id="Zkc-A2-Ld5"/>
                         <outlet property="vTxtIntroduce" destination="Q0k-GO-0Qc" id="XXT-58-NIw"/>
+                        <segue destination="NKl-GF-mMR" kind="showDetail" identifier="moveToPictureRegister" id="5bt-KJ-9Cw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U1x-dK-IUt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1262.3188405797102" y="-1187.2767857142856"/>
+            <point key="canvasLocation" x="-486" y="-1187"/>
+        </scene>
+        <!--Register PitureVC-->
+        <scene sceneID="yy7-EM-o3f">
+            <objects>
+                <viewController id="NKl-GF-mMR" customClass="RegisterPitureVC" customModule="GamePartner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ldq-oW-9Y1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zc4-lu-Ksr">
+                                <rect key="frame" x="68.666666666666686" y="257" width="277" height="328"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="277" id="92A-5M-yta"/>
+                                    <constraint firstAttribute="height" constant="328" id="hbU-T4-kdT"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사진을 등록 해주세요 :)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oj3-72-94o">
+                                <rect key="frame" x="107" y="157.66666666666666" width="200" height="27"/>
+                                <color key="tintColor" red="0.16705398090000001" green="0.76701605620000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Bzf-7h-XrX"/>
+                                    <constraint firstAttribute="height" constant="27" id="ibR-h0-s7F"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" systemColor="systemBlueColor"/>
+                                <color key="highlightedColor" red="0.16705398090000001" green="0.76701605620000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5iq-t0-vSq">
+                                <rect key="frame" x="81" y="606" width="52" height="30"/>
+                                <state key="normal" title="촬영하기"/>
+                                <connections>
+                                    <action selector="btnCapturePhoto:" destination="NKl-GF-mMR" eventType="touchUpInside" id="tCU-hO-qbR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JsI-Wv-djI">
+                                <rect key="frame" x="281" y="606" width="52" height="30"/>
+                                <state key="normal" title="불러오기"/>
+                                <connections>
+                                    <action selector="btnGetPhoto:" destination="NKl-GF-mMR" eventType="touchUpInside" id="vJi-5v-dtJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcC-jC-Nh7">
+                                <rect key="frame" x="180.66666666666666" y="676" width="53" height="30"/>
+                                <state key="normal" title="NEXT &gt;"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마지막 단계입니다 !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pq-D2-APw">
+                                <rect key="frame" x="149" y="212" width="116.33333333333331" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="116.33" id="aHq-Bl-FwZ"/>
+                                    <constraint firstAttribute="height" constant="18" id="rC7-6g-FFS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.16705398090000001" green="0.76701605620000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Im2-sj-4mT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zc4-lu-Ksr" firstAttribute="centerX" secondItem="Ldq-oW-9Y1" secondAttribute="centerX" id="5K7-R0-Mgd"/>
+                            <constraint firstItem="vcC-jC-Nh7" firstAttribute="centerX" secondItem="Ldq-oW-9Y1" secondAttribute="centerX" id="6Wd-Lk-MB8"/>
+                            <constraint firstItem="9pq-D2-APw" firstAttribute="centerX" secondItem="Ldq-oW-9Y1" secondAttribute="centerX" id="Cnh-4k-SJf"/>
+                            <constraint firstItem="JsI-Wv-djI" firstAttribute="centerX" secondItem="Ldq-oW-9Y1" secondAttribute="centerX" constant="100" id="Lg4-9I-Nsf"/>
+                            <constraint firstItem="JsI-Wv-djI" firstAttribute="centerY" secondItem="Ldq-oW-9Y1" secondAttribute="centerY" constant="200" id="Lk6-Wu-HIo"/>
+                            <constraint firstItem="Oj3-72-94o" firstAttribute="centerX" secondItem="Ldq-oW-9Y1" secondAttribute="centerX" id="NGt-zx-X3J"/>
+                            <constraint firstItem="zc4-lu-Ksr" firstAttribute="centerY" secondItem="Ldq-oW-9Y1" secondAttribute="centerY" id="Pwh-o1-T5R"/>
+                            <constraint firstItem="5iq-t0-vSq" firstAttribute="centerX" secondItem="Ldq-oW-9Y1" secondAttribute="centerX" constant="-100" id="Z3M-Yn-xhh"/>
+                            <constraint firstItem="Oj3-72-94o" firstAttribute="centerY" secondItem="Ldq-oW-9Y1" secondAttribute="centerY" constant="-250" id="caP-MN-MgJ"/>
+                            <constraint firstItem="vcC-jC-Nh7" firstAttribute="centerY" secondItem="Ldq-oW-9Y1" secondAttribute="centerY" constant="270" id="mdU-dq-Tae"/>
+                            <constraint firstItem="5iq-t0-vSq" firstAttribute="centerY" secondItem="Ldq-oW-9Y1" secondAttribute="centerY" constant="200" id="vE9-XD-BD9"/>
+                            <constraint firstItem="9pq-D2-APw" firstAttribute="centerY" secondItem="Ldq-oW-9Y1" secondAttribute="centerY" constant="-200" id="vSg-Fg-Wsq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnNext" destination="vcC-jC-Nh7" id="4XJ-0w-1YX"/>
+                        <outlet property="imgView" destination="zc4-lu-Ksr" id="tEw-o0-6VP"/>
+                        <outlet property="lblMain" destination="Oj3-72-94o" id="4Xj-9N-G81"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5sA-1M-tFo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="364" y="-1187"/>
+        </scene>
+        <!--Register GameVC-->
+        <scene sceneID="RRz-mB-S8J">
+            <objects>
+                <viewController id="tJt-l8-XXf" customClass="RegisterGameVC" customModule="GamePartner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fQk-gy-BUx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="즐겨하시는 게임은 뭔가요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rm2-8B-xhQ">
+                                <rect key="frame" x="91.666666666666686" y="157.66666666666666" width="231" height="27"/>
+                                <color key="tintColor" red="0.16705398090000001" green="0.76701605620000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="231" id="5Y1-Lj-sEi"/>
+                                    <constraint firstAttribute="height" constant="27" id="BUN-6Y-n3i"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" systemColor="systemBlueColor"/>
+                                <color key="highlightedColor" red="0.16705398090000001" green="0.76701605620000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVZ-BZ-Fls">
+                                <rect key="frame" x="180.66666666666666" y="656" width="53" height="30"/>
+                                <state key="normal" title="NEXT &gt;"/>
+                                <connections>
+                                    <action selector="btnNextPressed:" destination="tJt-l8-XXf" eventType="touchUpInside" id="Den-jX-Ji8"/>
+                                    <action selector="btnNextPressed:" destination="Scu-wG-B2i" eventType="touchUpInside" id="uFe-4X-9ek"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나중에 변경 하실수 있어요 :)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oi-dy-EzI">
+                                <rect key="frame" x="122.66666666666667" y="212" width="168.66666666666663" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="43g-IZ-Pqk"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="168.66999999999999" id="XIg-UN-pEX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.16705398090000001" green="0.76701605620000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Uf-B6-fYD">
+                                <rect key="frame" x="0.0" y="340" width="414" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="wF5-s4-LAt"/>
+                                    <constraint firstAttribute="height" constant="162" id="y9s-1A-MUB"/>
+                                </constraints>
+                            </pickerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ce3-aH-xJD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qVZ-BZ-Fls" firstAttribute="centerY" secondItem="fQk-gy-BUx" secondAttribute="centerY" constant="250" id="3D8-3K-VQm"/>
+                            <constraint firstItem="6oi-dy-EzI" firstAttribute="centerX" secondItem="fQk-gy-BUx" secondAttribute="centerX" id="HLJ-ij-3UO"/>
+                            <constraint firstItem="6oi-dy-EzI" firstAttribute="centerY" secondItem="fQk-gy-BUx" secondAttribute="centerY" constant="-200" id="IzU-eG-7YL"/>
+                            <constraint firstItem="Rm2-8B-xhQ" firstAttribute="centerY" secondItem="fQk-gy-BUx" secondAttribute="centerY" constant="-250" id="LPM-Um-9gM"/>
+                            <constraint firstItem="5Uf-B6-fYD" firstAttribute="centerX" secondItem="fQk-gy-BUx" secondAttribute="centerX" id="O6m-3H-WhY"/>
+                            <constraint firstItem="5Uf-B6-fYD" firstAttribute="centerY" secondItem="fQk-gy-BUx" secondAttribute="centerY" id="OxA-EQ-U4L"/>
+                            <constraint firstItem="qVZ-BZ-Fls" firstAttribute="centerX" secondItem="fQk-gy-BUx" secondAttribute="centerX" id="RUm-cj-Giy"/>
+                            <constraint firstItem="Rm2-8B-xhQ" firstAttribute="centerX" secondItem="fQk-gy-BUx" secondAttribute="centerX" id="o0g-X1-nwY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnNext" destination="qVZ-BZ-Fls" id="K93-Pq-RjM"/>
+                        <outlet property="lblMain" destination="Rm2-8B-xhQ" id="X7W-cj-QsS"/>
+                        <outlet property="pickerView" destination="5Uf-B6-fYD" id="aEU-I1-chw"/>
+                        <segue destination="ciV-nU-Yt9" kind="showDetail" identifier="moveToDetailRegister" id="e8h-uU-D8z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wf8-G6-hhQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1301" y="-1187"/>
         </scene>
     </scenes>
     <resources>

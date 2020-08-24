@@ -29,7 +29,7 @@ class RegisterBirthVC : UIViewController{
     }
     
     @IBAction func btnNextPressed(_ sender: Any) {
-        performSegue(withIdentifier: "moveToRegisterDetail", sender: nil)
+        performSegue(withIdentifier: "moveToGameRegister", sender: nil)
     }
     
     private func initControl(){

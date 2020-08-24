@@ -33,6 +33,10 @@ class RegisterDetailVC : UIViewController{
         self.vTxtIntroduce.layer.cornerRadius = 10
     }
     
+    @IBAction func btnNextPressed(_ sender: Any) {
+        performSegue(withIdentifier: "moveToPictureRegister", sender: nil)
+    }
+    
     private func animate(){
         UIView.animateKeyframes(withDuration: 3.0, delay: 0.0, options: [], animations: {
             UIView.addKeyframe(withRelativeStartTime: 0.3, relativeDuration:0.3, animations: {
