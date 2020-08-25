@@ -34,6 +34,9 @@ class RegisterSexVC: UIViewController{
     }
     
     @IBAction func btnNextPressed(_ sender: Any) {
+        if btnMan.isSelected == false && btnWoman.isSelected == false{
+            alert("값을 입력해주세요!", message: "성별을 선택해주세요!")
+        }
         performSegue(withIdentifier: "moveToBirthdayRegister", sender: nil)
     }
     
@@ -61,6 +64,16 @@ class RegisterSexVC: UIViewController{
         self.imgMan = UIImage(named: "radio_man.png")
         self.imgManCheked = UIImage(named: "radio_cheked_man.png")
         self.imgWomanChecked = UIImage(named: "radio_cheked_woman.png")
+    }
+    
+    private func alert(_ title: String, message: String){
+        let alert = UIAlertController(title: title, message: message
+                                      ,preferredStyle:UIAlertController.Style.alert)
+        let action = UIAlertAction(title:"OK", style: UIAlertAction.Style.default,handler: nil)
+        
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+        
     }
     
     private func animate(){

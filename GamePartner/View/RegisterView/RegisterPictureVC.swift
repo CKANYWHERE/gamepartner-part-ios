@@ -30,6 +30,12 @@ class RegisterPitureVC : UIViewController,UINavigationControllerDelegate,UIImage
         animate()
     }
     
+    @IBAction func btnNextPressed(_ sender: Any) {
+        if imgView.image == nil{
+            alert("값을 입력해주세요!", message: "사진을 등록해주세요!")
+        }
+    }
+    
     private func initControl(){
         self.btnNext.alpha = 0.0
         self.lblMain.font = UIFont.boldSystemFont(ofSize: 30)

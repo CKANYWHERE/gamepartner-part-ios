@@ -95,7 +95,7 @@
                                 <color key="textColor" systemColor="systemBlueColor"/>
                                 <color key="highlightedColor" red="0.16705398090000001" green="0.76701605620000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ID 를 입력해주세요 :)" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rWY-xe-m8Y">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rWY-xe-m8Y">
                                 <rect key="frame" x="112" y="344" width="210" height="34"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
@@ -399,7 +399,7 @@
                                 <color key="textColor" red="0.16705398090000001" green="0.76701605620000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ex) 롤마스터" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l1h-CA-lf8">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l1h-CA-lf8">
                                 <rect key="frame" x="57" y="274" width="300" height="34"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
@@ -417,17 +417,17 @@
                                     <action selector="btnNextPressed:" destination="ciV-nU-Yt9" eventType="touchUpInside" id="zKF-Ff-DbR"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="ex) 안녕하세요! 25 살 남자이고 롤을 즐겨하는 골드 미드라이너 입니다. 같이 하실분은 DM 주세요 :)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Q0k-GO-0Qc">
-                                <rect key="frame" x="42" y="454" width="330" height="94"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0zG-Ho-Rhm">
+                                <rect key="frame" x="57" y="454" width="300" height="34"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="330" id="Gte-za-IRG"/>
-                                    <constraint firstAttribute="height" constant="94" id="MgI-KI-zKf"/>
+                                    <constraint firstAttribute="height" constant="34" id="18O-2N-XlA"/>
+                                    <constraint firstAttribute="width" constant="300" id="pk8-qa-a6t"/>
                                 </constraints>
                                 <color key="textColor" red="0.17772451040000001" green="0.36068016289999999" blue="0.41576939819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LC3-uD-CVQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -435,14 +435,14 @@
                             <constraint firstItem="EKI-uB-ar1" firstAttribute="centerX" secondItem="QNb-WN-pds" secondAttribute="centerX" id="8YB-N1-Kbh"/>
                             <constraint firstItem="xTs-6D-c4e" firstAttribute="centerY" secondItem="QNb-WN-pds" secondAttribute="centerY" constant="-230" id="A3H-iB-Byh"/>
                             <constraint firstItem="iCT-gn-qYb" firstAttribute="centerX" secondItem="QNb-WN-pds" secondAttribute="centerX" id="L6Q-CP-asp"/>
-                            <constraint firstItem="Q0k-GO-0Qc" firstAttribute="centerY" secondItem="QNb-WN-pds" secondAttribute="centerY" constant="80" id="Nbe-dC-fqR"/>
+                            <constraint firstItem="0zG-Ho-Rhm" firstAttribute="centerY" secondItem="QNb-WN-pds" secondAttribute="centerY" constant="50" id="Oyz-Qc-i84"/>
+                            <constraint firstItem="0zG-Ho-Rhm" firstAttribute="centerX" secondItem="QNb-WN-pds" secondAttribute="centerX" id="UWp-Th-HMq"/>
                             <constraint firstItem="iCT-gn-qYb" firstAttribute="centerY" secondItem="QNb-WN-pds" secondAttribute="centerY" constant="250" id="WTB-Nu-aH9"/>
                             <constraint firstItem="l1h-CA-lf8" firstAttribute="centerY" secondItem="QNb-WN-pds" secondAttribute="centerY" constant="-130" id="iLC-IK-Lbm"/>
                             <constraint firstItem="8fP-1T-6Vx" firstAttribute="centerY" secondItem="QNb-WN-pds" secondAttribute="centerY" constant="-180" id="k6I-iT-NpY"/>
                             <constraint firstItem="EKI-uB-ar1" firstAttribute="centerY" secondItem="QNb-WN-pds" secondAttribute="centerY" constant="-30" id="kIn-Wa-NYX"/>
                             <constraint firstItem="l1h-CA-lf8" firstAttribute="centerX" secondItem="QNb-WN-pds" secondAttribute="centerX" id="l5f-FY-YVi"/>
                             <constraint firstItem="xTs-6D-c4e" firstAttribute="centerX" secondItem="QNb-WN-pds" secondAttribute="centerX" id="oX2-aU-RMb"/>
-                            <constraint firstItem="Q0k-GO-0Qc" firstAttribute="centerX" secondItem="QNb-WN-pds" secondAttribute="centerX" id="rKk-YU-Wf9"/>
                             <constraint firstItem="8fP-1T-6Vx" firstAttribute="centerX" secondItem="QNb-WN-pds" secondAttribute="centerX" id="tVi-eI-ads"/>
                         </constraints>
                     </view>
@@ -450,13 +450,14 @@
                         <outlet property="btnNext" destination="iCT-gn-qYb" id="szg-eP-CmU"/>
                         <outlet property="lblIntroduce" destination="EKI-uB-ar1" id="8Bg-JR-QTl"/>
                         <outlet property="lblMainNickName" destination="xTs-6D-c4e" id="Zkc-A2-Ld5"/>
-                        <outlet property="vTxtIntroduce" destination="Q0k-GO-0Qc" id="XXT-58-NIw"/>
+                        <outlet property="txtIntroduce" destination="0zG-Ho-Rhm" id="ZEk-Y9-ztG"/>
+                        <outlet property="txtNickName" destination="l1h-CA-lf8" id="Prn-1b-qUo"/>
                         <segue destination="NKl-GF-mMR" kind="showDetail" identifier="moveToPictureRegister" id="5bt-KJ-9Cw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U1x-dK-IUt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-486" y="-1187"/>
+            <point key="canvasLocation" x="-486.95652173913049" y="-1187.2767857142856"/>
         </scene>
         <!--Register PitureVC-->
         <scene sceneID="yy7-EM-o3f">
@@ -502,6 +503,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcC-jC-Nh7">
                                 <rect key="frame" x="180.66666666666666" y="676" width="53" height="30"/>
                                 <state key="normal" title="NEXT &gt;"/>
+                                <connections>
+                                    <action selector="btnNextPressed:" destination="NKl-GF-mMR" eventType="touchUpInside" id="s9R-ed-Ua6"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마지막 단계입니다 !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pq-D2-APw">
                                 <rect key="frame" x="149" y="212" width="116.33333333333331" height="18"/>

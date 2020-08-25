@@ -7,11 +7,24 @@
 
 import UIKit
 
-class RegisterBaiscVC: UIViewController {
+class RegisterBaiscVC: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var btnNext: UIButton!
     @IBOutlet weak var lblGuide: UILabel!
-    @IBOutlet weak var txtId: UITextField!
-    @IBOutlet weak var txtPw: UITextField!
+    @IBOutlet weak var txtId: UITextField!{
+        didSet{
+            let placeholderText = NSAttributedString(string: "ID를 입력해주세요")
+            txtId.delegate = self
+            txtId.attributedPlaceholder = placeholderText
+        }
+    }
+    
+    @IBOutlet weak var txtPw: UITextField!{
+        didSet{
+            let placeholderText = NSAttributedString(string: "PW를 입력해주세요")
+            txtPw.delegate = self
+            txtPw.attributedPlaceholder = placeholderText
+        }
+    }
     
     override func viewDidLoad() {
        
@@ -26,8 +39,17 @@ class RegisterBaiscVC: UIViewController {
       
     }
  
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
     @IBAction func btnNextPressed(_ sender: Any) {
-        performSegue(withIdentifier: "moveToSexRegister", sender: nil)
+        if txtId.text!.isEmpty || txtPw.text!.isEmpty{
+            alert("값을 입력해주세요!", message: "ID와 PW를 입력해주세요!")
+        }else{
+            performSegue(withIdentifier: "moveToSexRegister", sender: nil)
+        }
     }
     
     private func initControl(){
@@ -43,5 +65,15 @@ class RegisterBaiscVC: UIViewController {
                 self.btnNext.alpha = 1.0
             })
         },completion: nil)
+    }
+    
+    private func alert(_ title: String, message: String){
+        let alert = UIAlertController(title: title, message: message
+                                      ,preferredStyle:UIAlertController.Style.alert)
+        let action = UIAlertAction(title:"OK", style: UIAlertAction.Style.default,handler: nil)
+        
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+        
     }
 }
