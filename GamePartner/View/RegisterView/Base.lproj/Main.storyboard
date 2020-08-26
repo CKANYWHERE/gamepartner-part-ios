@@ -122,6 +122,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="특수문자는 ! @ # 만 입력 가능합니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3q-IQ-ZUY">
+                                <rect key="frame" x="96.666666666666686" y="260.66666666666669" width="221" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="8vL-ac-2Lp"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="221" id="ygf-l5-A3e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.16705398090000001" green="0.76701605620000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3iL-HB-THP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -129,9 +139,11 @@
                             <constraint firstItem="Ybv-vr-W62" firstAttribute="centerY" secondItem="ALw-x1-Ha2" secondAttribute="centerY" constant="250" id="0DE-28-WXt"/>
                             <constraint firstItem="kJD-9S-JfJ" firstAttribute="centerX" secondItem="ALw-x1-Ha2" secondAttribute="centerX" id="0dT-1r-lUc"/>
                             <constraint firstItem="rWY-xe-m8Y" firstAttribute="centerX" secondItem="ALw-x1-Ha2" secondAttribute="centerX" constant="10" id="26G-nf-eo6"/>
+                            <constraint firstItem="i3q-IQ-ZUY" firstAttribute="centerY" secondItem="ALw-x1-Ha2" secondAttribute="centerY" constant="-150" id="4cH-ag-eGk"/>
                             <constraint firstItem="OtG-VP-f64" firstAttribute="centerX" secondItem="ALw-x1-Ha2" secondAttribute="centerX" constant="-120" id="5Ek-fT-ii3"/>
                             <constraint firstItem="5d4-3Q-bm8" firstAttribute="centerY" secondItem="ALw-x1-Ha2" secondAttribute="centerY" constant="80" id="5HR-XI-bKJ"/>
                             <constraint firstItem="Ybv-vr-W62" firstAttribute="centerX" secondItem="ALw-x1-Ha2" secondAttribute="centerX" id="7kj-qh-Ym2"/>
+                            <constraint firstItem="i3q-IQ-ZUY" firstAttribute="centerX" secondItem="ALw-x1-Ha2" secondAttribute="centerX" id="AGl-hR-OXX"/>
                             <constraint firstItem="rWY-xe-m8Y" firstAttribute="centerY" secondItem="ALw-x1-Ha2" secondAttribute="centerY" constant="-60" id="Agl-Jp-jD1"/>
                             <constraint firstItem="5d4-3Q-bm8" firstAttribute="centerX" secondItem="ALw-x1-Ha2" secondAttribute="centerX" constant="10" id="FPX-kg-t43"/>
                             <constraint firstItem="OtG-VP-f64" firstAttribute="centerY" secondItem="ALw-x1-Ha2" secondAttribute="centerY" constant="80" id="Gch-Qe-5Ui"/>
@@ -329,7 +341,7 @@
                                 </date>
                                 <locale key="locale" localeIdentifier="ko"/>
                                 <connections>
-                                    <action selector="changeDatePicker:" destination="Scu-wG-B2i" eventType="valueChanged" id="6af-El-Cv5"/>
+                                    <action selector="changeDatePicker:" destination="Scu-wG-B2i" eventType="valueChanged" id="jGX-6i-xx7"/>
                                 </connections>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zFv-SR-25w">
@@ -355,6 +367,7 @@
                     </view>
                     <connections>
                         <outlet property="btnNext" destination="zFv-SR-25w" id="USl-55-7Cd"/>
+                        <outlet property="datePicker" destination="WHz-SH-Lf4" id="NVG-90-DGm"/>
                         <outlet property="lblMain" destination="9H3-kC-vjy" id="yGV-Io-eQq"/>
                         <segue destination="tJt-l8-XXf" kind="showDetail" identifier="moveToGameRegister" id="VGV-bD-d70"/>
                     </connections>

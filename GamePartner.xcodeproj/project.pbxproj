@@ -33,6 +33,7 @@
 		FDC4E86924E2C36000392432 /* GamePartnerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC4E86824E2C36000392432 /* GamePartnerUITests.swift */; };
 		FDF92C2D24F3D529005EE293 /* RegisterPictureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF92C2C24F3D529005EE293 /* RegisterPictureVC.swift */; };
 		FDF92C2F24F3F893005EE293 /* RegisterGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF92C2E24F3F893005EE293 /* RegisterGameVC.swift */; };
+		FDF92C3224F65429005EE293 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF92C3124F65429005EE293 /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		FDC4E86A24E2C36000392432 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDF92C2C24F3D529005EE293 /* RegisterPictureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPictureVC.swift; sourceTree = "<group>"; };
 		FDF92C2E24F3F893005EE293 /* RegisterGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterGameVC.swift; sourceTree = "<group>"; };
+		FDF92C3124F65429005EE293 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 		FD5C431B24ED4ABB000C2FE1 /* RegisterView */ = {
 			isa = PBXGroup;
 			children = (
+				FDF92C3024F65402005EE293 /* ExtensionPack */,
 				FDC4E84C24E2C35F00392432 /* Main.storyboard */,
 				FDC4E84A24E2C35F00392432 /* ViewController.swift */,
 				FD5C431C24ED4D31000C2FE1 /* RegisterBasicVC.swift */,
@@ -259,6 +262,14 @@
 				FDB4D90124EFF7080009776D /* UserModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FDF92C3024F65402005EE293 /* ExtensionPack */ = {
+			isa = PBXGroup;
+			children = (
+				FDF92C3124F65429005EE293 /* String.swift */,
+			);
+			path = ExtensionPack;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -512,6 +523,7 @@
 				FDC4E84724E2C35F00392432 /* AppDelegate.swift in Sources */,
 				FDF92C2D24F3D529005EE293 /* RegisterPictureVC.swift in Sources */,
 				FD3DF50824F0F31700EF8307 /* RegisterSexVC.swift in Sources */,
+				FDF92C3224F65429005EE293 /* String.swift in Sources */,
 				FDB4D90224EFF7080009776D /* UserModel.swift in Sources */,
 				FD3DF50E24F11DA900EF8307 /* RegisterDetailVC.swift in Sources */,
 				FDC4E84924E2C35F00392432 /* SceneDelegate.swift in Sources */,

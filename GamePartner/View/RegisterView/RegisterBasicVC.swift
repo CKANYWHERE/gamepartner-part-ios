@@ -8,6 +8,7 @@
 import UIKit
 
 class RegisterBaiscVC: UIViewController,UITextFieldDelegate {
+    
     @IBOutlet weak var btnNext: UIButton!
     @IBOutlet weak var lblGuide: UILabel!
     @IBOutlet weak var txtId: UITextField!{
@@ -38,6 +39,16 @@ class RegisterBaiscVC: UIViewController,UITextFieldDelegate {
         animate()
       
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination
+        guard let rvc = dest as? RegisterSexVC else {
+            return
+        }
+        
+        rvc.paramId = txtId.text
+        rvc.paramPw = txtPw.text
+    }
  
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
@@ -52,6 +63,17 @@ class RegisterBaiscVC: UIViewController,UITextFieldDelegate {
         }
     }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+            let utf8Char = string.cString(using: .utf8)
+            let isBackSpace = strcmp(utf8Char, "\\b")
+               if string.isValidId() || isBackSpace == -92{
+                return true
+            }
+            return false
+        }
+
+    
+    
     private func initControl(){
         self.lblGuide.font = UIFont.boldSystemFont(ofSize: 30)
         self.txtId.layer.cornerRadius = 50
@@ -59,6 +81,7 @@ class RegisterBaiscVC: UIViewController,UITextFieldDelegate {
         self.btnNext.alpha = 0.0
     }
     
+   
     private func animate(){
         UIView.animateKeyframes(withDuration: 3.0, delay: 0.0, options: [], animations: {
             UIView.addKeyframe(withRelativeStartTime: 0.3, relativeDuration:0.3, animations: {
@@ -77,3 +100,4 @@ class RegisterBaiscVC: UIViewController,UITextFieldDelegate {
         
     }
 }
+

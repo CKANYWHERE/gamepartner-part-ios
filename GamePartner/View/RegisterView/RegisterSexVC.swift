@@ -15,10 +15,14 @@ class RegisterSexVC: UIViewController{
     @IBOutlet weak var btnMan: UIButton!
     @IBOutlet weak var lblSub: UILabel!
     
+    var paramId:String!
+    var paramPw:String!
+    
     var imgWoman: UIImage?
     var imgMan: UIImage?
     var imgWomanChecked: UIImage?
     var imgManCheked: UIImage?
+    var sexType:String!
     
     override func viewDidLoad() {
        
@@ -33,6 +37,17 @@ class RegisterSexVC: UIViewController{
       
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination
+        guard let rvc = dest as? RegisterBirthVC else {
+            return
+        }
+        
+        rvc.paramId = paramId
+        rvc.paramPw = paramPw
+        rvc.paramSex = sexType
+    }
+    
     @IBAction func btnNextPressed(_ sender: Any) {
         if btnMan.isSelected == false && btnWoman.isSelected == false{
             alert("값을 입력해주세요!", message: "성별을 선택해주세요!")
@@ -45,11 +60,13 @@ class RegisterSexVC: UIViewController{
         if sender == btnWoman{
             btnMan.isSelected = false
             btnWoman.isSelected = true
+            sexType = "W"
         }
         
         else if sender == btnMan{
             btnMan.isSelected = true
             btnWoman.isSelected = false
+            sexType = "M"
         }
         
     }

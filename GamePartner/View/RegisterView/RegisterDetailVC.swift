@@ -26,6 +26,14 @@ class RegisterDetailVC : UIViewController,UITextFieldDelegate {
         }
     }
     
+    var paramId:String!
+    var paramPw:String!
+    var paramSex:String!
+    var paramAge:Int!
+    var paramBirthDay:String!
+    var paramGame:String!
+
+    
     @IBOutlet weak var btnNext: UIButton!
     
     override func viewDidLoad() {
@@ -37,13 +45,33 @@ class RegisterDetailVC : UIViewController,UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+       
         animate()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination
+        guard let rvc = dest as? RegisterPitureVC else {
+            return
+        }
+
+        rvc.paramId = paramId
+        rvc.paramPw = paramPw
+        rvc.paramSex = paramSex
+        rvc.paramAge = paramAge
+        rvc.paramBirthDay = paramBirthDay
+        rvc.paramGame = paramGame
+        rvc.paramNickName = txtNickName.text!
+        rvc.paramIntroduce = txtIntroduce.text!
+    }
+    
     
     private func initControl(){
         self.btnNext.alpha = 0.0
         self.lblMainNickName.font = UIFont.boldSystemFont(ofSize: 30)
-        self.lblIntroduce.font = UIFont.boldSystemFont(ofSize: 30)    }
+        self.lblIntroduce.font = UIFont.boldSystemFont(ofSize: 30)
+        
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)

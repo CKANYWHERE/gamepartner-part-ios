@@ -18,6 +18,13 @@ class RegisterGameVC : UIViewController,UIPickerViewDelegate,UIPickerViewDataSou
     let PICKER_VIEW_COLUMN = 1
     var gameList = ["리그오브레전드","오버워치","배틀그라운드","피파온라인","메이플스토리","던전앤파이터","하스스톤","카트라이더","콜오브듀티","기타"]
     
+    var paramId:String!
+    var paramPw:String!
+    var paramSex:String!
+    var paramAge:Int!
+    var paramBirthDay:String!
+    
+    var favoritGame:String!
     
     override func viewDidLoad() {
        
@@ -29,6 +36,21 @@ class RegisterGameVC : UIViewController,UIPickerViewDelegate,UIPickerViewDataSou
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         animate()
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination
+        guard let rvc = dest as? RegisterDetailVC else {
+            return
+        }
+
+        rvc.paramId = paramId
+        rvc.paramPw = paramPw
+        rvc.paramSex = paramSex
+        rvc.paramAge = paramAge
+        rvc.paramBirthDay = paramBirthDay
+        rvc.paramGame = favoritGame
     }
     
     private func initControl(){
@@ -58,7 +80,8 @@ class RegisterGameVC : UIViewController,UIPickerViewDelegate,UIPickerViewDataSou
     }
  
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //피커뷰 선택한 부분 들고옴 
+        //피커뷰 선택한 부분 들고옴
+        favoritGame = gameList[row]
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

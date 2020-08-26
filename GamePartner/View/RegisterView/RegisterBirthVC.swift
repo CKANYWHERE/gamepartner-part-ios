@@ -11,7 +11,17 @@ class RegisterBirthVC : UIViewController{
     
     @IBOutlet weak var lblMain: UILabel!
     @IBOutlet weak var btnNext: UIButton!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
+    var paramId:String!
+    var paramPw:String!
+    var paramSex:String!
+    
+    var age:Int!
+    var birthDay:String!
+    
+    @IBAction func changeDatePicker(_ sender: Any) {
+    }
     override func viewDidLoad() {
        
         super.viewDidLoad()
@@ -24,11 +34,32 @@ class RegisterBirthVC : UIViewController{
         animate()
     }
     
-    @IBAction func changeDatePicker(_ sender: UIDatePicker) {
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination
+        guard let rvc = dest as? RegisterGameVC else {
+            return
+        }
+        let formatter = DateFormatter()
+        formatter.dateFormat = "YYYY-MM-d"
+        birthDay = formatter.string(from: datePicker.date)
+        
+        print(formatter.string(from: datePicker.date))
+        
+        let formatYear = DateFormatter()
+        formatYear.dateFormat = "YYYY"
+        let birthYear: Int? = Int(formatYear.string(from: datePicker.date))
+        let currentYear: Int? = Int(formatYear.string(from: Date()))
+        let age = currentYear! - birthYear! + 1
+
+        rvc.paramId = paramId
+        rvc.paramPw = paramPw
+        rvc.paramSex = paramSex
+        rvc.paramAge = age
+        rvc.paramBirthDay = birthDay
     }
     
     @IBAction func btnNextPressed(_ sender: Any) {
+        
         performSegue(withIdentifier: "moveToGameRegister", sender: nil)
     }
     

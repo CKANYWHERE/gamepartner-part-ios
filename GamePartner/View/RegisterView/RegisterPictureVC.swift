@@ -18,6 +18,16 @@ class RegisterPitureVC : UIViewController,UINavigationControllerDelegate,UIImage
     var captureImage: UIImage!
     var flagImageSave = false
     
+    var paramId:String!
+    var paramPw:String!
+    var paramSex:String!
+    var paramAge:Int!
+    var paramBirthDay:String!
+    var paramGame:String!
+    var paramNickName:String!
+    var paramIntroduce:String!
+    
+    
     override func viewDidLoad() {
        
         super.viewDidLoad()
