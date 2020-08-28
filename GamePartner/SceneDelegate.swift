@@ -21,9 +21,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             
             let window = UIWindow(windowScene: windowScene)
-
-            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            window.rootViewController = storyBoard.instantiateViewController(withIdentifier: "MainRegister")// Your RootViewController in MainVC
+            
+            let realm = try! Realm()
+            let user = realm.objects(UserModel.self)
+            
+            if user.count == 0 {
+                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                window.rootViewController = storyBoard.instantiateViewController(withIdentifier: "MainRegister")// Your RootViewController in MainVC
+            }
+            else{
+                let storyBoard = UIStoryboard(name: "MainStoryBoard", bundle: nil)
+                window.rootViewController = storyBoard.instantiateViewController(withIdentifier: "MainVC")// Your RootViewController in MainVC
+            }
 
             self.window = window
             window.makeKeyAndVisible()

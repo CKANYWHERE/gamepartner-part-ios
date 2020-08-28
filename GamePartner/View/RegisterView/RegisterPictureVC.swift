@@ -7,6 +7,7 @@
 
 import UIKit
 import MobileCoreServices
+import RealmSwift
 
 class RegisterPitureVC : UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate{
 
@@ -37,12 +38,24 @@ class RegisterPitureVC : UIViewController,UINavigationControllerDelegate,UIImage
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         animate()
     }
     
     @IBAction func btnNextPressed(_ sender: Any) {
         if imgView.image == nil{
             alert("값을 입력해주세요!", message: "사진을 등록해주세요!")
+        }
+        else{
+      
+            let realm = try! Realm()
+            let user = UserModel(id:paramId,pw:paramPw,sex:paramSex,age:paramAge
+                                 ,birthDay:paramBirthDay,favoritGame: paramGame,introduce: paramIntroduce,nickName: paramNickName)
+            
+            try! realm.write{
+                realm.add(user)
+            }
+            
         }
     }
     

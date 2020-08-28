@@ -58,6 +58,8 @@ class RegisterBaiscVC: UIViewController,UITextFieldDelegate {
     @IBAction func btnNextPressed(_ sender: Any) {
         if txtId.text!.isEmpty || txtPw.text!.isEmpty{
             alert("값을 입력해주세요!", message: "ID와 PW를 입력해주세요!")
+        }else if txtId.text!.count < 8 || txtPw.text!.count < 8{
+            alert("값을 확인해주세요!", message: "ID와 PW는 최소 9개 이상으로 입력가능합니다!")
         }else{
             performSegue(withIdentifier: "moveToSexRegister", sender: nil)
         }
