@@ -34,6 +34,7 @@
 		FDF92C2D24F3D529005EE293 /* RegisterPictureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF92C2C24F3D529005EE293 /* RegisterPictureVC.swift */; };
 		FDF92C2F24F3F893005EE293 /* RegisterGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF92C2E24F3F893005EE293 /* RegisterGameVC.swift */; };
 		FDF92C3224F65429005EE293 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF92C3124F65429005EE293 /* String.swift */; };
+		FDF92C3724FA1794005EE293 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF92C3624FA1794005EE293 /* UserViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		FDF92C2C24F3D529005EE293 /* RegisterPictureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPictureVC.swift; sourceTree = "<group>"; };
 		FDF92C2E24F3F893005EE293 /* RegisterGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterGameVC.swift; sourceTree = "<group>"; };
 		FDF92C3124F65429005EE293 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		FDF92C3624FA1794005EE293 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +254,7 @@
 		FDC4E87824E2C81700392432 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FDF92C3624FA1794005EE293 /* UserViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				FDF92C3224F65429005EE293 /* String.swift in Sources */,
 				FDB4D90224EFF7080009776D /* UserModel.swift in Sources */,
 				FD3DF50E24F11DA900EF8307 /* RegisterDetailVC.swift in Sources */,
+				FDF92C3724FA1794005EE293 /* UserViewModel.swift in Sources */,
 				FDC4E84924E2C35F00392432 /* SceneDelegate.swift in Sources */,
 				FD3DF50A24F10BD200EF8307 /* RegisterBirthVC.swift in Sources */,
 				FDF92C2F24F3F893005EE293 /* RegisterGameVC.swift in Sources */,

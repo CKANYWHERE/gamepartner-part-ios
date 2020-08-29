@@ -6,6 +6,8 @@ target 'GamePartner' do
   use_frameworks!
   pod 'RealmSwift'
   pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxDataSources'
   
   # Pods for GamePartner
 

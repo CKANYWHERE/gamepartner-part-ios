@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxDataSources
 
 class RegisterGameVC : UIViewController,UIPickerViewDelegate,UIPickerViewDataSource{
     
@@ -23,8 +25,9 @@ class RegisterGameVC : UIViewController,UIPickerViewDelegate,UIPickerViewDataSou
     var paramSex:String!
     var paramAge:Int!
     var paramBirthDay:String!
-    
     var favoritGame:String!
+    
+    var userViewModel: UserViewPresentable!
     
     override func viewDidLoad() {
        
