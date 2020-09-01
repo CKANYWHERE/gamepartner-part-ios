@@ -40,7 +40,7 @@ class RegisterBirthVC : UIViewController{
             return
         }
         let formatter = DateFormatter()
-        formatter.dateFormat = "YYYY-MM-d"
+        formatter.dateFormat = "YYYY-MM-dd"
         birthDay = formatter.string(from: datePicker.date)
         
         print(formatter.string(from: datePicker.date))

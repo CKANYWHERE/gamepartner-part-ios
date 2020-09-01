@@ -8,6 +8,9 @@ target 'GamePartner' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'RxDataSources'
+  pod 'Alamofire'
+  pod 'PromiseKit'
+  pod 'SwiftyJSON'
   
   # Pods for GamePartner
 

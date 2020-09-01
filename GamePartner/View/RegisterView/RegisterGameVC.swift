@@ -27,7 +27,8 @@ class RegisterGameVC : UIViewController,UIPickerViewDelegate,UIPickerViewDataSou
     var paramBirthDay:String!
     var favoritGame:String!
     
-    var userViewModel: UserViewPresentable!
+    var apiService : RegisterAPIService!
+
     
     override func viewDidLoad() {
        

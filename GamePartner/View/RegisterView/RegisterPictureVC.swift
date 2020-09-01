@@ -8,6 +8,7 @@
 import UIKit
 import MobileCoreServices
 import RealmSwift
+import PromiseKit
 
 class RegisterPitureVC : UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate{
 
@@ -47,14 +48,28 @@ class RegisterPitureVC : UIViewController,UINavigationControllerDelegate,UIImage
             alert("값을 입력해주세요!", message: "사진을 등록해주세요!")
         }
         else{
-      
-            let realm = try! Realm()
-            let user = UserModel(id:paramId,pw:paramPw,sex:paramSex,age:paramAge
-                                 ,birthDay:paramBirthDay,favoritGame: paramGame,introduce: paramIntroduce,nickName: paramNickName)
-            
-            try! realm.write{
-                realm.add(user)
-            }
+            RegisterAPIService.shared.checkImage(image: imgView.image, userId: paramId, imageType: "jpeg")
+                .done{ json in
+                    /*if (json["Stauts"] != nil) {
+                        if json["Stauts"] as! Int == 400  {
+                            alert("이미지 크기 오류", message: "이미지")
+                        }
+                    }*/
+                    print(json.values)
+                    /*let realm = try! Realm()
+                    let user = UserModel(id:self.paramId,pw:self.paramPw,sex:self.paramSex,age:self.paramAge
+                                         ,birthDay:self.paramBirthDay,favoritGame: self.paramGame
+                                         ,introduce: self.paramIntroduce,nickName: self.paramNickName)
+                    
+                    try! realm.write{
+                        realm.add(user)
+                    }*/
+                }
+                
+                .catch { error in
+                    print(error)
+                }
+
             
         }
     }
@@ -73,6 +88,7 @@ class RegisterPitureVC : UIViewController,UINavigationControllerDelegate,UIImage
             imagePicker.sourceType = .camera
             imagePicker.mediaTypes = [kUTTypeImage as String]
             imagePicker.allowsEditing = false
+            
             
             present(imagePicker, animated: true, completion: nil)
             

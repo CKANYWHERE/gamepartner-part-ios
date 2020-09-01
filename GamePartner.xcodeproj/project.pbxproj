@@ -16,6 +16,7 @@
 		FD5C431D24ED4D31000C2FE1 /* RegisterBasicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5C431C24ED4D31000C2FE1 /* RegisterBasicVC.swift */; };
 		FD5C432024ED6D8E000C2FE1 /* MainStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5C431F24ED6D8E000C2FE1 /* MainStoryBoard.storyboard */; };
 		FD5C432224ED6DC5000C2FE1 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5C432124ED6DC5000C2FE1 /* MainVC.swift */; };
+		FD79FB0524FDEDB10073B16D /* RegisterAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD79FB0424FDEDB10073B16D /* RegisterAPIService.swift */; };
 		FD8F3B6F24F0D9D40080EE2E /* man.png in Resources */ = {isa = PBXBuildFile; fileRef = FD8F3B6D24F0D9D30080EE2E /* man.png */; };
 		FD8F3B7024F0D9D40080EE2E /* woman.png in Resources */ = {isa = PBXBuildFile; fileRef = FD8F3B6E24F0D9D40080EE2E /* woman.png */; };
 		FD8F3B7524F0E3830080EE2E /* radio_checked_woman.png in Resources */ = {isa = PBXBuildFile; fileRef = FD8F3B7124F0E3830080EE2E /* radio_checked_woman.png */; };
@@ -34,7 +35,6 @@
 		FDF92C2D24F3D529005EE293 /* RegisterPictureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF92C2C24F3D529005EE293 /* RegisterPictureVC.swift */; };
 		FDF92C2F24F3F893005EE293 /* RegisterGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF92C2E24F3F893005EE293 /* RegisterGameVC.swift */; };
 		FDF92C3224F65429005EE293 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF92C3124F65429005EE293 /* String.swift */; };
-		FDF92C3724FA1794005EE293 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF92C3624FA1794005EE293 /* UserViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +70,7 @@
 		FD5C431C24ED4D31000C2FE1 /* RegisterBasicVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBasicVC.swift; sourceTree = "<group>"; };
 		FD5C431F24ED6D8E000C2FE1 /* MainStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainStoryBoard.storyboard; sourceTree = "<group>"; };
 		FD5C432124ED6DC5000C2FE1 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		FD79FB0424FDEDB10073B16D /* RegisterAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAPIService.swift; sourceTree = "<group>"; };
 		FD8F3B6D24F0D9D30080EE2E /* man.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = man.png; sourceTree = "<group>"; };
 		FD8F3B6E24F0D9D40080EE2E /* woman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = woman.png; sourceTree = "<group>"; };
 		FD8F3B7124F0E3830080EE2E /* radio_checked_woman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radio_checked_woman.png; sourceTree = "<group>"; };
@@ -94,7 +95,6 @@
 		FDF92C2C24F3D529005EE293 /* RegisterPictureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPictureVC.swift; sourceTree = "<group>"; };
 		FDF92C2E24F3F893005EE293 /* RegisterGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterGameVC.swift; sourceTree = "<group>"; };
 		FDF92C3124F65429005EE293 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		FDF92C3624FA1794005EE293 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +173,14 @@
 			path = MainView;
 			sourceTree = "<group>";
 		};
+		FD79FB0324FDEB5C0073B16D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FD79FB0424FDEDB10073B16D /* RegisterAPIService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		FD8F3B6824F0179C0080EE2E /* ImageAssets */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +219,7 @@
 		FDC4E84524E2C35F00392432 /* GamePartner */ = {
 			isa = PBXGroup;
 			children = (
+				FD79FB0324FDEB5C0073B16D /* Service */,
 				FD8F3B6824F0179C0080EE2E /* ImageAssets */,
 				FDC4E87A24E2C83700392432 /* Model */,
 				FDC4E87824E2C81700392432 /* ViewModel */,
@@ -254,7 +263,6 @@
 		FDC4E87824E2C81700392432 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				FDF92C3624FA1794005EE293 /* UserViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -520,6 +528,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD79FB0524FDEDB10073B16D /* RegisterAPIService.swift in Sources */,
 				FD5C431D24ED4D31000C2FE1 /* RegisterBasicVC.swift in Sources */,
 				FD5C432224ED6DC5000C2FE1 /* MainVC.swift in Sources */,
 				FDC4E84B24E2C35F00392432 /* ViewController.swift in Sources */,
@@ -529,7 +538,6 @@
 				FDF92C3224F65429005EE293 /* String.swift in Sources */,
 				FDB4D90224EFF7080009776D /* UserModel.swift in Sources */,
 				FD3DF50E24F11DA900EF8307 /* RegisterDetailVC.swift in Sources */,
-				FDF92C3724FA1794005EE293 /* UserViewModel.swift in Sources */,
 				FDC4E84924E2C35F00392432 /* SceneDelegate.swift in Sources */,
 				FD3DF50A24F10BD200EF8307 /* RegisterBirthVC.swift in Sources */,
 				FDF92C2F24F3F893005EE293 /* RegisterGameVC.swift in Sources */,
