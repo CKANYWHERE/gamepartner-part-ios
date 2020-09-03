@@ -552,11 +552,52 @@
                         <outlet property="btnNext" destination="vcC-jC-Nh7" id="4XJ-0w-1YX"/>
                         <outlet property="imgView" destination="zc4-lu-Ksr" id="tEw-o0-6VP"/>
                         <outlet property="lblMain" destination="Oj3-72-94o" id="4Xj-9N-G81"/>
+                        <segue destination="tjF-XX-6Wd" kind="showDetail" identifier="moveToCompleteVC" id="jAK-7t-R9q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5sA-1M-tFo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="364" y="-1187"/>
+        </scene>
+        <!--Register CompleteVC-->
+        <scene sceneID="gYR-13-04V">
+            <objects>
+                <viewController id="tjF-XX-6Wd" customClass="RegisterCompleteVC" customModule="GamePartner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M6D-7p-N6K">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="1yy-Ub-alP">
+                                <rect key="frame" x="188.66666666666666" y="402.66666666666669" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원가입 처리 중 입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjn-Mx-Ykb">
+                                <rect key="frame" x="101.66666666666669" y="357.66666666666669" width="211" height="27"/>
+                                <color key="tintColor" red="0.16705398090000001" green="0.76701605620000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="GIp-WJ-LgJ"/>
+                                    <constraint firstAttribute="width" constant="211" id="cgN-kH-QSz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" systemColor="systemBlueColor"/>
+                                <color key="highlightedColor" red="0.16705398090000001" green="0.76701605620000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9KN-Fi-Fux"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yjn-Mx-Ykb" firstAttribute="centerX" secondItem="M6D-7p-N6K" secondAttribute="centerX" id="O0b-O1-P6b"/>
+                            <constraint firstItem="1yy-Ub-alP" firstAttribute="centerX" secondItem="M6D-7p-N6K" secondAttribute="centerX" id="XML-Zm-8jC"/>
+                            <constraint firstItem="1yy-Ub-alP" firstAttribute="centerY" secondItem="M6D-7p-N6K" secondAttribute="centerY" id="vRd-kW-Xme"/>
+                            <constraint firstItem="yjn-Mx-Ykb" firstAttribute="centerY" secondItem="M6D-7p-N6K" secondAttribute="centerY" constant="-50" id="yUM-mk-Fqu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="spinner" destination="1yy-Ub-alP" id="TD7-Gr-Lpb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q4m-0h-B73" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1324.6376811594205" y="-1187.2767857142856"/>
         </scene>
         <!--Register GameVC-->
         <scene sceneID="RRz-mB-S8J">

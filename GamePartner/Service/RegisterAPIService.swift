@@ -27,33 +27,19 @@ class RegisterAPIService : NSObject{
             },to: checkUrl,method: .post, headers: ["Authorization":"KakaoAK 42118d46bf58bbb4b7feb8740cd82af6"])
             .validate()
             .responseJSON{ response in
-                debugPrint(response)
+                
                 switch response.result {
                 case .success(let json):
                     guard let json = json  as? [String: Any] else {
-                        
                         return seal.reject(AFError.responseValidationFailed(reason: .dataFileNil))
                     }
                     seal.fulfill(json)
                 case .failure(let error):
-                    if response.response?.statusCode == 400{
-                        seal.fulfill(["Status":400])
-                    }else{
-                        seal.reject(error)
-                    }
-                   
+                    seal.reject(error)
                 }
             }
         }
     }
     
-    /*private func alert(_ title: String, message: String){
-        let alert = UIAlertController(title: title, message: message
-                                      ,preferredStyle:UIAlertController.Style.alert)
-        let action = UIAlertAction(title:"OK", style: UIAlertAction.Style.default,handler: nil)
-        
-        alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
-    }*/
 }
 

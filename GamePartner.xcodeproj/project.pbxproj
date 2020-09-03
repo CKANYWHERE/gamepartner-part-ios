@@ -13,6 +13,7 @@
 		FD3DF50824F0F31700EF8307 /* RegisterSexVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3DF50724F0F31700EF8307 /* RegisterSexVC.swift */; };
 		FD3DF50A24F10BD200EF8307 /* RegisterBirthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3DF50924F10BD200EF8307 /* RegisterBirthVC.swift */; };
 		FD3DF50E24F11DA900EF8307 /* RegisterDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3DF50D24F11DA900EF8307 /* RegisterDetailVC.swift */; };
+		FD4A1BE52501255200DDB235 /* RegisterCompleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4A1BE42501255200DDB235 /* RegisterCompleteVC.swift */; };
 		FD5C431D24ED4D31000C2FE1 /* RegisterBasicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5C431C24ED4D31000C2FE1 /* RegisterBasicVC.swift */; };
 		FD5C432024ED6D8E000C2FE1 /* MainStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5C431F24ED6D8E000C2FE1 /* MainStoryBoard.storyboard */; };
 		FD5C432224ED6DC5000C2FE1 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5C432124ED6DC5000C2FE1 /* MainVC.swift */; };
@@ -67,6 +68,7 @@
 		FD3DF50724F0F31700EF8307 /* RegisterSexVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSexVC.swift; sourceTree = "<group>"; };
 		FD3DF50924F10BD200EF8307 /* RegisterBirthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBirthVC.swift; sourceTree = "<group>"; };
 		FD3DF50D24F11DA900EF8307 /* RegisterDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDetailVC.swift; sourceTree = "<group>"; };
+		FD4A1BE42501255200DDB235 /* RegisterCompleteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCompleteVC.swift; sourceTree = "<group>"; };
 		FD5C431C24ED4D31000C2FE1 /* RegisterBasicVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBasicVC.swift; sourceTree = "<group>"; };
 		FD5C431F24ED6D8E000C2FE1 /* MainStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainStoryBoard.storyboard; sourceTree = "<group>"; };
 		FD5C432124ED6DC5000C2FE1 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				FD3DF50D24F11DA900EF8307 /* RegisterDetailVC.swift */,
 				FDF92C2C24F3D529005EE293 /* RegisterPictureVC.swift */,
 				FDF92C2E24F3F893005EE293 /* RegisterGameVC.swift */,
+				FD4A1BE42501255200DDB235 /* RegisterCompleteVC.swift */,
 			);
 			path = RegisterView;
 			sourceTree = "<group>";
@@ -534,6 +537,7 @@
 				FDC4E84B24E2C35F00392432 /* ViewController.swift in Sources */,
 				FDC4E84724E2C35F00392432 /* AppDelegate.swift in Sources */,
 				FDF92C2D24F3D529005EE293 /* RegisterPictureVC.swift in Sources */,
+				FD4A1BE52501255200DDB235 /* RegisterCompleteVC.swift in Sources */,
 				FD3DF50824F0F31700EF8307 /* RegisterSexVC.swift in Sources */,
 				FDF92C3224F65429005EE293 /* String.swift in Sources */,
 				FDB4D90224EFF7080009776D /* UserModel.swift in Sources */,

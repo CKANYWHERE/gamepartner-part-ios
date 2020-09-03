@@ -9,6 +9,7 @@ import UIKit
 import MobileCoreServices
 import RealmSwift
 import PromiseKit
+import SwiftyJSON
 
 class RegisterPitureVC : UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate{
 
@@ -50,28 +51,46 @@ class RegisterPitureVC : UIViewController,UINavigationControllerDelegate,UIImage
         else{
             RegisterAPIService.shared.checkImage(image: imgView.image, userId: paramId, imageType: "jpeg")
                 .done{ json in
-                    /*if (json["Stauts"] != nil) {
-                        if json["Stauts"] as! Int == 400  {
-                            alert("이미지 크기 오류", message: "이미지")
-                        }
-                    }*/
-                    print(json.values)
-                    /*let realm = try! Realm()
-                    let user = UserModel(id:self.paramId,pw:self.paramPw,sex:self.paramSex,age:self.paramAge
-                                         ,birthDay:self.paramBirthDay,favoritGame: self.paramGame
-                                         ,introduce: self.paramIntroduce,nickName: self.paramNickName)
                     
-                    try! realm.write{
-                        realm.add(user)
-                    }*/
+                    if let jsonData = json["result"]{
+                        print(jsonData)
+                        let swiftyJson = try! JSON(data: jsonData as! Data)
+                        
+                        let adult = swiftyJson["adult"].double
+                        let normal = swiftyJson["normal"].double
+                        let soft = swiftyJson["soft"].double
+                        
+                        print(adult)
+                        print(normal)
+                        print(soft)
+                        
+                    }
                 }
-                
+                .done{
+                    self.performSegue(withIdentifier: "moveToCompleteVC", sender: nil)
+                }
                 .catch { error in
-                    print(error)
+                    self.alert("사진 처리 오류!", message: "이미지의 사이즈가 너무 크거나, 사용할수 없는 포맷 혹은 10MB이하 여야 합니다.")
                 }
-
-            
         }
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination
+        guard let rvc = dest as? RegisterCompleteVC else {
+            return
+        }
+
+        rvc.paramId = paramId
+        rvc.paramPw = paramPw
+        rvc.paramSex = paramSex
+        rvc.paramAge = paramAge
+        rvc.paramBirthDay = paramBirthDay
+        rvc.paramGame = paramGame
+        rvc.paramNickName = paramNickName
+        rvc.paramIntroduce = paramIntroduce
+        rvc.paramImage = imgView.image
     }
     
     private func initControl(){
