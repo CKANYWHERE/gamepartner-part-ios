@@ -12,7 +12,7 @@ import PromiseKit
 import SwiftyJSON
 
 class RegisterPitureVC : UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate{
-
+    
     @IBOutlet weak var lblMain: UILabel!
     @IBOutlet weak var btnNext: UIButton!
     @IBOutlet weak var imgView: UIImageView!
@@ -32,7 +32,7 @@ class RegisterPitureVC : UIViewController,UINavigationControllerDelegate,UIImage
     
     
     override func viewDidLoad() {
-       
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         initControl()
@@ -50,24 +50,19 @@ class RegisterPitureVC : UIViewController,UINavigationControllerDelegate,UIImage
         }
         else{
             RegisterAPIService.shared.checkImage(image: imgView.image, userId: paramId, imageType: "jpeg")
-                .done{ json in
+                .done{ (json) -> Void in
+                    let swiftyJson = JSON.init(json["result"] as Any)
                     
-                    if let jsonData = json["result"]{
-                        print(jsonData)
-                        let swiftyJson = try! JSON(data: jsonData as! Data)
-                        
-                        let adult = swiftyJson["adult"].double
-                        let normal = swiftyJson["normal"].double
-                        let soft = swiftyJson["soft"].double
-                        
-                        print(adult)
-                        print(normal)
-                        print(soft)
-                        
+                    let adult = swiftyJson["adult"].double
+                    let normal = swiftyJson["normal"].double
+                    //let soft = swiftyJson["soft"].double
+                    
+                    if adult! > 0.5 || normal! < 0.5 {
+                        self.alert("다른 사진을 선택해주세요!", message: "노출이 너무 심하면 안돼요 :(")
                     }
-                }
-                .done{
-                    self.performSegue(withIdentifier: "moveToCompleteVC", sender: nil)
+                    else{
+                        self.performSegue(withIdentifier: "moveToCompleteVC", sender: nil)
+                    }
                 }
                 .catch { error in
                     self.alert("사진 처리 오류!", message: "이미지의 사이즈가 너무 크거나, 사용할수 없는 포맷 혹은 10MB이하 여야 합니다.")
@@ -81,7 +76,7 @@ class RegisterPitureVC : UIViewController,UINavigationControllerDelegate,UIImage
         guard let rvc = dest as? RegisterCompleteVC else {
             return
         }
-
+        
         rvc.paramId = paramId
         rvc.paramPw = paramPw
         rvc.paramSex = paramSex
@@ -173,5 +168,5 @@ class RegisterPitureVC : UIViewController,UINavigationControllerDelegate,UIImage
             })
         },completion: nil)
     }
-
+    
 }
