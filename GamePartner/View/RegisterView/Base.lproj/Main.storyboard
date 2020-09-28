@@ -132,12 +132,23 @@
                                 <color key="textColor" red="0.16705398090000001" green="0.76701605620000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이미 존재하는 아이디 입니다 :(" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLg-Pb-9jb">
+                                <rect key="frame" x="114.66666666666669" y="390.66666666666669" width="205" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Ib2-mc-Ufc"/>
+                                    <constraint firstAttribute="width" constant="205" id="dq7-kz-jRb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemPinkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3iL-HB-THP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Ybv-vr-W62" firstAttribute="centerY" secondItem="ALw-x1-Ha2" secondAttribute="centerY" constant="250" id="0DE-28-WXt"/>
                             <constraint firstItem="kJD-9S-JfJ" firstAttribute="centerX" secondItem="ALw-x1-Ha2" secondAttribute="centerX" id="0dT-1r-lUc"/>
+                            <constraint firstItem="bLg-Pb-9jb" firstAttribute="centerX" secondItem="ALw-x1-Ha2" secondAttribute="centerX" constant="10" id="1dy-Fg-pPG"/>
                             <constraint firstItem="rWY-xe-m8Y" firstAttribute="centerX" secondItem="ALw-x1-Ha2" secondAttribute="centerX" constant="10" id="26G-nf-eo6"/>
                             <constraint firstItem="i3q-IQ-ZUY" firstAttribute="centerY" secondItem="ALw-x1-Ha2" secondAttribute="centerY" constant="-150" id="4cH-ag-eGk"/>
                             <constraint firstItem="OtG-VP-f64" firstAttribute="centerX" secondItem="ALw-x1-Ha2" secondAttribute="centerX" constant="-120" id="5Ek-fT-ii3"/>
@@ -150,12 +161,14 @@
                             <constraint firstItem="kJD-9S-JfJ" firstAttribute="centerY" secondItem="ALw-x1-Ha2" secondAttribute="centerY" constant="-200" id="KeS-M9-hpP"/>
                             <constraint firstItem="2Ug-hb-fE4" firstAttribute="centerY" secondItem="ALw-x1-Ha2" secondAttribute="centerY" constant="-60" id="N8r-h8-1cv"/>
                             <constraint firstItem="2Ug-hb-fE4" firstAttribute="centerX" secondItem="ALw-x1-Ha2" secondAttribute="centerX" constant="-120" id="TGa-Uy-xee"/>
+                            <constraint firstItem="bLg-Pb-9jb" firstAttribute="centerY" secondItem="ALw-x1-Ha2" secondAttribute="centerY" constant="-20" id="da7-0q-oJp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RsK-fK-664"/>
                     <connections>
                         <outlet property="btnNext" destination="Ybv-vr-W62" id="WCT-1h-pUO"/>
                         <outlet property="lblGuide" destination="kJD-9S-JfJ" id="T7H-wq-0cE"/>
+                        <outlet property="txtCheckId" destination="bLg-Pb-9jb" id="Sc0-DU-3jC"/>
                         <outlet property="txtId" destination="rWY-xe-m8Y" id="090-7S-abA"/>
                         <outlet property="txtPw" destination="5d4-3Q-bm8" id="FfX-eM-YjY"/>
                         <segue destination="iVe-vK-Tww" kind="showDetail" identifier="moveToSexRegister" id="1pd-52-DPq"/>
@@ -684,6 +697,9 @@
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -25,7 +25,7 @@ class RegisterGameVC : UIViewController,UIPickerViewDelegate,UIPickerViewDataSou
     var paramSex:String!
     var paramAge:Int!
     var paramBirthDay:String!
-    var favoritGame:String!
+    var favoritGame:String = "리그오브레전드"
     
     var apiService : RegisterAPIService!
 
@@ -60,7 +60,9 @@ class RegisterGameVC : UIViewController,UIPickerViewDelegate,UIPickerViewDataSou
     private func initControl(){
         self.btnNext.alpha = 0.0
         self.lblMain.font = UIFont.boldSystemFont(ofSize: 30)
-        pickerView.delegate = self
+        self.pickerView.delegate = self
+        self.pickerView.dataSource = self
+        self.pickerView.selectRow(0, inComponent: 0, animated: true)
     }
     
     @IBAction func btnNextPressed(_ sender: Any) {

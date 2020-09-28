@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import PromiseKit
+import SwiftyJSON
 
 class RegisterBaiscVC: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var btnNext: UIButton!
     @IBOutlet weak var lblGuide: UILabel!
+    @IBOutlet weak var txtCheckId: UILabel!
     @IBOutlet weak var txtId: UITextField!{
         didSet{
             let placeholderText = NSAttributedString(string: "ID를 입력해주세요")
@@ -26,6 +29,7 @@ class RegisterBaiscVC: UIViewController,UITextFieldDelegate {
             txtPw.attributedPlaceholder = placeholderText
         }
     }
+    private var isDuplicated:Bool = false
     
     override func viewDidLoad() {
        
@@ -55,11 +59,31 @@ class RegisterBaiscVC: UIViewController,UITextFieldDelegate {
         return false
     }
     
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason){
+        firstly{
+            RegisterAPIService.shared.checkUserId(userId: txtId.text)
+        }.done{ response in
+            if(response["message"] as! String == "N"){
+                self.txtCheckId.isHidden = false
+                self.isDuplicated = false
+            }
+            if(response["message"] as! String == "Y"){
+                self.txtCheckId.isHidden = true
+                self.isDuplicated = true
+            }
+        }.catch{ error in
+            self.alert("오류 발생", message: "회원 가입중 오류가 발생 했습니다. 네트워크를 확인 해주세요 :(")
+        }
+    }
+    
     @IBAction func btnNextPressed(_ sender: Any) {
+        print(isDuplicated)
         if txtId.text!.isEmpty || txtPw.text!.isEmpty{
             alert("값을 입력해주세요!", message: "ID와 PW를 입력해주세요!")
         }else if txtId.text!.count < 8 || txtPw.text!.count < 8{
             alert("값을 확인해주세요!", message: "ID와 PW는 최소 9개 이상으로 입력가능합니다!")
+        }else if self.isDuplicated == true{
+            alert("값을 확인해주세요!", message: "이미 존재하는 아이디 입니다!")
         }else{
             performSegue(withIdentifier: "moveToSexRegister", sender: nil)
         }
@@ -71,9 +95,8 @@ class RegisterBaiscVC: UIViewController,UITextFieldDelegate {
                if string.isValidId() || isBackSpace == -92{
                 return true
             }
-            return false
-        }
-
+        return false
+    }
     
     
     private func initControl(){
@@ -81,6 +104,7 @@ class RegisterBaiscVC: UIViewController,UITextFieldDelegate {
         self.txtId.layer.cornerRadius = 50
         self.txtPw.layer.cornerRadius = 50
         self.btnNext.alpha = 0.0
+        self.txtCheckId.isHidden = true
     }
     
    

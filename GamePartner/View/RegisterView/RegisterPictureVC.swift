@@ -7,7 +7,7 @@
 
 import UIKit
 import MobileCoreServices
-import RealmSwift
+
 import PromiseKit
 import SwiftyJSON
 

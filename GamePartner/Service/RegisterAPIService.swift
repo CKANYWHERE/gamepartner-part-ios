@@ -18,6 +18,7 @@ class RegisterAPIService : NSObject{
     private var checkUrl = "https://dapi.kakao.com/v2/vision/adult/detect"
     private var uploadUrl = "http://34.105.28.130:7940/api/v1/uploadImage/post"
     private var insertUserUrl = Util.mainUrl + Util.insertUserUrl
+    private var getUserIdUrl = Util.mainUrl + Util.getUserIdUrl
     // MARK: - Services
     func checkImage(image:UIImage!,userId:String!,imageType:String!) -> Promise<[String:Any]>{
         return Promise { seal in
@@ -43,12 +44,30 @@ class RegisterAPIService : NSObject{
         }
     }
     
+    func checkUserId(userId:String!) -> Promise<[String:Any]>{
+        return Promise{ seal in
+            AF.request(getUserIdUrl + userId, method: .get)
+                .validate()
+                .responseJSON{ response in
+                    switch response.result {
+                    case .success(let json):
+                        guard let json = json as? [String: Any] else {
+                            return seal.reject(AFError.responseValidationFailed(reason: .dataFileNil))
+                        }
+                        seal.fulfill(json)
+                    case .failure(let error):
+                        seal.reject(error)
+                    }
+            }
+        }
+    }
+    
     func insertImage(image:UIImage!,userId:String!,imageType:String!) -> Promise<[String:Any]>{
         return Promise{ seal in
             AF.upload( multipartFormData: { multiformData in
                 
                 multiformData.append(image!.jpegData(compressionQuality: 0.5)!, withName: "image"
-                                    ,fileName: userId + imageType, mimeType: "image/" + imageType)
+                                    ,fileName: userId + "." + imageType, mimeType: "image/" + imageType)
                         
             },to:uploadUrl,method: .post)
             .validate()

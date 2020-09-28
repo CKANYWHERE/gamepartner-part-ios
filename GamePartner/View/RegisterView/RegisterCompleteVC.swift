@@ -7,6 +7,9 @@
 
 import Foundation
 import UIKit
+import PromiseKit
+import SwiftyJSON
+import RealmSwift
 
 class RegisterCompleteVC : UIViewController{
     
@@ -32,15 +35,38 @@ class RegisterCompleteVC : UIViewController{
     
     private func doRegister(){
         
-        
-            /*let realm = try! Realm()
-            let user = UserModel(id:self.paramId,pw:self.paramPw,sex:self.paramSex,age:self.paramAge
-                                 ,birthDay:self.paramBirthDay,favoritGame: self.paramGames
-                                 ,introduce: self.paramIntroduce,nickName: self.paramNickNamesss
-            
-            try! realm.write{
-                realm.add(user)
-            }*/
+        firstly{
+            RegisterAPIService.shared.insertImage(image: paramImage, userId: paramId, imageType: "jpeg")
+        }.done{ response in
+            let swifyJson = JSON.init(response["image"] as Any)
+            let imgPath = swifyJson[0]["filename"].string
+            _ = RegisterAPIService.shared.insertUser(userId: self.paramId, pw: self.paramPw, sex: self.paramSex, age: self.paramAge, birthDay: self.paramBirthDay, favoritGame: self.paramGame, introduce: self.paramIntroduce, nickName: self.paramNickName, imgPath: imgPath!)
+        }.done{ response in
+            print(response)
+        }.catch { error in
+            self.alert("오류발생", message: "다시시도 해주세요!")
+        }
 
+
+    }
+    
+    private func insertIntoMemory(){
+        let realm = try! Realm()
+        let user = UserModel(id:self.paramId,pw:self.paramPw,sex:self.paramSex,age:self.paramAge
+                                 ,birthDay:self.paramBirthDay,favoritGame: self.paramGame
+                             ,introduce: self.paramIntroduce,nickName: self.paramNickName)
+        try! realm.write{
+            realm.add(user)
+        }
+    }
+    
+    private func alert(_ title: String, message: String){
+        let alert = UIAlertController(title: title, message: message
+                                      ,preferredStyle:UIAlertController.Style.alert)
+        let action = UIAlertAction(title:"OK", style: UIAlertAction.Style.default,handler: nil)
+        
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+        
     }
 }
