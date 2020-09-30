@@ -29,7 +29,7 @@ class RegisterBaiscVC: UIViewController,UITextFieldDelegate {
             txtPw.attributedPlaceholder = placeholderText
         }
     }
-    private var isDuplicated:Bool = false
+    private var isDuplicated:Bool!
     
     override func viewDidLoad() {
        
@@ -59,34 +59,61 @@ class RegisterBaiscVC: UIViewController,UITextFieldDelegate {
         return false
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason){
+    /*private func checkValidateId() -> Bool{
+        var isDuplicated:Bool!
         firstly{
             RegisterAPIService.shared.checkUserId(userId: txtId.text)
         }.done{ response in
             if(response["message"] as! String == "N"){
                 self.txtCheckId.isHidden = false
-                self.isDuplicated = false
+                isDuplicated = false
             }
             if(response["message"] as! String == "Y"){
                 self.txtCheckId.isHidden = true
-                self.isDuplicated = true
+                isDuplicated = true
             }
         }.catch{ error in
             self.alert("오류 발생", message: "회원 가입중 오류가 발생 했습니다. 네트워크를 확인 해주세요 :(")
         }
+        
+        return isDuplicated
+    }*/
+    func parseResponse(response:[String:Any]) -> Promise<[String:Any]>{
+        return Promise{ seal in
+            if(response["message"] as! String == "N"){
+                self.txtCheckId.isHidden = false
+                seal.fulfill(["duplicated":true])
+            }
+            if(response["message"] as! String == "Y"){
+                self.txtCheckId.isHidden = true
+                seal.fulfill(["duplicated":false])
+            }
+        }
     }
     
     @IBAction func btnNextPressed(_ sender: Any) {
-        print(isDuplicated)
-        if txtId.text!.isEmpty || txtPw.text!.isEmpty{
-            alert("값을 입력해주세요!", message: "ID와 PW를 입력해주세요!")
-        }else if txtId.text!.count < 8 || txtPw.text!.count < 8{
-            alert("값을 확인해주세요!", message: "ID와 PW는 최소 9개 이상으로 입력가능합니다!")
-        }else if self.isDuplicated == true{
-            alert("값을 확인해주세요!", message: "이미 존재하는 아이디 입니다!")
-        }else{
-            performSegue(withIdentifier: "moveToSexRegister", sender: nil)
+        //var isDuplicated = false
+        
+        RegisterAPIService.shared.checkUserId(userId: txtId.text)
+        .then{ response -> Promise<[String : Any]> in
+            //return
+            self.parseResponse(response: response)
         }
+        .done{ result in
+            if self.txtId.text!.isEmpty || self.txtPw.text!.isEmpty{
+                self.alert("값을 입력해주세요!", message: "ID와 PW를 입력해주세요!")
+            }else if self.txtId.text!.count < 8 || self.txtPw.text!.count < 8{
+                self.alert("값을 확인해주세요!", message: "ID와 PW는 최소 9개 이상으로 입력가능합니다!")
+            }else if result["duplicated"] as! Bool == true{
+                self.alert("값을 확인해주세요!", message: "이미 존재하는 아이디 입니다!")
+            }else{
+                self.performSegue(withIdentifier: "moveToSexRegister", sender: nil)
+            }
+        }
+        .catch{ error in
+            self.alert("오류 발생", message: "회원 가입중 오류가 발생 했습니다. 네트워크를 확인 해주세요 :(")
+        }
+        
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
