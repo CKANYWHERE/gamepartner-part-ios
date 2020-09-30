@@ -83,6 +83,11 @@ class RegisterDetailVC : UIViewController,UITextFieldDelegate {
         if txtNickName.text!.isEmpty || txtIntroduce.text!.isEmpty{
             alert("값을 입력해주세요!", message: "닉네임과 한줄소개를 입력해주세요!")
         }
+        for word in FilterWord.checkWord{
+            if txtIntroduce.text!.hasPrefix(word) || txtNickName.text!.hasPrefix(word){
+                alert("값을 확인해주세요", message: "비속어가 들어가면 안되요 :(")
+            }
+        }
         performSegue(withIdentifier: "moveToPictureRegister", sender: nil)
     }
     

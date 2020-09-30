@@ -59,25 +59,6 @@ class RegisterBaiscVC: UIViewController,UITextFieldDelegate {
         return false
     }
     
-    /*private func checkValidateId() -> Bool{
-        var isDuplicated:Bool!
-        firstly{
-            RegisterAPIService.shared.checkUserId(userId: txtId.text)
-        }.done{ response in
-            if(response["message"] as! String == "N"){
-                self.txtCheckId.isHidden = false
-                isDuplicated = false
-            }
-            if(response["message"] as! String == "Y"){
-                self.txtCheckId.isHidden = true
-                isDuplicated = true
-            }
-        }.catch{ error in
-            self.alert("오류 발생", message: "회원 가입중 오류가 발생 했습니다. 네트워크를 확인 해주세요 :(")
-        }
-        
-        return isDuplicated
-    }*/
     func parseResponse(response:[String:Any]) -> Promise<[String:Any]>{
         return Promise{ seal in
             if(response["message"] as! String == "N"){

@@ -352,6 +352,9 @@
                                 <date key="minimumDate" timeIntervalSinceReferenceDate="-1230728400">
                                     <!--1962-01-01 11:00:00 +0000-->
                                 </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="1293793200">
+                                    <!--2041-12-31 11:00:00 +0000-->
+                                </date>
                                 <locale key="locale" localeIdentifier="ko"/>
                                 <connections>
                                     <action selector="changeDatePicker:" destination="Scu-wG-B2i" eventType="valueChanged" id="jGX-6i-xx7"/>

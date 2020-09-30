@@ -31,6 +31,7 @@ class RegisterBirthVC : UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.datePicker.maximumDate = Date()
         animate()
     }
     
@@ -43,7 +44,7 @@ class RegisterBirthVC : UIViewController{
         formatter.dateFormat = "YYYY-MM-dd"
         birthDay = formatter.string(from: datePicker.date)
         
-        print(formatter.string(from: datePicker.date))
+        //print(formatter.string(from: datePicker.date))
         
         let formatYear = DateFormatter()
         formatYear.dateFormat = "YYYY"
@@ -66,6 +67,7 @@ class RegisterBirthVC : UIViewController{
     private func initControl(){
         self.btnNext.alpha = 0.0
         self.lblMain.font = UIFont.boldSystemFont(ofSize: 30)
+        
     }
     
     private func animate(){

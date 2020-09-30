@@ -33,6 +33,7 @@
 		FDC4E85324E2C36000392432 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDC4E85124E2C36000392432 /* LaunchScreen.storyboard */; };
 		FDC4E85E24E2C36000392432 /* GamePartnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC4E85D24E2C36000392432 /* GamePartnerTests.swift */; };
 		FDC4E86924E2C36000392432 /* GamePartnerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC4E86824E2C36000392432 /* GamePartnerUITests.swift */; };
+		FDD1460B2524D3BE00FB388A /* FilterWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD1460A2524D3BE00FB388A /* FilterWord.swift */; };
 		FDEE40BB251CDBFB0069A941 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEE40BA251CDBFB0069A941 /* Util.swift */; };
 		FDF92C2D24F3D529005EE293 /* RegisterPictureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF92C2C24F3D529005EE293 /* RegisterPictureVC.swift */; };
 		FDF92C2F24F3F893005EE293 /* RegisterGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF92C2E24F3F893005EE293 /* RegisterGameVC.swift */; };
@@ -95,6 +96,7 @@
 		FDC4E86424E2C36000392432 /* GamePartnerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GamePartnerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDC4E86824E2C36000392432 /* GamePartnerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePartnerUITests.swift; sourceTree = "<group>"; };
 		FDC4E86A24E2C36000392432 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDD1460A2524D3BE00FB388A /* FilterWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterWord.swift; sourceTree = "<group>"; };
 		FDEE40BA251CDBFB0069A941 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		FDF92C2C24F3D529005EE293 /* RegisterPictureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPictureVC.swift; sourceTree = "<group>"; };
 		FDF92C2E24F3F893005EE293 /* RegisterGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterGameVC.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				FDF92C3124F65429005EE293 /* String.swift */,
+				FDD1460A2524D3BE00FB388A /* FilterWord.swift */,
 			);
 			path = ExtensionPack;
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 				FDB4D90224EFF7080009776D /* UserModel.swift in Sources */,
 				FD3DF50E24F11DA900EF8307 /* RegisterDetailVC.swift in Sources */,
 				FDC4E84924E2C35F00392432 /* SceneDelegate.swift in Sources */,
+				FDD1460B2524D3BE00FB388A /* FilterWord.swift in Sources */,
 				FD3DF50A24F10BD200EF8307 /* RegisterBirthVC.swift in Sources */,
 				FDF92C2F24F3F893005EE293 /* RegisterGameVC.swift in Sources */,
 			);
