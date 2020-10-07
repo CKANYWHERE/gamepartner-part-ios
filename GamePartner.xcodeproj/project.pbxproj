@@ -14,8 +14,8 @@
 		FD3DF50A24F10BD200EF8307 /* RegisterBirthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3DF50924F10BD200EF8307 /* RegisterBirthVC.swift */; };
 		FD3DF50E24F11DA900EF8307 /* RegisterDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3DF50D24F11DA900EF8307 /* RegisterDetailVC.swift */; };
 		FD4A1BE52501255200DDB235 /* RegisterCompleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4A1BE42501255200DDB235 /* RegisterCompleteVC.swift */; };
+		FD4A3E07252DAAD6008C3E45 /* MainStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5C431F24ED6D8E000C2FE1 /* MainStoryBoard.storyboard */; };
 		FD5C431D24ED4D31000C2FE1 /* RegisterBasicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5C431C24ED4D31000C2FE1 /* RegisterBasicVC.swift */; };
-		FD5C432024ED6D8E000C2FE1 /* MainStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5C431F24ED6D8E000C2FE1 /* MainStoryBoard.storyboard */; };
 		FD5C432224ED6DC5000C2FE1 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5C432124ED6DC5000C2FE1 /* MainVC.swift */; };
 		FD79FB0524FDEDB10073B16D /* RegisterAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD79FB0424FDEDB10073B16D /* RegisterAPIService.swift */; };
 		FD8F3B6F24F0D9D40080EE2E /* man.png in Resources */ = {isa = PBXBuildFile; fileRef = FD8F3B6D24F0D9D30080EE2E /* man.png */; };
@@ -414,9 +414,9 @@
 				FD8F3B7624F0E3830080EE2E /* radio_woman.png in Resources */,
 				FD8F3B7824F0E3830080EE2E /* radio_cheked_man.png in Resources */,
 				FDC4E85024E2C36000392432 /* Assets.xcassets in Resources */,
-				FD5C432024ED6D8E000C2FE1 /* MainStoryBoard.storyboard in Resources */,
 				FD8F3B7024F0D9D40080EE2E /* woman.png in Resources */,
 				FDC4E84E24E2C35F00392432 /* Main.storyboard in Resources */,
+				FD4A3E07252DAAD6008C3E45 /* MainStoryBoard.storyboard in Resources */,
 				FD8F3B7524F0E3830080EE2E /* radio_checked_woman.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

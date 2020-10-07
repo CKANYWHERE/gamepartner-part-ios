@@ -43,7 +43,7 @@ class RegisterCompleteVC : UIViewController{
             self.insertIntoMemory()
         }.done{ response in
             let storyBoard = UIStoryboard(name: "MainStoryBoard", bundle: nil)
-            let nextView = storyBoard.instantiateViewController(withIdentifier: "MainVC")
+            let nextView = storyBoard.instantiateViewController(withIdentifier: "MainController")
             nextView.modalPresentationStyle = .fullScreen
             self.present(nextView, animated: true, completion: nil)
         }.catch { error in

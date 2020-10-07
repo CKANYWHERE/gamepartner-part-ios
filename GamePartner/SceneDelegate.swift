@@ -31,7 +31,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             }
             else{
                 let storyBoard = UIStoryboard(name: "MainStoryBoard", bundle: nil)
-                window.rootViewController = storyBoard.instantiateViewController(withIdentifier: "MainVC")// Your RootViewController in MainVC
+                window.rootViewController = storyBoard.instantiateViewController(withIdentifier: "MainController")// Your RootViewController in MainVC
             }
 
             self.window = window
