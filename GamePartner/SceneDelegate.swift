@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             let realm = try! Realm()
             let user = realm.objects(UserModel.self)
-            
+           
             if user.count == 0 {
                 let storyBoard = UIStoryboard(name: "Main", bundle: nil)
                 window.rootViewController = storyBoard.instantiateViewController(withIdentifier: "MainRegister")// Your RootViewController in MainVC

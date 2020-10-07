@@ -71,6 +71,8 @@ class RegisterPitureVC : UIViewController,UINavigationControllerDelegate,UIImage
                 }
                 .catch { error in
                     self.alert("사진 처리 오류!", message: "이미지의 사이즈가 너무 크거나, 사용할수 없는 포맷 혹은 10MB이하 여야 합니다.")
+                    
+                    self.btnNext.isEnabled = true
                 }
         }
     }

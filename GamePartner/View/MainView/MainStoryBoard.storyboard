@@ -112,7 +112,7 @@
         <scene sceneID="wWA-PE-ee8">
             <objects>
                 <navigationController id="ZgG-Xs-fmb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="설정" image="gearshape" catalog="system" id="xNI-OH-48B"/>
+                    <tabBarItem key="tabBarItem" title="설정" image="gear" catalog="system" id="xNI-OH-48B"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Qqg-tU-gxZ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -163,7 +163,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gearshape" catalog="system" width="128" height="121"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="message.fill" catalog="system" width="128" height="113"/>
         <image name="paperplane.fill" catalog="system" width="128" height="118"/>

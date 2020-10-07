@@ -136,7 +136,7 @@
                                 <rect key="frame" x="114.66666666666669" y="390.66666666666669" width="205" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Ib2-mc-Ufc"/>
-                                    <constraint firstAttribute="width" constant="205" id="dq7-kz-jRb"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="205" id="dq7-kz-jRb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemPinkColor"/>
