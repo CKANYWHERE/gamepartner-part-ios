@@ -16,7 +16,7 @@ class RegisterAPIService : NSObject{
     
     // MARK: - URL
     private var checkUrl = "https://dapi.kakao.com/v2/vision/adult/detect"
-    private var uploadUrl = "http://34.105.28.130:7940/api/v1/uploadImage/post"
+    private var uploadUrl = "https://gamepartner.storage.googleapis.com"
     private var insertUserUrl = Util.mainUrl + Util.insertUserUrl
     private var getUserIdUrl = Util.mainUrl + Util.getUserIdUrl
     // MARK: - Services
@@ -62,23 +62,25 @@ class RegisterAPIService : NSObject{
         }
     }
     
-    func insertImage(image:UIImage!,userId:String!,imageType:String!) -> Promise<[String:Any]>{
+    func insertImage(image:UIImage!,userId:String!,imageType:String!) -> Promise<String>{
         return Promise{ seal in
             AF.upload( multipartFormData: { multiformData in
                 
-                multiformData.append(image!.jpegData(compressionQuality: 0.5)!, withName: "image"
+                multiformData.append(image!.jpegData(compressionQuality: 0.5)!, withName: "file"
                                     ,fileName: userId + "." + imageType, mimeType: "image/" + imageType)
-                        
+                multiformData.append(userId.data(using: .utf8)!, withName: "key")
             },to:uploadUrl,method: .post)
             .validate()
             .responseJSON{ response in
                 switch response.result {
-                case .success(let json):
-                    guard let json = json  as? [String: Any] else {
-                        return seal.reject(AFError.responseValidationFailed(reason: .dataFileNil))
-                    }
-                    seal.fulfill(json)
+                case .success( _):
+                    //print(json)
+//                    guard let json = json  as? [String: Any] else {
+//                        return seal.reject(AFError.responseValidationFailed(reason: .dataFileNil))
+//                    }
+                    seal.fulfill(userId)
                 case .failure(let error):
+                    //print(error)
                     seal.reject(error)
                 }
             }

@@ -38,11 +38,14 @@ class RegisterCompleteVC : UIViewController{
         firstly{
             RegisterAPIService.shared.insertImage(image: paramImage, userId: paramId, imageType: "jpeg")
         }.done{ response in
-            let swifyJson = JSON.init(response["image"] as Any)
-            let imgPath = swifyJson[0]["filename"].string
-            _ = RegisterAPIService.shared.insertUser(userId: self.paramId, pw: self.paramPw, sex: self.paramSex, age: self.paramAge, birthDay: self.paramBirthDay, favoritGame: self.paramGame, introduce: self.paramIntroduce, nickName: self.paramNickName, imgPath: imgPath!)
+            _ = RegisterAPIService.shared.insertUser(userId: self.paramId, pw: self.paramPw, sex: self.paramSex, age: self.paramAge, birthDay: self.paramBirthDay, favoritGame: self.paramGame, introduce: self.paramIntroduce, nickName: self.paramNickName, imgPath: response)
         }.done{ response in
-            print(response)
+            self.insertIntoMemory()
+        }.done{ response in
+            let storyBoard = UIStoryboard(name: "MainStoryBoard", bundle: nil)
+            let nextView = storyBoard.instantiateViewController(withIdentifier: "MainVC")
+            nextView.modalPresentationStyle = .fullScreen
+            self.present(nextView, animated: true, completion: nil)
         }.catch { error in
             self.alert("오류발생", message: "다시시도 해주세요!")
         }

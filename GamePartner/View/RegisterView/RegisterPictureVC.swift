@@ -49,6 +49,7 @@ class RegisterPitureVC : UIViewController,UINavigationControllerDelegate,UIImage
             alert("값을 입력해주세요!", message: "사진을 등록해주세요!")
         }
         else{
+            btnNext.isEnabled = false
             RegisterAPIService.shared.checkImage(image: imgView.image, userId: paramId, imageType: "jpeg")
                 .done{ (json) -> Void in
                     let swiftyJson = JSON.init(json["result"] as Any)
@@ -61,8 +62,12 @@ class RegisterPitureVC : UIViewController,UINavigationControllerDelegate,UIImage
                         self.alert("다른 사진을 선택해주세요!", message: "노출이 너무 심하면 안돼요 :(")
                     }
                     else{
+                        //RegisterCompleteVC.modalPresentationStyle = .fullScreen
+                        self.modalPresentationStyle = .fullScreen
                         self.performSegue(withIdentifier: "moveToCompleteVC", sender: nil)
                     }
+                    
+                    self.btnNext.isEnabled = true
                 }
                 .catch { error in
                     self.alert("사진 처리 오류!", message: "이미지의 사이즈가 너무 크거나, 사용할수 없는 포맷 혹은 10MB이하 여야 합니다.")

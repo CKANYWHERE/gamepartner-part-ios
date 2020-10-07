@@ -74,7 +74,7 @@ class RegisterBaiscVC: UIViewController,UITextFieldDelegate {
     
     @IBAction func btnNextPressed(_ sender: Any) {
         //var isDuplicated = false
-        
+        btnNext.isEnabled = false
         RegisterAPIService.shared.checkUserId(userId: txtId.text)
         .then{ response -> Promise<[String : Any]> in
             //return
@@ -90,6 +90,8 @@ class RegisterBaiscVC: UIViewController,UITextFieldDelegate {
             }else{
                 self.performSegue(withIdentifier: "moveToSexRegister", sender: nil)
             }
+            
+            self.btnNext.isEnabled = true
         }
         .catch{ error in
             self.alert("오류 발생", message: "회원 가입중 오류가 발생 했습니다. 네트워크를 확인 해주세요 :(")
