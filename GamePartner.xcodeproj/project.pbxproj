@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6CC888021FA0DEAB26E08ACD /* Pods_GamePartner_GamePartnerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2097B673F66240741A6D111A /* Pods_GamePartner_GamePartnerUITests.framework */; };
+		7384A2532532F7DD00B552BC /* CommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384A2522532F7DD00B552BC /* CommonViewModel.swift */; };
+		7384A2582532F8D200B552BC /* ViewModelBindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384A2572532F8D200B552BC /* ViewModelBindableType.swift */; };
+		7384A25D2532F91400B552BC /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384A25C2532F91400B552BC /* MainViewModel.swift */; };
 		90BE1DC974467D29FAEEC47A /* Pods_GamePartnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13948EF6251CDCEBABF7A334 /* Pods_GamePartnerTests.framework */; };
 		DBA5FA33B942AF76D572058D /* Pods_GamePartner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30B5D33568CFDDD55CD070C2 /* Pods_GamePartner.framework */; };
 		FD3DF50824F0F31700EF8307 /* RegisterSexVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3DF50724F0F31700EF8307 /* RegisterSexVC.swift */; };
@@ -64,6 +67,9 @@
 		30B5D33568CFDDD55CD070C2 /* Pods_GamePartner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GamePartner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A63BAB0FCFC5F3EB830F3A1 /* Pods-GamePartnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamePartnerTests.debug.xcconfig"; path = "Target Support Files/Pods-GamePartnerTests/Pods-GamePartnerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6E5F5676A4FFD890FDAF48FF /* Pods-GamePartner-GamePartnerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamePartner-GamePartnerUITests.debug.xcconfig"; path = "Target Support Files/Pods-GamePartner-GamePartnerUITests/Pods-GamePartner-GamePartnerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7384A2522532F7DD00B552BC /* CommonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModel.swift; sourceTree = "<group>"; };
+		7384A2572532F8D200B552BC /* ViewModelBindableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBindableType.swift; sourceTree = "<group>"; };
+		7384A25C2532F91400B552BC /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		867AC30093D85EE94734C19C /* Pods-GamePartner-GamePartnerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamePartner-GamePartnerUITests.release.xcconfig"; path = "Target Support Files/Pods-GamePartner-GamePartnerUITests/Pods-GamePartner-GamePartnerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E550CB09867F7AC8F608973F /* Pods-GamePartner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamePartner.debug.xcconfig"; path = "Target Support Files/Pods-GamePartner/Pods-GamePartner.debug.xcconfig"; sourceTree = "<group>"; };
 		F82A7C72CF796A20260C9311 /* Pods-GamePartnerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamePartnerTests.release.xcconfig"; path = "Target Support Files/Pods-GamePartnerTests/Pods-GamePartnerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +160,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7384A2512532F78C00B552BC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7384A2522532F7DD00B552BC /* CommonViewModel.swift */,
+				7384A2572532F8D200B552BC /* ViewModelBindableType.swift */,
+				7384A25C2532F91400B552BC /* MainViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		FD5C431B24ED4ABB000C2FE1 /* RegisterView */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,11 +242,11 @@
 		FDC4E84524E2C35F00392432 /* GamePartner */ = {
 			isa = PBXGroup;
 			children = (
+				FDC4E87A24E2C83700392432 /* Model */,
+				FD8F3B6824F0179C0080EE2E /* ImageAssets */,
 				FDEE40B9251CDBE00069A941 /* Util */,
 				FD79FB0324FDEB5C0073B16D /* Service */,
-				FD8F3B6824F0179C0080EE2E /* ImageAssets */,
-				FDC4E87A24E2C83700392432 /* Model */,
-				FDC4E87824E2C81700392432 /* ViewModel */,
+				7384A2512532F78C00B552BC /* ViewModel */,
 				FDC4E87724E2C80E00392432 /* View */,
 				FDC4E84824E2C35F00392432 /* SceneDelegate.swift */,
 				FDC4E84624E2C35F00392432 /* AppDelegate.swift */,
@@ -266,13 +282,6 @@
 				FD5C431B24ED4ABB000C2FE1 /* RegisterView */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		FDC4E87824E2C81700392432 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		FDC4E87A24E2C83700392432 /* Model */ = {
@@ -548,6 +557,7 @@
 				FD79FB0524FDEDB10073B16D /* RegisterAPIService.swift in Sources */,
 				FD5C431D24ED4D31000C2FE1 /* RegisterBasicVC.swift in Sources */,
 				FD5C432224ED6DC5000C2FE1 /* MainVC.swift in Sources */,
+				7384A2582532F8D200B552BC /* ViewModelBindableType.swift in Sources */,
 				FDC4E84B24E2C35F00392432 /* ViewController.swift in Sources */,
 				FDC4E84724E2C35F00392432 /* AppDelegate.swift in Sources */,
 				FDF92C2D24F3D529005EE293 /* RegisterPictureVC.swift in Sources */,
@@ -557,10 +567,12 @@
 				FDF92C3224F65429005EE293 /* String.swift in Sources */,
 				FDB4D90224EFF7080009776D /* UserModel.swift in Sources */,
 				FD3DF50E24F11DA900EF8307 /* RegisterDetailVC.swift in Sources */,
+				7384A25D2532F91400B552BC /* MainViewModel.swift in Sources */,
 				FDC4E84924E2C35F00392432 /* SceneDelegate.swift in Sources */,
 				FDD1460B2524D3BE00FB388A /* FilterWord.swift in Sources */,
 				FD3DF50A24F10BD200EF8307 /* RegisterBirthVC.swift in Sources */,
 				FDF92C2F24F3F893005EE293 /* RegisterGameVC.swift in Sources */,
+				7384A2532532F7DD00B552BC /* CommonViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
