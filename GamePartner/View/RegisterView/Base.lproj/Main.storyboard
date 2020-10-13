@@ -66,7 +66,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4617.391304347826" y="-1186.6071428571429"/>
+            <point key="canvasLocation" x="-4541" y="-1187"/>
         </scene>
         <!--Register BaiscVC-->
         <scene sceneID="8Qr-2w-SHg">
@@ -176,7 +176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ug-j1-Hz5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3768.115942028986" y="-1187.2767857142856"/>
+            <point key="canvasLocation" x="-3664" y="-1187"/>
         </scene>
         <!--Register SexVC-->
         <scene sceneID="voT-sT-EhH">

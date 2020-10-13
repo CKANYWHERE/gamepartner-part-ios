@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:837474686905:ios:b068a3cf087232e2640868</string>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>STORAGE_BUCKET</key>
+	<string>gamepartner-61753.appspot.com</string>
+	<key>PROJECT_ID</key>
+	<string>gamepartner-61753</string>
+	<key>BUNDLE_ID</key>
+	<string>gazualabs.GamePartner</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>GCM_SENDER_ID</key>
+	<string>837474686905</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD75rfvAv5H31uobTvCAhEs3cFIKrxVT3o</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.837474686905-ogpl3ajugbhetbcdvl32n9r9lv1odgie</string>
+	<key>CLIENT_ID</key>
+	<string>837474686905-ogpl3ajugbhetbcdvl32n9r9lv1odgie.apps.googleusercontent.com</string>
+	<key>DATABASE_URL</key>
+	<string>https://gamepartner-61753.firebaseio.com</string>
+</dict>
+</plist>

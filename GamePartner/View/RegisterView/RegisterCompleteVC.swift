@@ -54,6 +54,7 @@ class RegisterCompleteVC : UIViewController{
     }
     
     private func insertIntoMemory(){
+        
         let realm = try! Realm()
         let user = UserModel(id:self.paramId,pw:self.paramPw,sex:self.paramSex,age:self.paramAge
                                  ,birthDay:self.paramBirthDay,favoritGame: self.paramGame

@@ -11,7 +11,8 @@ target 'GamePartner' do
   pod 'Alamofire'
   pod 'PromiseKit'
   pod 'SwiftyJSON'
-  
+  pod 'Firebase/Auth'
+  pod 'Firebase/Analytics'
   # Pods for GamePartner
 
   target 'GamePartnerTests' do

@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		6CC888021FA0DEAB26E08ACD /* Pods_GamePartner_GamePartnerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2097B673F66240741A6D111A /* Pods_GamePartner_GamePartnerUITests.framework */; };
 		90BE1DC974467D29FAEEC47A /* Pods_GamePartnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13948EF6251CDCEBABF7A334 /* Pods_GamePartnerTests.framework */; };
-		DBA5FA33B942AF76D572058D /* Pods_GamePartner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30B5D33568CFDDD55CD070C2 /* Pods_GamePartner.framework */; };
+		FD20BB8B2535DCA500B92AB8 /* FriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD20BB8A2535DCA500B92AB8 /* FriendModel.swift */; };
+		FD20BB8D2535EA3400B92AB8 /* FriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD20BB8C2535EA3400B92AB8 /* FriendViewModel.swift */; };
+		FD20BB8F2535EC9B00B92AB8 /* FriendInfoSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD20BB8E2535EC9B00B92AB8 /* FriendInfoSection.swift */; };
 		FD3DF50824F0F31700EF8307 /* RegisterSexVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3DF50724F0F31700EF8307 /* RegisterSexVC.swift */; };
 		FD3DF50A24F10BD200EF8307 /* RegisterBirthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3DF50924F10BD200EF8307 /* RegisterBirthVC.swift */; };
 		FD3DF50E24F11DA900EF8307 /* RegisterDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3DF50D24F11DA900EF8307 /* RegisterDetailVC.swift */; };
@@ -25,6 +27,7 @@
 		FD8F3B7724F0E3830080EE2E /* radio_man.png in Resources */ = {isa = PBXBuildFile; fileRef = FD8F3B7324F0E3830080EE2E /* radio_man.png */; };
 		FD8F3B7824F0E3830080EE2E /* radio_cheked_man.png in Resources */ = {isa = PBXBuildFile; fileRef = FD8F3B7424F0E3830080EE2E /* radio_cheked_man.png */; };
 		FDB4D90224EFF7080009776D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB4D90124EFF7080009776D /* UserModel.swift */; };
+		FDBE68A02535D97D0023590C /* RoundUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE689F2535D97D0023590C /* RoundUIView.swift */; };
 		FDC4E84724E2C35F00392432 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC4E84624E2C35F00392432 /* AppDelegate.swift */; };
 		FDC4E84924E2C35F00392432 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC4E84824E2C35F00392432 /* SceneDelegate.swift */; };
 		FDC4E84B24E2C35F00392432 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC4E84A24E2C35F00392432 /* ViewController.swift */; };
@@ -35,6 +38,9 @@
 		FDC4E86924E2C36000392432 /* GamePartnerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC4E86824E2C36000392432 /* GamePartnerUITests.swift */; };
 		FDD1460B2524D3BE00FB388A /* FilterWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD1460A2524D3BE00FB388A /* FilterWord.swift */; };
 		FDEE40BB251CDBFB0069A941 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEE40BA251CDBFB0069A941 /* Util.swift */; };
+		FDF7833025349A3000E072C7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDF7832F25349A3000E072C7 /* GoogleService-Info.plist */; };
+		FDF7833125349BD900E072C7 /* Pods_GamePartner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30B5D33568CFDDD55CD070C2 /* Pods_GamePartner.framework */; };
+		FDF7833225349BD900E072C7 /* Pods_GamePartner.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 30B5D33568CFDDD55CD070C2 /* Pods_GamePartner.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FDF92C2D24F3D529005EE293 /* RegisterPictureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF92C2C24F3D529005EE293 /* RegisterPictureVC.swift */; };
 		FDF92C2F24F3F893005EE293 /* RegisterGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF92C2E24F3F893005EE293 /* RegisterGameVC.swift */; };
 		FDF92C3224F65429005EE293 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF92C3124F65429005EE293 /* String.swift */; };
@@ -57,6 +63,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FDF7833325349BD900E072C7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FDF7833225349BD900E072C7 /* Pods_GamePartner.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		06489717925DC4C10B7754C3 /* Pods-GamePartner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamePartner.release.xcconfig"; path = "Target Support Files/Pods-GamePartner/Pods-GamePartner.release.xcconfig"; sourceTree = "<group>"; };
 		13948EF6251CDCEBABF7A334 /* Pods_GamePartnerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GamePartnerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +87,9 @@
 		867AC30093D85EE94734C19C /* Pods-GamePartner-GamePartnerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamePartner-GamePartnerUITests.release.xcconfig"; path = "Target Support Files/Pods-GamePartner-GamePartnerUITests/Pods-GamePartner-GamePartnerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E550CB09867F7AC8F608973F /* Pods-GamePartner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamePartner.debug.xcconfig"; path = "Target Support Files/Pods-GamePartner/Pods-GamePartner.debug.xcconfig"; sourceTree = "<group>"; };
 		F82A7C72CF796A20260C9311 /* Pods-GamePartnerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamePartnerTests.release.xcconfig"; path = "Target Support Files/Pods-GamePartnerTests/Pods-GamePartnerTests.release.xcconfig"; sourceTree = "<group>"; };
+		FD20BB8A2535DCA500B92AB8 /* FriendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendModel.swift; sourceTree = "<group>"; };
+		FD20BB8C2535EA3400B92AB8 /* FriendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewModel.swift; sourceTree = "<group>"; };
+		FD20BB8E2535EC9B00B92AB8 /* FriendInfoSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInfoSection.swift; sourceTree = "<group>"; };
 		FD3DF50724F0F31700EF8307 /* RegisterSexVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSexVC.swift; sourceTree = "<group>"; };
 		FD3DF50924F10BD200EF8307 /* RegisterBirthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBirthVC.swift; sourceTree = "<group>"; };
 		FD3DF50D24F11DA900EF8307 /* RegisterDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDetailVC.swift; sourceTree = "<group>"; };
@@ -82,6 +105,7 @@
 		FD8F3B7324F0E3830080EE2E /* radio_man.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radio_man.png; sourceTree = "<group>"; };
 		FD8F3B7424F0E3830080EE2E /* radio_cheked_man.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radio_cheked_man.png; sourceTree = "<group>"; };
 		FDB4D90124EFF7080009776D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		FDBE689F2535D97D0023590C /* RoundUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundUIView.swift; sourceTree = "<group>"; };
 		FDC4E84324E2C35F00392432 /* GamePartner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamePartner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDC4E84624E2C35F00392432 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDC4E84824E2C35F00392432 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +122,7 @@
 		FDC4E86A24E2C36000392432 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDD1460A2524D3BE00FB388A /* FilterWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterWord.swift; sourceTree = "<group>"; };
 		FDEE40BA251CDBFB0069A941 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		FDF7832F25349A3000E072C7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FDF92C2C24F3D529005EE293 /* RegisterPictureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPictureVC.swift; sourceTree = "<group>"; };
 		FDF92C2E24F3F893005EE293 /* RegisterGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterGameVC.swift; sourceTree = "<group>"; };
 		FDF92C3124F65429005EE293 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -108,7 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBA5FA33B942AF76D572058D /* Pods_GamePartner.framework in Frameworks */,
+				FDF7833125349BD900E072C7 /* Pods_GamePartner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +199,7 @@
 		FD5C431E24ED6D54000C2FE1 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				FDBE689E2535D9660023590C /* Desgin */,
 				FD5C431F24ED6D8E000C2FE1 /* MainStoryBoard.storyboard */,
 				FD5C432124ED6DC5000C2FE1 /* MainVC.swift */,
 			);
@@ -199,6 +225,14 @@
 				FD8F3B6E24F0D9D40080EE2E /* woman.png */,
 			);
 			path = ImageAssets;
+			sourceTree = "<group>";
+		};
+		FDBE689E2535D9660023590C /* Desgin */ = {
+			isa = PBXGroup;
+			children = (
+				FDBE689F2535D97D0023590C /* RoundUIView.swift */,
+			);
+			path = Desgin;
 			sourceTree = "<group>";
 		};
 		FDC4E83A24E2C35F00392432 = {
@@ -237,6 +271,7 @@
 				FDC4E84F24E2C36000392432 /* Assets.xcassets */,
 				FDC4E85124E2C36000392432 /* LaunchScreen.storyboard */,
 				FDC4E85424E2C36000392432 /* Info.plist */,
+				FDF7832F25349A3000E072C7 /* GoogleService-Info.plist */,
 			);
 			path = GamePartner;
 			sourceTree = "<group>";
@@ -271,6 +306,7 @@
 		FDC4E87824E2C81700392432 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FD20BB8C2535EA3400B92AB8 /* FriendViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -279,6 +315,8 @@
 			isa = PBXGroup;
 			children = (
 				FDB4D90124EFF7080009776D /* UserModel.swift */,
+				FD20BB8A2535DCA500B92AB8 /* FriendModel.swift */,
+				FD20BB8E2535EC9B00B92AB8 /* FriendInfoSection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -312,6 +350,7 @@
 				FDC4E84024E2C35F00392432 /* Frameworks */,
 				FDC4E84124E2C35F00392432 /* Resources */,
 				7DF70CE62BDA476B378C7D49 /* [CP] Embed Pods Frameworks */,
+				FDF7833325349BD900E072C7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -416,6 +455,7 @@
 				FDC4E85024E2C36000392432 /* Assets.xcassets in Resources */,
 				FD8F3B7024F0D9D40080EE2E /* woman.png in Resources */,
 				FDC4E84E24E2C35F00392432 /* Main.storyboard in Resources */,
+				FDF7833025349A3000E072C7 /* GoogleService-Info.plist in Resources */,
 				FD4A3E07252DAAD6008C3E45 /* MainStoryBoard.storyboard in Resources */,
 				FD8F3B7524F0E3830080EE2E /* radio_checked_woman.png in Resources */,
 			);
@@ -547,16 +587,20 @@
 			files = (
 				FD79FB0524FDEDB10073B16D /* RegisterAPIService.swift in Sources */,
 				FD5C431D24ED4D31000C2FE1 /* RegisterBasicVC.swift in Sources */,
+				FDBE68A02535D97D0023590C /* RoundUIView.swift in Sources */,
+				FD20BB8F2535EC9B00B92AB8 /* FriendInfoSection.swift in Sources */,
 				FD5C432224ED6DC5000C2FE1 /* MainVC.swift in Sources */,
 				FDC4E84B24E2C35F00392432 /* ViewController.swift in Sources */,
 				FDC4E84724E2C35F00392432 /* AppDelegate.swift in Sources */,
 				FDF92C2D24F3D529005EE293 /* RegisterPictureVC.swift in Sources */,
 				FD4A1BE52501255200DDB235 /* RegisterCompleteVC.swift in Sources */,
 				FDEE40BB251CDBFB0069A941 /* Util.swift in Sources */,
+				FD20BB8D2535EA3400B92AB8 /* FriendViewModel.swift in Sources */,
 				FD3DF50824F0F31700EF8307 /* RegisterSexVC.swift in Sources */,
 				FDF92C3224F65429005EE293 /* String.swift in Sources */,
 				FDB4D90224EFF7080009776D /* UserModel.swift in Sources */,
 				FD3DF50E24F11DA900EF8307 /* RegisterDetailVC.swift in Sources */,
+				FD20BB8B2535DCA500B92AB8 /* FriendModel.swift in Sources */,
 				FDC4E84924E2C35F00392432 /* SceneDelegate.swift in Sources */,
 				FDD1460B2524D3BE00FB388A /* FilterWord.swift in Sources */,
 				FD3DF50A24F10BD200EF8307 /* RegisterBirthVC.swift in Sources */,
