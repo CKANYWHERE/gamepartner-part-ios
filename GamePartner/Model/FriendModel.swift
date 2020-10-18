@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct FriendInfo {
+struct FriendModel {
     let imgUrl:String?
     let nickName:String?
     let sex:String?

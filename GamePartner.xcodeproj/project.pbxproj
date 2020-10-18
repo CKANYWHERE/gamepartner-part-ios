@@ -12,6 +12,7 @@
 		FD20BB8B2535DCA500B92AB8 /* FriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD20BB8A2535DCA500B92AB8 /* FriendModel.swift */; };
 		FD20BB8D2535EA3400B92AB8 /* FriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD20BB8C2535EA3400B92AB8 /* FriendViewModel.swift */; };
 		FD20BB8F2535EC9B00B92AB8 /* FriendInfoSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD20BB8E2535EC9B00B92AB8 /* FriendInfoSection.swift */; };
+		FD20BB942535FCF200B92AB8 /* MainTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD20BB932535FCF200B92AB8 /* MainTableCell.swift */; };
 		FD3DF50824F0F31700EF8307 /* RegisterSexVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3DF50724F0F31700EF8307 /* RegisterSexVC.swift */; };
 		FD3DF50A24F10BD200EF8307 /* RegisterBirthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3DF50924F10BD200EF8307 /* RegisterBirthVC.swift */; };
 		FD3DF50E24F11DA900EF8307 /* RegisterDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3DF50D24F11DA900EF8307 /* RegisterDetailVC.swift */; };
@@ -90,6 +91,7 @@
 		FD20BB8A2535DCA500B92AB8 /* FriendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendModel.swift; sourceTree = "<group>"; };
 		FD20BB8C2535EA3400B92AB8 /* FriendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewModel.swift; sourceTree = "<group>"; };
 		FD20BB8E2535EC9B00B92AB8 /* FriendInfoSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInfoSection.swift; sourceTree = "<group>"; };
+		FD20BB932535FCF200B92AB8 /* MainTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableCell.swift; sourceTree = "<group>"; };
 		FD3DF50724F0F31700EF8307 /* RegisterSexVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSexVC.swift; sourceTree = "<group>"; };
 		FD3DF50924F10BD200EF8307 /* RegisterBirthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBirthVC.swift; sourceTree = "<group>"; };
 		FD3DF50D24F11DA900EF8307 /* RegisterDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDetailVC.swift; sourceTree = "<group>"; };
@@ -179,6 +181,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FD20BB902535FC7A00B92AB8 /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				FD20BB932535FCF200B92AB8 /* MainTableCell.swift */,
+			);
+			path = TableCell;
+			sourceTree = "<group>";
+		};
 		FD5C431B24ED4ABB000C2FE1 /* RegisterView */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +209,7 @@
 		FD5C431E24ED6D54000C2FE1 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				FD20BB902535FC7A00B92AB8 /* TableCell */,
 				FDBE689E2535D9660023590C /* Desgin */,
 				FD5C431F24ED6D8E000C2FE1 /* MainStoryBoard.storyboard */,
 				FD5C432124ED6DC5000C2FE1 /* MainVC.swift */,
@@ -585,6 +596,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD20BB942535FCF200B92AB8 /* MainTableCell.swift in Sources */,
 				FD79FB0524FDEDB10073B16D /* RegisterAPIService.swift in Sources */,
 				FD5C431D24ED4D31000C2FE1 /* RegisterBasicVC.swift in Sources */,
 				FDBE68A02535D97D0023590C /* RoundUIView.swift in Sources */,

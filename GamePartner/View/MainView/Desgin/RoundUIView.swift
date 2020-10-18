@@ -7,7 +7,7 @@
 
 import UIKit
 @IBDesignable
-class RoundUIView: UIView {
+class RoundUIView: UIImageView {
     
     @IBInspectable var borderColor: UIColor = UIColor.white {
         didSet {

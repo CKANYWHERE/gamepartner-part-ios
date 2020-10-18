@@ -23,19 +23,19 @@ class FriendViewModel : FriendViewModelType{
         friendList = Observable.just([
             
             FriendInfoSection(header: "친구 요청 받은 리스트", items: [
-                FriendInfo(name: "민창경", sex: "man", age: 25, favoritGame: "리그오브레전드", imgUrl: "janu723"),
-                FriendInfo(name: "민창경", sex: "man", age: 25, favoritGame: "리그오브레전드", imgUrl: "janu723"),
-                FriendInfo(name: "민창경", sex: "man", age: 25, favoritGame: "리그오브레전드", imgUrl: "janu723"),
+                FriendModel(name: "권예진", sex: "man", age: 27, favoritGame: "리그오브레전드", imgUrl: "janu723"),
+                FriendModel(name: "민창경", sex: "man", age: 28, favoritGame: "리그오브레전드", imgUrl: "janu723"),
+                FriendModel(name: "민창경", sex: "man", age: 29, favoritGame: "리그오브레전드", imgUrl: "janu723"),
             ]),
             FriendInfoSection(header: "친구 요청한 리스트", items: [
-                FriendInfo(name: "민창경", sex: "man", age: 25, favoritGame: "리그오브레전드", imgUrl: "janu723"),
-                FriendInfo(name: "민창경", sex: "man", age: 25, favoritGame: "리그오브레전드", imgUrl: "janu723"),
-                FriendInfo(name: "민창경", sex: "man", age: 25, favoritGame: "리그오브레전드", imgUrl: "janu723"),
+                FriendModel(name: "민창경", sex: "man", age: 24, favoritGame: "리그오브레전드", imgUrl: "janu723"),
+                FriendModel(name: "권례찐", sex: "man", age: 22, favoritGame: "리그오브레전드", imgUrl: "janu723"),
+                FriendModel(name: "민창경", sex: "man", age: 25, favoritGame: "리그오브레전드", imgUrl: "janu723"),
             ]),
             FriendInfoSection(header: "내 친구 리스트", items: [
-                FriendInfo(name: "민창경", sex: "man", age: 25, favoritGame: "리그오브레전드", imgUrl: "janu723"),
-                FriendInfo(name: "민창경", sex: "man", age: 25, favoritGame: "리그오브레전드", imgUrl: "janu723"),
-                FriendInfo(name: "민창경", sex: "man", age: 25, favoritGame: "리그오브레전드", imgUrl: "janu723"),
+                FriendModel(name: "권예진", sex: "man", age: 25, favoritGame: "리그오브레전드", imgUrl: "janu723"),
+                FriendModel(name: "권예찐", sex: "man", age: 25, favoritGame: "리그오브레전드", imgUrl: "janu723"),
+                FriendModel(name: "민창경", sex: "man", age: 25, favoritGame: "리그오브레전드", imgUrl: "janu723"),
             ]),
             
             
