@@ -27,8 +27,10 @@ class MainVC: UIViewController{
             cell.imgProfile.layer.borderWidth = 1
             cell.imgProfile.layer.masksToBounds = true
             
+            cell.imgSex.image = element.imageSex
+            
             cell.lblNickName.text = element.nickName
-            cell.lblAge.text = String(element.age ?? 0)
+            cell.lblIntroduce.text = element.introduce
             cell.lblGame.text = element.favoritGame
             
             return cell

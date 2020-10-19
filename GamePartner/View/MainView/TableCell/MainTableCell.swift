@@ -13,10 +13,10 @@ import RxSwift
 class MainTableCell: UITableViewCell {
     @IBOutlet weak var lblNickName: UILabel!
     @IBOutlet weak var lblGame: UILabel!
-    @IBOutlet weak var lblAge: UILabel!
-    @IBOutlet weak var imgSex: UIImageView!
+    @IBOutlet weak var lblIntroduce: UILabel!
     @IBOutlet weak var imgProfile: UIImageView!
     
-
+    @IBOutlet weak var imgSex: UIImageView!
+    
  
 }

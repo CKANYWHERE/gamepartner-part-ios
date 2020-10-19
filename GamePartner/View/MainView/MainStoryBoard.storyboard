@@ -37,27 +37,35 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="민창경" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pT9-iC-03b">
-                                                    <rect key="frame" x="106" y="1" width="288" height="18"/>
+                                                    <rect key="frame" x="106" y="13" width="288" height="18"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <color key="textColor" name="AccentColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="리그오브레전드" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFW-E9-cdz">
-                                                    <rect key="frame" x="106" y="24" width="288" height="14.5"/>
+                                                    <rect key="frame" x="106" y="36" width="288" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25세" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZ3-XJ-AEZ">
-                                                    <rect key="frame" x="106" y="43.5" width="25.5" height="14.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZ3-XJ-AEZ">
+                                                    <rect key="frame" x="106" y="55.5" width="52" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="man.png" translatesAutoresizingMaskIntoConstraints="NO" id="Nim-eZ-4Ud">
+                                                    <rect key="frame" x="380" y="9" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="UXn-Om-lPs"/>
+                                                        <constraint firstAttribute="height" constant="20" id="bw0-GR-Ovp"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="pT9-iC-03b" secondAttribute="trailing" constant="20" id="9im-5G-ZxH"/>
                                                 <constraint firstItem="sFW-E9-cdz" firstAttribute="leading" secondItem="FEc-n2-qVA" secondAttribute="trailing" constant="30" id="H0T-U8-UJl"/>
+                                                <constraint firstAttribute="trailing" secondItem="Nim-eZ-4Ud" secondAttribute="trailing" constant="14" id="Ke5-mu-Ybg"/>
                                                 <constraint firstItem="KZ3-XJ-AEZ" firstAttribute="leading" secondItem="FEc-n2-qVA" secondAttribute="trailing" constant="30" id="ONp-6F-Msd"/>
                                                 <constraint firstItem="FEc-n2-qVA" firstAttribute="height" secondItem="9t0-ZL-Pdd" secondAttribute="height" multiplier="0.765" id="Xxu-wa-vR7"/>
                                                 <constraint firstItem="sFW-E9-cdz" firstAttribute="top" secondItem="pT9-iC-03b" secondAttribute="bottom" constant="5" id="cRq-HM-Xqz"/>
@@ -66,13 +74,15 @@
                                                 <constraint firstItem="FEc-n2-qVA" firstAttribute="leading" secondItem="9t0-ZL-Pdd" secondAttribute="leading" constant="15" id="gGe-NC-3ta"/>
                                                 <constraint firstItem="FEc-n2-qVA" firstAttribute="centerY" secondItem="9t0-ZL-Pdd" secondAttribute="centerY" id="rLE-Ng-Oxk"/>
                                                 <constraint firstItem="pT9-iC-03b" firstAttribute="leading" secondItem="FEc-n2-qVA" secondAttribute="trailing" constant="30" id="rl6-Lg-Bkn"/>
-                                                <constraint firstItem="pT9-iC-03b" firstAttribute="centerY" secondItem="9t0-ZL-Pdd" secondAttribute="centerY" constant="-30" id="yLF-PV-f9s"/>
+                                                <constraint firstItem="Nim-eZ-4Ud" firstAttribute="top" secondItem="9t0-ZL-Pdd" secondAttribute="top" constant="9" id="ubT-aT-Ew9"/>
+                                                <constraint firstItem="pT9-iC-03b" firstAttribute="centerY" secondItem="9t0-ZL-Pdd" secondAttribute="centerY" constant="-18" id="yLF-PV-f9s"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="imgProfile" destination="FEc-n2-qVA" id="dV6-jB-U7U"/>
-                                            <outlet property="lblAge" destination="KZ3-XJ-AEZ" id="Onk-rs-K3l"/>
+                                            <outlet property="imgSex" destination="Nim-eZ-4Ud" id="LPI-8m-c9b"/>
                                             <outlet property="lblGame" destination="sFW-E9-cdz" id="61I-NQ-Vq0"/>
+                                            <outlet property="lblIntroduce" destination="KZ3-XJ-AEZ" id="6h5-4g-Hjh"/>
                                             <outlet property="lblNickName" destination="pT9-iC-03b" id="9mb-AA-aNQ"/>
                                         </connections>
                                     </tableViewCell>
@@ -232,6 +242,7 @@
     <resources>
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="man.png" width="22.811882019042969" height="22.811882019042969"/>
         <image name="message.fill" catalog="system" width="128" height="113"/>
         <image name="paperplane.fill" catalog="system" width="128" height="118"/>
         <namedColor name="AccentColor">
