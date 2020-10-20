@@ -9,6 +9,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 import RxDataSources
+import Kingfisher
 
 class MainVC: UIViewController{
     
@@ -21,11 +22,13 @@ class MainVC: UIViewController{
     private lazy var dataSource = RxTableViewSectionedReloadDataSource<FriendInfoSection>(
         configureCell: { (_, tv, indexPath, element) in
             let cell = tv.dequeueReusableCell(withIdentifier: "cell") as! MainTableCell
+            let imgUrl = URL(string: "https://gamepartner.storage.googleapis.com/" + element.imgUrl!)
             
             cell.imgProfile.image = element.image
             cell.imgProfile.layer.cornerRadius = cell.imgProfile.frame.height/2
-            cell.imgProfile.layer.borderWidth = 1
             cell.imgProfile.layer.masksToBounds = true
+            cell.imgProfile.kf.setImage(with: imgUrl)
+            cell.imgProfile.contentMode = .scaleAspectFill
             
             cell.imgSex.image = element.imageSex
             

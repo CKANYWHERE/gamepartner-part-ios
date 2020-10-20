@@ -37,19 +37,19 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="민창경" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pT9-iC-03b">
-                                                    <rect key="frame" x="106" y="13" width="288" height="18"/>
+                                                    <rect key="frame" x="96" y="13" width="298" height="18"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <color key="textColor" name="AccentColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="리그오브레전드" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFW-E9-cdz">
-                                                    <rect key="frame" x="106" y="36" width="288" height="14.5"/>
+                                                    <rect key="frame" x="96" y="36" width="298" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZ3-XJ-AEZ">
-                                                    <rect key="frame" x="106" y="55.5" width="52" height="15"/>
+                                                    <rect key="frame" x="96" y="55.5" width="52" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -64,16 +64,16 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="pT9-iC-03b" secondAttribute="trailing" constant="20" id="9im-5G-ZxH"/>
-                                                <constraint firstItem="sFW-E9-cdz" firstAttribute="leading" secondItem="FEc-n2-qVA" secondAttribute="trailing" constant="30" id="H0T-U8-UJl"/>
+                                                <constraint firstItem="sFW-E9-cdz" firstAttribute="leading" secondItem="FEc-n2-qVA" secondAttribute="trailing" constant="20" id="H0T-U8-UJl"/>
                                                 <constraint firstAttribute="trailing" secondItem="Nim-eZ-4Ud" secondAttribute="trailing" constant="14" id="Ke5-mu-Ybg"/>
-                                                <constraint firstItem="KZ3-XJ-AEZ" firstAttribute="leading" secondItem="FEc-n2-qVA" secondAttribute="trailing" constant="30" id="ONp-6F-Msd"/>
+                                                <constraint firstItem="KZ3-XJ-AEZ" firstAttribute="leading" secondItem="FEc-n2-qVA" secondAttribute="trailing" constant="20" id="ONp-6F-Msd"/>
                                                 <constraint firstItem="FEc-n2-qVA" firstAttribute="height" secondItem="9t0-ZL-Pdd" secondAttribute="height" multiplier="0.765" id="Xxu-wa-vR7"/>
                                                 <constraint firstItem="sFW-E9-cdz" firstAttribute="top" secondItem="pT9-iC-03b" secondAttribute="bottom" constant="5" id="cRq-HM-Xqz"/>
                                                 <constraint firstItem="sFW-E9-cdz" firstAttribute="centerX" secondItem="pT9-iC-03b" secondAttribute="centerX" id="cTX-uf-ATl"/>
                                                 <constraint firstItem="KZ3-XJ-AEZ" firstAttribute="top" secondItem="sFW-E9-cdz" secondAttribute="bottom" constant="5" id="cuO-Kw-QE6"/>
                                                 <constraint firstItem="FEc-n2-qVA" firstAttribute="leading" secondItem="9t0-ZL-Pdd" secondAttribute="leading" constant="15" id="gGe-NC-3ta"/>
                                                 <constraint firstItem="FEc-n2-qVA" firstAttribute="centerY" secondItem="9t0-ZL-Pdd" secondAttribute="centerY" id="rLE-Ng-Oxk"/>
-                                                <constraint firstItem="pT9-iC-03b" firstAttribute="leading" secondItem="FEc-n2-qVA" secondAttribute="trailing" constant="30" id="rl6-Lg-Bkn"/>
+                                                <constraint firstItem="pT9-iC-03b" firstAttribute="leading" secondItem="FEc-n2-qVA" secondAttribute="trailing" constant="20" id="rl6-Lg-Bkn"/>
                                                 <constraint firstItem="Nim-eZ-4Ud" firstAttribute="top" secondItem="9t0-ZL-Pdd" secondAttribute="top" constant="9" id="ubT-aT-Ew9"/>
                                                 <constraint firstItem="pT9-iC-03b" firstAttribute="centerY" secondItem="9t0-ZL-Pdd" secondAttribute="centerY" constant="-18" id="yLF-PV-f9s"/>
                                             </constraints>
