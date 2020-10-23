@@ -33,6 +33,12 @@ class MainVC: UIViewController{
             cell.imgSex.image = element.imageSex
             
             cell.lblNickName.text = element.nickName
+            
+            if element.sex == "W"{
+                cell.lblNickName.textColor = .systemPink
+            }
+            
+            
             cell.lblIntroduce.text = element.introduce
             cell.lblGame.text = element.favoritGame
             

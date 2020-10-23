@@ -16,14 +16,14 @@ class FriendAPIService : NSObject{
     
     private var indexUrl = Util.mainUrl + Util.getIndexPageUrl
     
-    func getIndexData(userId:String!) -> Observable<[String:Any]>{
-        return Observable<[String:Any]>.create { (observer) -> Disposable in
+    func getIndexData(userId:String!) -> Observable<[FriendInfoSection]>{
+        return Observable<[FriendInfoSection]>.create { (observer) -> Disposable in
             AF.request(self.indexUrl + userId, method: .get)
                     .validate()
                     .responseJSON { response in
                         switch response.result {
                         case .success(let json):
-                            guard let json = json  as? [String: Any] else {
+                            guard let json = json  as? [FriendInfoSection] else {
                                 return observer.onError(AFError.responseValidationFailed(reason: .dataFileNil))
                             }
                             observer.onNext(json)
