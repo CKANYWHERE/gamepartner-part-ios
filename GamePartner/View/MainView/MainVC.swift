@@ -58,7 +58,7 @@ class MainVC: UIViewController{
         //self.definesPresentationContext = true
         
         
-        viewModel.friendList
+        viewModel.fetchFriendList
             .bind(to: tableView.rx.items(dataSource:self.dataSource))
             .disposed(by: disposeBag)
             
