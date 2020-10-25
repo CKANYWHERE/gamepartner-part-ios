@@ -56,6 +56,21 @@ class MainVC: UIViewController{
         //tableView.rowHeight = 70
         tableView.separatorInset.left = 0
         //self.definesPresentationContext = true
+//        
+//        let firstLoad = rx.viewWillAppear
+//            .take(1)
+//            .map { _ in () }
+//
+//        Observable
+//            .bind(to: viewModel.fetchIndexApi)
+//            .disposed(by: disposeBag)
+//        Observable.just(Void)
+//            .bind(to: viewModel.fetchIndexApi)
+//
+        
+        Observable<Void>.just(())
+            .bind(to: viewModel.fetchIndexApi)
+            .disposed(by: disposeBag)
         
         
         viewModel.fetchFriendList

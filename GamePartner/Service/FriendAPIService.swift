@@ -19,21 +19,32 @@ class FriendAPIService : NSObject{
     func getIndexData(userId:String!) -> Observable<[FriendInfoSection]>{
         return Observable.create { (observer) -> Disposable in
             print("here")
-            AF.request(self.indexUrl + userId, method: .get)
-                    .validate()
-                    .responseJSON { response in
-                        
-                        switch response.result {
-                        case .success(let json):
-                            guard let json = json as? [FriendInfoSection] else {
-                                return observer.onError(AFError.responseValidationFailed(reason: .dataFileNil))
-                            }
-                            observer.onNext(json)
-                            observer.onCompleted()
-                        case .failure(let error):
-                            observer.onError(error)
-                        }
-                   }
+            AF.request(self.indexUrl + userId, method: .get).responseData {
+                response in
+                switch response.result {
+                case .success(let json):
+                    let model = JSON(json)
+                    print(model)
+                
+                case .failure(let error):
+                    observer.onError(error)
+                }
+                
+            }
+//                    .validate()
+//                    .responseJSON { response in
+//
+//                        switch response.result {
+//                        case .success(let json):
+//                            guard let json = json as? [FriendInfoSection] else {
+//                                return observer.onError(AFError.responseValidationFailed(reason: .dataFileNil))
+//                            }
+//                            observer.onNext(json)
+//                            observer.onCompleted()
+//                        case .failure(let error):
+//                            observer.onError(error)
+//                        }
+//                   }
             return Disposables.create()
         }
     }

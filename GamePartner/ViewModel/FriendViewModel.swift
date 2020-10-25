@@ -11,20 +11,25 @@ import RxCocoa
 
 protocol FriendViewModelType {
     // MARK: - Output
-    var fetchFriendList: AnyObserver<Void> { get }
+    var fetchFriendList: Observable<[FriendInfoSection]> { get }
+    var fetchIndexApi: AnyObserver<Void> { get }
     //var bountyInfo : Observable<BountyInfo> {get}
 }
 
 class FriendViewModel : FriendViewModelType{
     var disposeBag = DisposeBag()
-    let fetchFriendList: AnyObserver<Void>
+    let fetchFriendList: Observable<[FriendInfoSection]>
+    let fetchIndexApi: AnyObserver<Void>
     //let bountyInfo : Observable<BountyInfo>
     
     init(){
         let fetching = PublishSubject<Void>()
+        let friends = BehaviorSubject<[FriendInfoSection]>(value: [])
         //let friendList = BehaviorSubject<[FriendInfoSection]>(value: [])
-        fetchFriendList = fetching.asObserver()
-        
+        fetchIndexApi = fetching.asObserver()
+        fetchFriendList = friends
+
+        //FriendAPIService.shared.getIndexData(userId: "janu723123")
         //let disposeBag = DisposeBag()
 //        friendList = Observable.just([
 //
@@ -49,22 +54,10 @@ class FriendViewModel : FriendViewModelType{
 //
 //        ]).observeOn(MainScheduler.instance)
         
-        
-        fetching
-            .flatMap{ _ -> Observable<[FriendInfoSection]> in
-                return FriendAPIService.shared.getIndexData(userId: "janu723123")
-            }
-            .subscribe{ (event) in
-                print("asdfasdf")
-                switch event {
-                case .next(let friend):
-                    print(friend)
-                case .error(let error):
-                    print(error)
-                case .completed:
-                    print("completed")
-                }
-            }
+
+        fetching.flatMap{_ -> Observable<[FriendInfoSection]> in
+            return FriendAPIService.shared.getIndexData(userId: "janu723123")}
+            .subscribe(onNext: friends.onNext)
             .disposed(by: disposeBag)
     }
     
