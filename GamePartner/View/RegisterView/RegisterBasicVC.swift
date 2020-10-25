@@ -14,22 +14,12 @@ class RegisterBaiscVC: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var btnNext: UIButton!
     @IBOutlet weak var lblGuide: UILabel!
     @IBOutlet weak var txtCheckId: UILabel!
-    @IBOutlet weak var txtId: UITextField!{
-        didSet{
-            let placeholderText = NSAttributedString(string: "ID를 입력해주세요")
-            txtId.delegate = self
-            txtId.attributedPlaceholder = placeholderText
-        }
-    }
+    @IBOutlet weak var txtId: UITextField!
+    @IBOutlet weak var txtPw: UITextField!
     
-    @IBOutlet weak var txtPw: UITextField!{
-        didSet{
-            let placeholderText = NSAttributedString(string: "PW를 입력해주세요")
-            txtPw.delegate = self
-            txtPw.attributedPlaceholder = placeholderText
-        }
-    }
     private var isDuplicated:Bool!
+    
+    let viewModel = RegisterIDPasswordViewModel()
     
     override func viewDidLoad() {
        
@@ -82,11 +72,14 @@ class RegisterBaiscVC: UIViewController,UITextFieldDelegate {
         }
         .done{ result in
             if self.txtId.text!.isEmpty || self.txtPw.text!.isEmpty{
-                self.alert("값을 입력해주세요!", message: "ID와 PW를 입력해주세요!")
+//                self.alert("값을 입력해주세요!", message: "ID와 PW를 입력해주세요!")
+                self.txtCheckId.text = "값을 입력해주세요"
             }else if self.txtId.text!.count < 8 || self.txtPw.text!.count < 8{
-                self.alert("값을 확인해주세요!", message: "ID와 PW는 최소 9개 이상으로 입력가능합니다!")
+//                self.alert("값을 확인해주세요!", message: "ID와 PW는 최소 9개 이상으로 입력가능합니다!")
+                self.txtCheckId.text = "ID와 비밀번호는 최소 9자 이상으로 입력가능합니다."
             }else if result["duplicated"] as! Bool == true{
-                self.alert("값을 확인해주세요!", message: "이미 존재하는 아이디 입니다!")
+//                self.alert("값을 확인해주세요!", message: "이미 존재하는 아이디 입니다!")
+                self.txtCheckId.text = "이미 존재하는 아이디입니다."
             }else{
                 self.performSegue(withIdentifier: "moveToSexRegister", sender: nil)
             }
@@ -109,22 +102,10 @@ class RegisterBaiscVC: UIViewController,UITextFieldDelegate {
     }
     
     
-    private func initControl(){
-        self.lblGuide.font = UIFont.boldSystemFont(ofSize: 30)
-        self.txtId.layer.cornerRadius = 50
-        self.txtPw.layer.cornerRadius = 50
-        self.btnNext.alpha = 0.0
-        self.txtCheckId.isHidden = true
-    }
+    
     
    
-    private func animate(){
-        UIView.animateKeyframes(withDuration: 3.0, delay: 0.0, options: [], animations: {
-            UIView.addKeyframe(withRelativeStartTime: 0.3, relativeDuration:0.3, animations: {
-                self.btnNext.alpha = 1.0
-            })
-        },completion: nil)
-    }
+    
     
     private func alert(_ title: String, message: String){
         let alert = UIAlertController(title: title, message: message
@@ -137,3 +118,35 @@ class RegisterBaiscVC: UIViewController,UITextFieldDelegate {
     }
 }
 
+// 뷰 관련
+extension RegisterBaiscVC{
+    private func animate(){
+        UIView.animateKeyframes(withDuration: 3.0, delay: 0.0, options: [], animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0.3, relativeDuration:0.3, animations: {
+                self.btnNext.alpha = 1.0
+            })
+        },completion: nil)
+    }
+    
+    private func initControl(){
+        self.lblGuide.font = UIFont.boldSystemFont(ofSize: 30)
+//        self.txtId.layer.cornerRadius = 50
+//        self.txtPw.layer.cornerRadius = 50
+        self.btnNext.alpha = 0.0
+        self.btnNext.layer.cornerRadius = 8
+        self.txtCheckId.isHidden = true
+    }
+    
+//    private func wrongData()
+    
+    enum errorMessage {
+        
+    }
+}
+
+
+class RegisterIDPasswordViewModel{
+//    var user:UserModel
+    
+
+}
