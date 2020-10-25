@@ -44,6 +44,8 @@ class ViewController: UIViewController {
         self.infoLabel2.alpha = 0.0
         
         self.btnNext.alpha = 0.0
+        
+        self.btnNext.layer.cornerRadius = 4
     }
     
 

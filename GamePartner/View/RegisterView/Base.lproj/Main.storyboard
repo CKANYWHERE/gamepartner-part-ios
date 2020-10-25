@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17147" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17120"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,20 +25,24 @@
                                 <color key="highlightedColor" red="0.17490683579999999" green="0.77119162640000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="처음 오셨으니 회원가입 부탁드릴게요 :)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BEs-TR-l6Y">
-                                <rect key="frame" x="75" y="587.66666666666663" width="264" height="21"/>
+                                <rect key="frame" x="75" y="394.66666666666669" width="264" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="systemBlueColor"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="먼저 GameParntner 앱을 받아주셔서 감사합니다!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8FS-nA-KhD">
-                                <rect key="frame" x="17" y="536.66666666666663" width="380" height="23"/>
+                                <rect key="frame" x="17" y="361.66666666666669" width="380" height="23"/>
                                 <fontDescription key="fontDescription" name="BMHANNA11yrsoldOTF" family="BM HANNA 11yrs old OTF" pointSize="19"/>
-                                <color key="textColor" systemColor="systemBlueColor"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HX9-tJ-yjg">
-                                <rect key="frame" x="180.66666666666666" y="683" width="53" height="30"/>
-                                <state key="normal" title="NEXT &gt;"/>
+                                <rect key="frame" x="50" y="565.66666666666663" width="314" height="38"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                                <state key="normal" title="NEXT &gt;">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="btnNextPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kjA-HF-oFJ"/>
                                 </connections>
@@ -49,11 +54,13 @@
                             <constraint firstItem="8FS-nA-KhD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2Eg-B3-lV6"/>
                             <constraint firstItem="HX9-tJ-yjg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="616-5u-O0U"/>
                             <constraint firstItem="BEs-TR-l6Y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Ot-y0-DGw"/>
-                            <constraint firstItem="BEs-TR-l6Y" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="150" id="8aA-QG-YY7"/>
-                            <constraint firstItem="8FS-nA-KhD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="100" id="IjM-oi-RMQ"/>
+                            <constraint firstItem="8FS-nA-KhD" firstAttribute="top" secondItem="RK7-Sp-iRK" secondAttribute="bottom" constant="50" id="DPw-KK-bJA"/>
                             <constraint firstItem="RK7-Sp-iRK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-150" id="QNx-Yc-TPe"/>
                             <constraint firstItem="RK7-Sp-iRK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a47-XL-dom"/>
-                            <constraint firstItem="HX9-tJ-yjg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="250" id="qz4-Xs-VyJ"/>
+                            <constraint firstItem="BEs-TR-l6Y" firstAttribute="top" secondItem="8FS-nA-KhD" secondAttribute="bottom" constant="10" id="aJR-QT-UN3"/>
+                            <constraint firstItem="HX9-tJ-yjg" firstAttribute="top" secondItem="BEs-TR-l6Y" secondAttribute="bottom" constant="150" id="bAY-Iz-cRz"/>
+                            <constraint firstItem="HX9-tJ-yjg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="oJT-lV-YpH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HX9-tJ-yjg" secondAttribute="trailing" constant="50" id="vnW-kk-YKh"/>
                         </constraints>
                     </view>
                     <connections>
@@ -66,7 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4541" y="-1187"/>
+            <point key="canvasLocation" x="-4542.0289855072469" y="-1187.2767857142856"/>
         </scene>
         <!--Register BaiscVC-->
         <scene sceneID="8Qr-2w-SHg">
@@ -693,6 +700,12 @@
         <image name="radio_man.png" width="48" height="48"/>
         <image name="radio_woman.png" width="48" height="48"/>
         <image name="woman.png" width="22.811882019042969" height="22.811882019042969"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
