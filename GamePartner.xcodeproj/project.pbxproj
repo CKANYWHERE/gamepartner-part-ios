@@ -20,7 +20,6 @@
 		FD4A3E07252DAAD6008C3E45 /* MainStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5C431F24ED6D8E000C2FE1 /* MainStoryBoard.storyboard */; };
 		FD5C431D24ED4D31000C2FE1 /* RegisterBasicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5C431C24ED4D31000C2FE1 /* RegisterBasicVC.swift */; };
 		FD5C432224ED6DC5000C2FE1 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5C432124ED6DC5000C2FE1 /* MainVC.swift */; };
-		FD5E1AAA2543ECFD002B142B /* FriendList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5E1AA92543ECFD002B142B /* FriendList.swift */; };
 		FD79FB0524FDEDB10073B16D /* RegisterAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD79FB0424FDEDB10073B16D /* RegisterAPIService.swift */; };
 		FD8F3B6F24F0D9D40080EE2E /* man.png in Resources */ = {isa = PBXBuildFile; fileRef = FD8F3B6D24F0D9D30080EE2E /* man.png */; };
 		FD8F3B7024F0D9D40080EE2E /* woman.png in Resources */ = {isa = PBXBuildFile; fileRef = FD8F3B6E24F0D9D40080EE2E /* woman.png */; };
@@ -101,7 +100,6 @@
 		FD5C431C24ED4D31000C2FE1 /* RegisterBasicVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBasicVC.swift; sourceTree = "<group>"; };
 		FD5C431F24ED6D8E000C2FE1 /* MainStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainStoryBoard.storyboard; sourceTree = "<group>"; };
 		FD5C432124ED6DC5000C2FE1 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
-		FD5E1AA92543ECFD002B142B /* FriendList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendList.swift; sourceTree = "<group>"; };
 		FD79FB0424FDEDB10073B16D /* RegisterAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAPIService.swift; sourceTree = "<group>"; };
 		FD8F3B6D24F0D9D30080EE2E /* man.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = man.png; sourceTree = "<group>"; };
 		FD8F3B6E24F0D9D40080EE2E /* woman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = woman.png; sourceTree = "<group>"; };
@@ -221,14 +219,6 @@
 			path = MainView;
 			sourceTree = "<group>";
 		};
-		FD5E1AA82543EA3E002B142B /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-				FD5E1AA92543ECFD002B142B /* FriendList.swift */,
-			);
-			path = Repository;
-			sourceTree = "<group>";
-		};
 		FD79FB0324FDEB5C0073B16D /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,7 +274,6 @@
 		FDC4E84524E2C35F00392432 /* GamePartner */ = {
 			isa = PBXGroup;
 			children = (
-				FD5E1AA82543EA3E002B142B /* Repository */,
 				FDEE40B9251CDBE00069A941 /* Util */,
 				FD79FB0324FDEB5C0073B16D /* Service */,
 				FD8F3B6824F0179C0080EE2E /* ImageAssets */,
@@ -631,7 +620,6 @@
 				FDC4E84924E2C35F00392432 /* SceneDelegate.swift in Sources */,
 				FDD1460B2524D3BE00FB388A /* FilterWord.swift in Sources */,
 				FD3DF50A24F10BD200EF8307 /* RegisterBirthVC.swift in Sources */,
-				FD5E1AAA2543ECFD002B142B /* FriendList.swift in Sources */,
 				FDF92C2F24F3F893005EE293 /* RegisterGameVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

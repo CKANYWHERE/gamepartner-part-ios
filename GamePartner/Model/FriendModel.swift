@@ -18,7 +18,7 @@ struct FriendModel {
         return UIImage(named: "luffy.jpg")
     }
     var imageSex:UIImage?{
-        if self.sex == "man"{
+        if self.sex == "M"{
             return UIImage(named: "man.png")
         }else{
             return UIImage(named: "woman.png")

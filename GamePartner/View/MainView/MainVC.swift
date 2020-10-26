@@ -22,7 +22,7 @@ class MainVC: UIViewController{
     private lazy var dataSource = RxTableViewSectionedReloadDataSource<FriendInfoSection>(
         configureCell: { (_, tv, indexPath, element) in
             let cell = tv.dequeueReusableCell(withIdentifier: "cell") as! MainTableCell
-            let imgUrl = URL(string: "https://gamepartner.storage.googleapis.com/" + element.imgUrl!)
+            let imgUrl = URL(string: "https://storage.googleapis.com/gamepartner/" + element.imgUrl!)
             
             cell.imgProfile.image = element.image
             cell.imgProfile.layer.cornerRadius = cell.imgProfile.frame.height/2
@@ -34,10 +34,11 @@ class MainVC: UIViewController{
             
             cell.lblNickName.text = element.nickName
             
+            //print(imgUrl)
+            
             if element.sex == "W"{
                 cell.lblNickName.textColor = .systemPink
             }
-            
             
             cell.lblIntroduce.text = element.introduce
             cell.lblGame.text = element.favoritGame
@@ -49,29 +50,17 @@ class MainVC: UIViewController{
         }
     )
     
-   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //tableView.rowHeight = 70
-        tableView.separatorInset.left = 0
-        //self.definesPresentationContext = true
-//        
-//        let firstLoad = rx.viewWillAppear
-//            .take(1)
-//            .map { _ in () }
-//
-//        Observable
-//            .bind(to: viewModel.fetchIndexApi)
-//            .disposed(by: disposeBag)
-//        Observable.just(Void)
-//            .bind(to: viewModel.fetchIndexApi)
-//
+        //tableView.separatorInset.left = 0
+        tableView.separatorColor = .clear
+        //self.definesPresentationContext = true\
         
         Observable<Void>.just(())
             .bind(to: viewModel.fetchIndexApi)
             .disposed(by: disposeBag)
-        
         
         viewModel.fetchFriendList
             .bind(to: tableView.rx.items(dataSource:self.dataSource))
