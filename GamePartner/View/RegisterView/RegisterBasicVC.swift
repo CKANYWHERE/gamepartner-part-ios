@@ -8,21 +8,29 @@
 import UIKit
 import PromiseKit
 import SwiftyJSON
+import RxSwift
+import RxCocoa
 
 class RegisterBaiscVC: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var btnNext: UIButton!
-    @IBOutlet weak var lblGuide: UILabel!
+//    @IBOutlet weak var lblGuide: UILabel!
     @IBOutlet weak var txtCheckId: UILabel!
     @IBOutlet weak var txtId: UITextField!
     @IBOutlet weak var txtPw: UITextField!
     
+    @IBOutlet weak var txtIDPWUnderLength: UILabel!
+    @IBOutlet weak var txtIDPWIllegalChar: UILabel!
+    
     private var isDuplicated:Bool!
     
     let viewModel = RegisterIDPasswordViewModel()
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
-       
+        view.largeContentTitle = "회원가입"
+
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         initControl()
@@ -30,9 +38,27 @@ class RegisterBaiscVC: UIViewController,UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        animate()
-      
+        validLogin()
     }
+    
+    func validLogin(){
+        txtId.rx.text.asObservable()
+            .subscribe(onNext: {id in
+                // 자리수 판별
+                if id?.count ?? 0 >= 9 {
+//                    self.txtIDPWUnderLength.textColor = .green
+                } else {
+//                    self.txtIDPWUnderLength.textColor = .red
+                }
+
+                // 특수문자 판별
+                
+            }, onError: nil, onCompleted: nil, onDisposed: nil)
+            .disposed(by:disposeBag)
+    }
+    
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dest = segue.destination
@@ -52,18 +78,18 @@ class RegisterBaiscVC: UIViewController,UITextFieldDelegate {
     func parseResponse(response:[String:Any]) -> Promise<[String:Any]>{
         return Promise{ seal in
             if(response["message"] as! String == "N"){
-                self.txtCheckId.isHidden = false
+//                self.txtCheckId.isHidden = false
                 seal.fulfill(["duplicated":true])
             }
             if(response["message"] as! String == "Y"){
-                self.txtCheckId.isHidden = true
+//                self.txtCheckId.isHidden = true
                 seal.fulfill(["duplicated":false])
             }
         }
     }
     
     @IBAction func btnNextPressed(_ sender: Any) {
-        //var isDuplicated = false
+        
         btnNext.isEnabled = false
         RegisterAPIService.shared.checkUserId(userId: txtId.text)
         .then{ response -> Promise<[String : Any]> in
@@ -83,13 +109,13 @@ class RegisterBaiscVC: UIViewController,UITextFieldDelegate {
             }else{
                 self.performSegue(withIdentifier: "moveToSexRegister", sender: nil)
             }
-            
+
             self.btnNext.isEnabled = true
         }
         .catch{ error in
             self.alert("오류 발생", message: "회원 가입중 오류가 발생 했습니다. 네트워크를 확인 해주세요 :(")
         }
-        
+
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -123,15 +149,14 @@ extension RegisterBaiscVC{
     private func animate(){
         UIView.animateKeyframes(withDuration: 3.0, delay: 0.0, options: [], animations: {
             UIView.addKeyframe(withRelativeStartTime: 0.3, relativeDuration:0.3, animations: {
-                self.btnNext.alpha = 1.0
+//                self.btnNext.alpha = 1.0
             })
         },completion: nil)
     }
     
     private func initControl(){
-        self.lblGuide.font = UIFont.boldSystemFont(ofSize: 30)
-//        self.txtId.layer.cornerRadius = 50
-//        self.txtPw.layer.cornerRadius = 50
+        self.txtId.layer.cornerRadius = 50
+        self.txtPw.layer.cornerRadius = 50
         self.btnNext.alpha = 0.0
         self.btnNext.layer.cornerRadius = 8
         self.txtCheckId.isHidden = true

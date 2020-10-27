@@ -34,6 +34,7 @@ class ViewController: UIViewController {
     private func initLabel(){
         self.WelcomeLabel.font = UIFont.boldSystemFont(ofSize: 40)
         self.WelcomeLabel.adjustsFontSizeToFitWidth = true
+        self.WelcomeLabel.textColor = DefaultStyle.Colors.tint
         
         self.infoLabel1.font = UIFont.systemFont(ofSize: 14)
         self.infoLabel1.adjustsFontSizeToFitWidth = true
@@ -44,7 +45,8 @@ class ViewController: UIViewController {
         self.infoLabel2.alpha = 0.0
         
         self.btnNext.alpha = 0.0
-        
+        self.btnNext.backgroundColor = DefaultStyle.Colors.tint
+        self.btnNext.tintColor = DefaultStyle.Colors.text
         self.btnNext.layer.cornerRadius = 4
     }
     
