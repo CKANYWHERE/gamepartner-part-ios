@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import PromiseKit
 import RxSwift
 import RxCocoa
 
@@ -75,7 +74,8 @@ class RegisterViewController: UIViewController {
         user.id = id
         user.pw = pw
         
-        let result = regitser(user: user)
+        let result = viewModel.register()
+        dump(result)
         if result.isEmpty {
             self.performSegue(withIdentifier: "moveToSexRegister", sender: nil)
         } else {
@@ -83,7 +83,7 @@ class RegisterViewController: UIViewController {
             self.labelErrorMessage.text = result
         }
     }
-
+    
     
     func validRegisterInfo(){
         textFieldID.rx.text.asObservable()
@@ -107,7 +107,7 @@ class RegisterViewController: UIViewController {
                 } else if pw.count >= 9 {
                     self.textFieldPW.backgroundColor = .none
                     self.textFieldPWValid.isHidden = false
-                                    
+                    
                 } else {
                     self.textFieldPW.backgroundColor = .systemRed
                     self.textFieldPWValid.isHidden = true
@@ -131,93 +131,4 @@ class RegisterViewController: UIViewController {
             }, onError: nil, onCompleted: nil, onDisposed: nil)
             .disposed(by: disposeBag)
     }
-    
-    
-    
 }
-
-extension RegisterViewController {
-    
-    func regitser(user: UserModel) -> String{
-        var message:String = "!"
-        RegisterAPIService.shared.checkUserId(userId: user.id)
-            .then{ response -> Promise<[String : Any]> in
-                //return
-                self.parseResponse(response: response)
-            }
-            .done{ result in
-                if user.id.isEmpty || user.pw.isEmpty{
-                    message = "아이디와 비밀번호를 입력해주세요"
-
-                }else if user.id.count < 8 || user.pw.count < 8{
-                    message = "아이디와 비밀번호를 최소 9자리 이상으로 맞춰주세요"
-                    
-                }else if result["duplicated"] as! Bool == true{
-                     message = "이미 존재하는 아이디입니다"
-
-                }else{
-                    message = ""
-                    
-                }
-                
-                dump(message)
-            }
-            .catch{ error in
-                message = "회원 가입중 오류가 발생 했습니다. 네트워크를 확인 해주세요 :("
-            }
-        
-        dump(message)
-        
-        return message
-    }
-    
-    private func parseResponse(response:[String:Any]) -> Promise<[String:Any]>{
-        return Promise{ seal in
-            if(response["message"] as! String == "N"){
-                seal.fulfill(["duplicated":true])
-            }
-            if(response["message"] as! String == "Y"){
-                seal.fulfill(["duplicated":false])
-            }
-        }
-        
-    }
-    
-    private func alert(_ title: String, message: String){
-        let alert = UIAlertController(title: title, message: message
-                                      ,preferredStyle:UIAlertController.Style.alert)
-        let action = UIAlertAction(title:"OK", style: UIAlertAction.Style.default,handler: nil)
-        
-        alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
-        
-    }
-    
-    
-    
-}
-
-class RegisterViewModel {
-    var newUser:UserModel = UserModel()
-    var errorMessage:String = ""
-    
-    func register(){
-    }
-    
-    private func parseResponse(response:[String:Any]) -> Promise<[String:Any]>{
-        return Promise{ seal in
-            if(response["message"] as! String == "N"){
-                //                self.txtCheckId.isHidden = false
-                seal.fulfill(["duplicated":true])
-            }
-            if(response["message"] as! String == "Y"){
-                //                self.txtCheckId.isHidden = true
-                seal.fulfill(["duplicated":false])
-            }
-        }
-        
-    }
-}
-
-
-
