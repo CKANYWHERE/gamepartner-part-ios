@@ -20,12 +20,8 @@ class RegisterGameVC : UIViewController,UIPickerViewDelegate,UIPickerViewDataSou
     let PICKER_VIEW_COLUMN = 1
     var gameList = ["리그오브레전드","오버워치","배틀그라운드","피파온라인","메이플스토리","던전앤파이터","하스스톤","카트라이더","콜오브듀티","기타"]
     
-    var paramId:String!
-    var paramPw:String!
-    var paramSex:String!
-    var paramAge:Int!
-    var paramBirthDay:String!
     var favoritGame:String = "리그오브레전드"
+    var user: UserModel!
     
     var apiService : RegisterAPIService!
 
@@ -49,12 +45,8 @@ class RegisterGameVC : UIViewController,UIPickerViewDelegate,UIPickerViewDataSou
             return
         }
 
-        rvc.paramId = paramId
-        rvc.paramPw = paramPw
-        rvc.paramSex = paramSex
-        rvc.paramAge = paramAge
-        rvc.paramBirthDay = paramBirthDay
-        rvc.paramGame = favoritGame
+        user.favoritGame = favoritGame
+        rvc.user = user
     }
     
     private func initControl(){
