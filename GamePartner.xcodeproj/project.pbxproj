@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6CC888021FA0DEAB26E08ACD /* Pods_GamePartner_GamePartnerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2097B673F66240741A6D111A /* Pods_GamePartner_GamePartnerUITests.framework */; };
+		7321E86525494E5F005863C5 /* DefaultStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7321E86425494E5F005863C5 /* DefaultStyle.swift */; };
 		90BE1DC974467D29FAEEC47A /* Pods_GamePartnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13948EF6251CDCEBABF7A334 /* Pods_GamePartnerTests.framework */; };
 		FD20BB8B2535DCA500B92AB8 /* FriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD20BB8A2535DCA500B92AB8 /* FriendModel.swift */; };
 		FD20BB8D2535EA3400B92AB8 /* FriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD20BB8C2535EA3400B92AB8 /* FriendViewModel.swift */; };
@@ -86,6 +87,7 @@
 		30B5D33568CFDDD55CD070C2 /* Pods_GamePartner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GamePartner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A63BAB0FCFC5F3EB830F3A1 /* Pods-GamePartnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamePartnerTests.debug.xcconfig"; path = "Target Support Files/Pods-GamePartnerTests/Pods-GamePartnerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6E5F5676A4FFD890FDAF48FF /* Pods-GamePartner-GamePartnerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamePartner-GamePartnerUITests.debug.xcconfig"; path = "Target Support Files/Pods-GamePartner-GamePartnerUITests/Pods-GamePartner-GamePartnerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7321E86425494E5F005863C5 /* DefaultStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultStyle.swift; sourceTree = "<group>"; };
 		867AC30093D85EE94734C19C /* Pods-GamePartner-GamePartnerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamePartner-GamePartnerUITests.release.xcconfig"; path = "Target Support Files/Pods-GamePartner-GamePartnerUITests/Pods-GamePartner-GamePartnerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E550CB09867F7AC8F608973F /* Pods-GamePartner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamePartner.debug.xcconfig"; path = "Target Support Files/Pods-GamePartner/Pods-GamePartner.debug.xcconfig"; sourceTree = "<group>"; };
 		F82A7C72CF796A20260C9311 /* Pods-GamePartnerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamePartnerTests.release.xcconfig"; path = "Target Support Files/Pods-GamePartnerTests/Pods-GamePartnerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -183,6 +185,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7321E86325494E5F005863C5 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				7321E86425494E5F005863C5 /* DefaultStyle.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
 		FD20BB902535FC7A00B92AB8 /* TableCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +284,7 @@
 		FDC4E84524E2C35F00392432 /* GamePartner */ = {
 			isa = PBXGroup;
 			children = (
+				7321E86325494E5F005863C5 /* Style */,
 				FDEE40B9251CDBE00069A941 /* Util */,
 				FD79FB0324FDEB5C0073B16D /* Service */,
 				FD8F3B6824F0179C0080EE2E /* ImageAssets */,
@@ -613,6 +624,7 @@
 				FDEE40BB251CDBFB0069A941 /* Util.swift in Sources */,
 				FD20BB8D2535EA3400B92AB8 /* FriendViewModel.swift in Sources */,
 				FD3DF50824F0F31700EF8307 /* RegisterSexVC.swift in Sources */,
+				7321E86525494E5F005863C5 /* DefaultStyle.swift in Sources */,
 				FDF92C3224F65429005EE293 /* String.swift in Sources */,
 				FDB4D90224EFF7080009776D /* UserModel.swift in Sources */,
 				FD3DF50E24F11DA900EF8307 /* RegisterDetailVC.swift in Sources */,
