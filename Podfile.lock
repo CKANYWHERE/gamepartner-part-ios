@@ -100,6 +100,9 @@ PODS:
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
+  - RxViewController (1.0.0):
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
@@ -112,6 +115,7 @@ DEPENDENCIES:
   - RxCocoa
   - RxDataSources
   - RxSwift
+  - RxViewController
   - SwiftyJSON
 
 SPEC REPOS:
@@ -138,6 +142,7 @@ SPEC REPOS:
     - RxDataSources
     - RxRelay
     - RxSwift
+    - RxViewController
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -163,8 +168,9 @@ SPEC CHECKSUMS:
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  RxViewController: 7330a46e5c31cd680db169da4c9fc8676e975a81
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: f3ef70bd10cb4f0a72d6e3c4dd7f8741907cff91
+PODFILE CHECKSUM: e9e5a633b6efb85419dc8ccd85d8b0fb10083e57
 
 COCOAPODS: 1.9.3

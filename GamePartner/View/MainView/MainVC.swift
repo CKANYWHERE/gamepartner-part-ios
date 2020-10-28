@@ -9,9 +9,10 @@ import UIKit
 import RxCocoa
 import RxSwift
 import RxDataSources
+import RxViewController
 import Kingfisher
 
-class MainVC: UIViewController{
+class MainVC: UIViewController, UIScrollViewDelegate{
     
     let viewModel = FriendViewModel()
     let disposeBag = DisposeBag()
@@ -53,12 +54,20 @@ class MainVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //tableView.rowHeight = 70
-        //tableView.separatorInset.left = 0
         tableView.separatorColor = .clear
-        //self.definesPresentationContext = true\
+        tableView.refreshControl = UIRefreshControl()
+
+        let firstLoad = rx.viewWillAppear
+            .take(1)
+            .map { _ in () }
         
-        Observable<Void>.just(())
+        let reload = tableView.refreshControl?.rx
+            .controlEvent(.valueChanged)
+            .map { _ in () } ?? Observable.just(())
+            .do(onNext: { _ in self.tableView.refreshControl?.endRefreshing()})
+
+    
+        Observable.merge([firstLoad, reload])
             .bind(to: viewModel.fetchIndexApi)
             .disposed(by: disposeBag)
         
