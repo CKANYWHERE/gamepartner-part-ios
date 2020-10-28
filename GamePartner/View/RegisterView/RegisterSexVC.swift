@@ -15,9 +15,8 @@ class RegisterSexVC: UIViewController{
     @IBOutlet weak var btnMan: UIButton!
     @IBOutlet weak var lblSub: UILabel!
     
-    var paramId:String!
-    var paramPw:String!
-    
+    var user: UserModel!
+        
     var imgWoman: UIImage?
     var imgMan: UIImage?
     var imgWomanChecked: UIImage?
@@ -43,9 +42,8 @@ class RegisterSexVC: UIViewController{
             return
         }
         
-        rvc.paramId = paramId
-        rvc.paramPw = paramPw
-        rvc.paramSex = sexType
+        self.user.sex = sexType
+        rvc.user = user
     }
     
     @IBAction func btnNextPressed(_ sender: Any) {

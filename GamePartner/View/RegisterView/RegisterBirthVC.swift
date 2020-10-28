@@ -13,10 +13,7 @@ class RegisterBirthVC : UIViewController{
     @IBOutlet weak var btnNext: UIButton!
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    var paramId:String!
-    var paramPw:String!
-    var paramSex:String!
-    
+    var user: UserModel!
     var age:Int!
     var birthDay:String!
     
@@ -51,12 +48,10 @@ class RegisterBirthVC : UIViewController{
         let birthYear: Int? = Int(formatYear.string(from: datePicker.date))
         let currentYear: Int? = Int(formatYear.string(from: Date()))
         let age = currentYear! - birthYear! + 1
+        self.user.age = age
+        self.user.birthDay = birthDay
+        rvc.user = user
 
-        rvc.paramId = paramId
-        rvc.paramPw = paramPw
-        rvc.paramSex = paramSex
-        rvc.paramAge = age
-        rvc.paramBirthDay = birthDay
     }
     
     @IBAction func btnNextPressed(_ sender: Any) {
