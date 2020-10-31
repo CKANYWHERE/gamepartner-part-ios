@@ -190,10 +190,10 @@
             filePath = "GamePartner/ViewModel/FriendViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "init()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -206,13 +206,13 @@
             filePath = "GamePartner/ViewModel/FriendViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "init()"
+            landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "7E5C824C-4242-4BFC-952A-BFBA7DCD9175 - b55af45fc314776f"
+                  uuid = "7E5C824C-4242-4BFC-952A-BFBA7DCD9175 - b55af45fc314772d"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -222,12 +222,12 @@
                   urlString = "file:///Users/minchang-gyeong/Desktop/SwiftProject/gamepartner-part-ios/GamePartner/ViewModel/FriendViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
                   offsetFromSymbolStart = "647">
                </Location>
                <Location
-                  uuid = "7E5C824C-4242-4BFC-952A-BFBA7DCD9175 - 6760cc7247c8d482"
+                  uuid = "7E5C824C-4242-4BFC-952A-BFBA7DCD9175 - 6760cc7247c8d4c0"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -237,8 +237,8 @@
                   urlString = "file:///Users/minchang-gyeong/Desktop/SwiftProject/gamepartner-part-ios/GamePartner/ViewModel/FriendViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
                   offsetFromSymbolStart = "49">
                </Location>
             </Locations>
@@ -248,7 +248,23 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "92048F7B-B6C6-4DC7-BA99-BDC2504B09D9"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GamePartner/View/MainView/MainVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2025C95D-36CF-4FC3-9ACF-D3C5B94A2CFD"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GamePartner/View/MainView/MainVC.swift"
@@ -263,31 +279,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2025C95D-36CF-4FC3-9ACF-D3C5B94A2CFD"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GamePartner/View/MainView/MainVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "A8050D1C-A51D-491A-B971-63D272E1B430"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GamePartner/View/MainView/MainVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -302,10 +302,170 @@
             filePath = "GamePartner/ViewModel/FriendViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "init()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "53FD2F2B-3762-44DF-8E14-45587A989B1A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GamePartner/View/MainView/MainVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A013B899-639E-46BD-A0AD-AB08D99704F5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GamePartner/View/MainView/MainVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F2977323-0CFE-4A36-828C-8802CF1236F9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GamePartner/View/MainView/MainVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F2977323-0CFE-4A36-828C-8802CF1236F9 - aac1cafb50816bb9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GamePartner.MainVC.viewDidLoad() -&gt; ()"
+                  moduleName = "GamePartner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/minchang-gyeong/Desktop/SwiftProject/gamepartner-part-ios/GamePartner/View/MainView/MainVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "1568">
+               </Location>
+               <Location
+                  uuid = "F2977323-0CFE-4A36-828C-8802CF1236F9 - 3e7a01383cbf786d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in GamePartner.MainVC.viewDidLoad() -&gt; ()"
+                  moduleName = "GamePartner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/minchang-gyeong/Desktop/SwiftProject/gamepartner-part-ios/GamePartner/View/MainView/MainVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "46">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "13FC5EF5-D633-4260-9625-DE1B5CEB057D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GamePartner/View/MainView/MainVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7D53528B-142A-45E1-A307-A2FF8BD0076D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GamePartner/Service/FriendAPIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "getIndexData(userId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7FAB184A-DCD5-4C1E-8489-6AA4BF43E328"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GamePartner/Service/FriendAPIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "getIndexData(userId:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7FAB184A-DCD5-4C1E-8489-6AA4BF43E328 - 9e97e1dc441da317"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GamePartner.FriendAPIService.getIndexData(userId: Swift.Optional&lt;Swift.String&gt;) -&gt; RxSwift.Observable&lt;Swift.Array&lt;GamePartner.FriendInfoSection&gt;&gt;"
+                  moduleName = "GamePartner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/minchang-gyeong/Desktop/SwiftProject/gamepartner-part-ios/GamePartner/Service/FriendAPIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "37">
+               </Location>
+               <Location
+                  uuid = "7FAB184A-DCD5-4C1E-8489-6AA4BF43E328 - ec8b3a5d1b2529f1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RxSwift.AnyObserver&lt;Swift.Array&lt;GamePartner.FriendInfoSection&gt;&gt;) -&gt; RxSwift.Disposable in GamePartner.FriendAPIService.getIndexData(userId: Swift.Optional&lt;Swift.String&gt;) -&gt; RxSwift.Observable&lt;Swift.Array&lt;GamePartner.FriendInfoSection&gt;&gt;"
+                  moduleName = "GamePartner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/minchang-gyeong/Desktop/SwiftProject/gamepartner-part-ios/GamePartner/Service/FriendAPIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "199">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

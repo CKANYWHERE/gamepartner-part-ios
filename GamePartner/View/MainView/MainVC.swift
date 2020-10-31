@@ -18,6 +18,7 @@ class MainVC: UIViewController, UIScrollViewDelegate{
     let disposeBag = DisposeBag()
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
 
     private lazy var dataSource = RxTableViewSectionedReloadDataSource<FriendInfoSection>(
@@ -55,26 +56,42 @@ class MainVC: UIViewController, UIScrollViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.separatorColor = .clear
-        tableView.refreshControl = UIRefreshControl()
-
-        let firstLoad = rx.viewWillAppear
-            .take(1)
-            .map { _ in () }
+//        tableView.refreshControl = UIRefreshControl()
         
-        let reload = tableView.refreshControl?.rx
-            .controlEvent(.valueChanged)
-            .map { _ in () } ?? Observable.just(())
-            .do(onNext: { _ in self.tableView.refreshControl?.endRefreshing()})
-
-    
-        Observable.merge([firstLoad, reload])
+//
+//        let firstLoad = rx.viewWillAppear
+//            .take(1)
+//            .map { _ in () }
+//
+//        let reload = tableView.refreshControl?.rx
+//            .controlEvent(.valueChanged)
+//            .map { _ in () } ?? BehaviorSubject.just(())
+//            //.do(onNext: { _ in self.tableView.refreshControl?.endRefreshing()})
+//
+//
+//        Observable.merge([firstLoad, reload])
+//            .bind(to: viewModel.fetchIndexApi)
+//            .disposed(by: disposeBag)
+//
+        Observable.just(())
             .bind(to: viewModel.fetchIndexApi)
             .disposed(by: disposeBag)
+
+//        tableView.refreshControl?.rx.controlEvent(.valueChanged)
+//            .bind(onNext: { [weak self] in
+//                _ = self?.viewModel.fetchFriendList
+//            })
+//            .disposed(by: disposeBag)
+
         
         viewModel.fetchFriendList
             .bind(to: tableView.rx.items(dataSource:self.dataSource))
             .disposed(by: disposeBag)
-            
+        
+        viewModel.activated
+            .map({ $0 })
+            .bind(to: spinner.rx.isHidden)
+            .disposed(by: disposeBag)
     }
     
 }

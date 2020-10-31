@@ -22,6 +22,11 @@
                                 <rect key="frame" x="0.0" y="29" width="414" height="818"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" id="ocB-2c-cqs">
+                                    <rect key="frame" x="0.0" y="136" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="color" systemColor="linkColor"/>
+                                </activityIndicatorView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="80" id="j4i-lu-FjR" customClass="MainTableCell" customModule="GamePartner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="80"/>
@@ -95,6 +100,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="홈" id="xn9-Do-pZQ"/>
                     <connections>
+                        <outlet property="spinner" destination="ocB-2c-cqs" id="bcF-nK-xgw"/>
                         <outlet property="tableView" destination="rN3-zu-nES" id="B7C-lT-mFb"/>
                     </connections>
                 </viewController>
@@ -248,6 +254,9 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
