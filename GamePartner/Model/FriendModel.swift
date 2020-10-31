@@ -14,9 +14,9 @@ struct FriendModel {
     let introduce:String?
     let favoritGame:String?
     
-    var image:UIImage?{
-        return UIImage(named: "luffy.jpg")
-    }
+//    var image:UIImage?{
+//        return UIImage(named: "luffy.jpg")
+//    }
     var imageSex:UIImage?{
         if self.sex == "M"{
             return UIImage(named: "man.png")

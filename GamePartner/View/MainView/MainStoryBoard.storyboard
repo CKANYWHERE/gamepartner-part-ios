@@ -10,6 +10,56 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Modal Image-->
+        <scene sceneID="OON-Lx-l1E">
+            <objects>
+                <viewController storyboardIdentifier="ModalImage" id="YOK-XS-MUe" customClass="ModalImage" customModule="GamePartner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S71-lO-uh7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xfG-HB-apV">
+                                <rect key="frame" x="67" y="252" width="280" height="392"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAH-xe-ZO7">
+                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="Ewv-1L-m5R"/>
+                                            <constraint firstAttribute="width" constant="20" id="N51-v6-Kud"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="x.circle.fill" catalog="system"/>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C4f-vi-ALt">
+                                        <rect key="frame" x="27" y="21" width="226" height="350"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="hAH-xe-ZO7" firstAttribute="top" secondItem="xfG-HB-apV" secondAttribute="top" id="77T-V4-jzl"/>
+                                    <constraint firstAttribute="height" constant="392" id="B13-8f-wyR"/>
+                                    <constraint firstAttribute="width" constant="280" id="ggE-wm-Jcd"/>
+                                    <constraint firstItem="hAH-xe-ZO7" firstAttribute="leading" secondItem="xfG-HB-apV" secondAttribute="leading" id="qU8-gB-see"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pDF-Wj-UJo"/>
+                        <color key="backgroundColor" red="0.81882534900000004" green="0.81882534900000004" blue="0.81882534900000004" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="xfG-HB-apV" firstAttribute="centerX" secondItem="S71-lO-uh7" secondAttribute="centerX" id="M28-FI-4ay"/>
+                            <constraint firstItem="xfG-HB-apV" firstAttribute="centerY" secondItem="S71-lO-uh7" secondAttribute="centerY" id="ZfU-Yj-KIa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnCancle" destination="hAH-xe-ZO7" id="EcW-Lk-rzd"/>
+                        <outlet property="imgView" destination="C4f-vi-ALt" id="fQW-Uh-GWD"/>
+                        <outlet property="subView" destination="xfG-HB-apV" id="cxG-Ct-EQO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MSs-yo-7FC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5959.420289855073" y="1013.8392857142857"/>
+        </scene>
         <!--홈-->
         <scene sceneID="AYL-Jv-895">
             <objects>
@@ -251,6 +301,7 @@
         <image name="man.png" width="22.811882019042969" height="22.811882019042969"/>
         <image name="message.fill" catalog="system" width="128" height="113"/>
         <image name="paperplane.fill" catalog="system" width="128" height="118"/>
+        <image name="x.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

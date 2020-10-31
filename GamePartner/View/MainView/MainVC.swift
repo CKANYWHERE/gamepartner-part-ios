@@ -20,30 +20,27 @@ class MainVC: UIViewController, UIScrollViewDelegate{
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
-
     private lazy var dataSource = RxTableViewSectionedReloadDataSource<FriendInfoSection>(
-        configureCell: { (_, tv, indexPath, element) in
+        configureCell: { [weak self] (_, tv, indexPath, element) in
             let cell = tv.dequeueReusableCell(withIdentifier: "cell") as! MainTableCell
             let imgUrl = URL(string: "https://storage.googleapis.com/gamepartner/" + element.imgUrl!)
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self?.touchToPickPhoto(tapGestureRecognizer:)))
+            cell.imgProfile?.addGestureRecognizer(tapGesture)
+            cell.imgProfile?.isUserInteractionEnabled = true
+            cell.imgProfile?.layer.cornerRadius = (cell.imgProfile?.frame.height)! / 2
+            cell.imgProfile?.layer.masksToBounds = true
+            cell.imgProfile?.kf.setImage(with: imgUrl)
+            cell.imgProfile?.contentMode = .scaleAspectFill
+            cell.imgSex?.image = element.imageSex
             
-            cell.imgProfile.image = element.image
-            cell.imgProfile.layer.cornerRadius = cell.imgProfile.frame.height/2
-            cell.imgProfile.layer.masksToBounds = true
-            cell.imgProfile.kf.setImage(with: imgUrl)
-            cell.imgProfile.contentMode = .scaleAspectFill
-            
-            cell.imgSex.image = element.imageSex
-            
-            cell.lblNickName.text = element.nickName
-            
-            //print(imgUrl)
+            cell.lblNickName?.text = element.nickName
             
             if element.sex == "W"{
-                cell.lblNickName.textColor = .systemPink
+                cell.lblNickName?.textColor = .systemPink
             }
             
-            cell.lblIntroduce.text = element.introduce
-            cell.lblGame.text = element.favoritGame
+            cell.lblIntroduce?.text = element.introduce
+            cell.lblGame?.text = element.favoritGame
             
             return cell
         },
@@ -52,6 +49,13 @@ class MainVC: UIViewController, UIScrollViewDelegate{
         }
     )
     
+    @objc func touchToPickPhoto(tapGestureRecognizer: UITapGestureRecognizer){
+        let view = tapGestureRecognizer.view as! UIImageView
+        let modal = self.storyboard?.instantiateViewController(withIdentifier: "ModalImage") as! ModalImage
+        modal.image = view.image
+        modal.modalPresentationStyle = .overCurrentContext
+        present(modal, animated: false, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,6 +87,7 @@ class MainVC: UIViewController, UIScrollViewDelegate{
 //            })
 //            .disposed(by: disposeBag)
 
+//        tableView.rx.itemSelected
         
         viewModel.fetchFriendList
             .bind(to: tableView.rx.items(dataSource:self.dataSource))
