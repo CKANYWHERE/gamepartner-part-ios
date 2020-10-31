@@ -49,9 +49,10 @@ class RegisterBaiscVC: UIViewController,UITextFieldDelegate {
         guard let rvc = dest as? RegisterSexVC else {
             return
         }
-        
-        rvc.paramId = txtId.text
-        rvc.paramPw = txtPw.text
+        let user = UserModel()
+        user.id = txtId.text!
+        user.pw = txtPw.text!
+        rvc.user = user
     }
  
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

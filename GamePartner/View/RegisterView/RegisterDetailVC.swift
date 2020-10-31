@@ -26,12 +26,7 @@ class RegisterDetailVC : UIViewController,UITextFieldDelegate {
         }
     }
     
-    var paramId:String!
-    var paramPw:String!
-    var paramSex:String!
-    var paramAge:Int!
-    var paramBirthDay:String!
-    var paramGame:String!
+    var user:UserModel!
 
     
     @IBOutlet weak var btnNext: UIButton!
@@ -55,14 +50,9 @@ class RegisterDetailVC : UIViewController,UITextFieldDelegate {
             return
         }
 
-        rvc.paramId = paramId
-        rvc.paramPw = paramPw
-        rvc.paramSex = paramSex
-        rvc.paramAge = paramAge
-        rvc.paramBirthDay = paramBirthDay
-        rvc.paramGame = paramGame
-        rvc.paramNickName = txtNickName.text!
-        rvc.paramIntroduce = txtIntroduce.text!
+        user.nickName = txtNickName.text!
+        user.introduce = txtIntroduce.text!
+        rvc.user = user
     }
     
     

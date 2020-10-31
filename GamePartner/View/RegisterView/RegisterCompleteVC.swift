@@ -15,15 +15,8 @@ class RegisterCompleteVC : UIViewController{
     
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
-    var paramId:String!
-    var paramPw:String!
-    var paramSex:String!
-    var paramAge:Int!
-    var paramBirthDay:String!
-    var paramGame:String!
-    var paramNickName:String!
-    var paramIntroduce:String!
     var paramImage:UIImage!
+    var user: UserModel!
     
     override func viewDidLoad() {
        
@@ -36,9 +29,9 @@ class RegisterCompleteVC : UIViewController{
     private func doRegister(){
         
         firstly{
-            RegisterAPIService.shared.insertImage(image: paramImage, userId: paramId, imageType: "jpeg")
+            RegisterAPIService.shared.insertImage(image: paramImage, userId: user.id, imageType: "jpeg")
         }.done{ response in
-            _ = RegisterAPIService.shared.insertUser(userId: self.paramId, pw: self.paramPw, sex: self.paramSex, age: self.paramAge, birthDay: self.paramBirthDay, favoritGame: self.paramGame, introduce: self.paramIntroduce, nickName: self.paramNickName, imgPath: response)
+            _ = RegisterAPIService.shared.insertUser(userId: self.user.id, pw: self.user.pw, sex: self.user.sex, age: self.user.age, birthDay: self.user.birthDay, favoritGame: self.user.favoritGame, introduce: self.user.introduce, nickName: self.user.nickName, imgPath: response)
         }.done{ response in
             self.insertIntoMemory()
         }.done{ response in
@@ -56,9 +49,6 @@ class RegisterCompleteVC : UIViewController{
     private func insertIntoMemory(){
         
         let realm = try! Realm()
-        let user = UserModel(id:self.paramId,pw:self.paramPw,sex:self.paramSex,age:self.paramAge
-                                 ,birthDay:self.paramBirthDay,favoritGame: self.paramGame
-                             ,introduce: self.paramIntroduce,nickName: self.paramNickName)
         try! realm.write{
             realm.add(user)
         }

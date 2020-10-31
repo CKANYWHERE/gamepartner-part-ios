@@ -21,15 +21,8 @@ class RegisterPitureVC : UIViewController,UINavigationControllerDelegate,UIImage
     var captureImage: UIImage!
     var flagImageSave = false
     
-    var paramId:String!
-    var paramPw:String!
-    var paramSex:String!
-    var paramAge:Int!
-    var paramBirthDay:String!
-    var paramGame:String!
-    var paramNickName:String!
-    var paramIntroduce:String!
-    
+
+    var user: UserModel!
     
     override func viewDidLoad() {
         
@@ -50,7 +43,7 @@ class RegisterPitureVC : UIViewController,UINavigationControllerDelegate,UIImage
         }
         else{
             btnNext.isEnabled = false
-            RegisterAPIService.shared.checkImage(image: imgView.image, userId: paramId, imageType: "jpeg")
+            RegisterAPIService.shared.checkImage(image: imgView.image, userId: user.id, imageType: "jpeg")
                 .done{ (json) -> Void in
                     let swiftyJson = JSON.init(json["result"] as Any)
                     
@@ -83,15 +76,7 @@ class RegisterPitureVC : UIViewController,UINavigationControllerDelegate,UIImage
         guard let rvc = dest as? RegisterCompleteVC else {
             return
         }
-        
-        rvc.paramId = paramId
-        rvc.paramPw = paramPw
-        rvc.paramSex = paramSex
-        rvc.paramAge = paramAge
-        rvc.paramBirthDay = paramBirthDay
-        rvc.paramGame = paramGame
-        rvc.paramNickName = paramNickName
-        rvc.paramIntroduce = paramIntroduce
+        rvc.user = user
         rvc.paramImage = imgView.image
     }
     
