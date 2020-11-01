@@ -29,6 +29,7 @@
 		FD8F3B7824F0E3830080EE2E /* radio_cheked_man.png in Resources */ = {isa = PBXBuildFile; fileRef = FD8F3B7424F0E3830080EE2E /* radio_cheked_man.png */; };
 		FD9D2FD4253ED8EC00435955 /* FriendAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9D2FD3253ED8EC00435955 /* FriendAPIService.swift */; };
 		FDA30B83254D98BA0045D49F /* ModalImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA30B82254D98BA0045D49F /* ModalImage.swift */; };
+		FDA4FE97254EBEFC00C41172 /* DetailFriendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA4FE96254EBEFC00C41172 /* DetailFriendVC.swift */; };
 		FDB4D90224EFF7080009776D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB4D90124EFF7080009776D /* UserModel.swift */; };
 		FDC4E84724E2C35F00392432 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC4E84624E2C35F00392432 /* AppDelegate.swift */; };
 		FDC4E84924E2C35F00392432 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC4E84824E2C35F00392432 /* SceneDelegate.swift */; };
@@ -109,6 +110,7 @@
 		FD8F3B7424F0E3830080EE2E /* radio_cheked_man.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radio_cheked_man.png; sourceTree = "<group>"; };
 		FD9D2FD3253ED8EC00435955 /* FriendAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendAPIService.swift; sourceTree = "<group>"; };
 		FDA30B82254D98BA0045D49F /* ModalImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalImage.swift; sourceTree = "<group>"; };
+		FDA4FE96254EBEFC00C41172 /* DetailFriendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFriendVC.swift; sourceTree = "<group>"; };
 		FDB4D90124EFF7080009776D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		FDC4E84324E2C35F00392432 /* GamePartner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamePartner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDC4E84624E2C35F00392432 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				FDBE689E2535D9660023590C /* Desgin */,
 				FD5C431F24ED6D8E000C2FE1 /* MainStoryBoard.storyboard */,
 				FD5C432124ED6DC5000C2FE1 /* MainVC.swift */,
+				FDA4FE96254EBEFC00C41172 /* DetailFriendVC.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDA4FE97254EBEFC00C41172 /* DetailFriendVC.swift in Sources */,
 				FD20BB942535FCF200B92AB8 /* MainTableCell.swift in Sources */,
 				FD79FB0524FDEDB10073B16D /* RegisterAPIService.swift in Sources */,
 				FD5C431D24ED4D31000C2FE1 /* RegisterBasicVC.swift in Sources */,

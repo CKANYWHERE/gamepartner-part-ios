@@ -20,6 +20,14 @@ class MainVC: UIViewController, UIScrollViewDelegate{
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
+    @objc func touchToPickPhoto(tapGestureRecognizer: UITapGestureRecognizer){
+        let view = tapGestureRecognizer.view as! UIImageView
+        let modal = self.storyboard?.instantiateViewController(withIdentifier: "ModalImage") as! ModalImage
+        modal.image = view.image
+        modal.modalPresentationStyle = .overCurrentContext
+        present(modal, animated: false, completion: nil)
+    }
+    
     private lazy var dataSource = RxTableViewSectionedReloadDataSource<FriendInfoSection>(
         configureCell: { [weak self] (_, tv, indexPath, element) in
             let cell = tv.dequeueReusableCell(withIdentifier: "cell") as! MainTableCell
@@ -49,12 +57,14 @@ class MainVC: UIViewController, UIScrollViewDelegate{
         }
     )
     
-    @objc func touchToPickPhoto(tapGestureRecognizer: UITapGestureRecognizer){
-        let view = tapGestureRecognizer.view as! UIImageView
-        let modal = self.storyboard?.instantiateViewController(withIdentifier: "ModalImage") as! ModalImage
-        modal.image = view.image
-        modal.modalPresentationStyle = .overCurrentContext
-        present(modal, animated: false, completion: nil)
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetailFriend" {
+            let vc = segue.destination as? DetailFriendVC
+            if let index = sender as? FriendModel {
+                vc?.friend = index
+            }
+        }
     }
     
     override func viewDidLoad() {
@@ -97,6 +107,13 @@ class MainVC: UIViewController, UIScrollViewDelegate{
             .map({ $0 })
             .bind(to: spinner.rx.isHidden)
             .disposed(by: disposeBag)
+        
+        tableView.rx.modelSelected(FriendModel.self)
+            .subscribe(onNext:{item in
+                self.performSegue(withIdentifier: "showDetailFriend", sender: item)
+            })
+            .disposed(by: disposeBag)
+        
     }
     
 }
