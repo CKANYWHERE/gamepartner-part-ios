@@ -5,7 +5,6 @@
 //  Created by 민창경 on 2020/08/19.
 //
 
-import UIKit
 import RxCocoa
 import RxSwift
 import RxDataSources
@@ -62,7 +61,7 @@ class MainVC: UIViewController, UIScrollViewDelegate{
         if segue.identifier == "showDetailFriend" {
             let vc = segue.destination as? DetailFriendVC
             if let index = sender as? FriendModel {
-                vc?.friend = index
+                vc?.viewModel = FriendDetialViewModel(model:index)
             }
         }
     }

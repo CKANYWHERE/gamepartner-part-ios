@@ -30,6 +30,7 @@
 		FD9D2FD4253ED8EC00435955 /* FriendAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9D2FD3253ED8EC00435955 /* FriendAPIService.swift */; };
 		FDA30B83254D98BA0045D49F /* ModalImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA30B82254D98BA0045D49F /* ModalImage.swift */; };
 		FDA4FE97254EBEFC00C41172 /* DetailFriendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA4FE96254EBEFC00C41172 /* DetailFriendVC.swift */; };
+		FDA4FE99254FB8D600C41172 /* FriendDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA4FE98254FB8D600C41172 /* FriendDetailViewModel.swift */; };
 		FDB4D90224EFF7080009776D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB4D90124EFF7080009776D /* UserModel.swift */; };
 		FDC4E84724E2C35F00392432 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC4E84624E2C35F00392432 /* AppDelegate.swift */; };
 		FDC4E84924E2C35F00392432 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC4E84824E2C35F00392432 /* SceneDelegate.swift */; };
@@ -111,6 +112,7 @@
 		FD9D2FD3253ED8EC00435955 /* FriendAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendAPIService.swift; sourceTree = "<group>"; };
 		FDA30B82254D98BA0045D49F /* ModalImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalImage.swift; sourceTree = "<group>"; };
 		FDA4FE96254EBEFC00C41172 /* DetailFriendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFriendVC.swift; sourceTree = "<group>"; };
+		FDA4FE98254FB8D600C41172 /* FriendDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailViewModel.swift; sourceTree = "<group>"; };
 		FDB4D90124EFF7080009776D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		FDC4E84324E2C35F00392432 /* GamePartner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamePartner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDC4E84624E2C35F00392432 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				FD20BB8C2535EA3400B92AB8 /* FriendViewModel.swift */,
+				FDA4FE98254FB8D600C41172 /* FriendDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -367,7 +370,7 @@
 				FDC4E84024E2C35F00392432 /* Frameworks */,
 				FDC4E84124E2C35F00392432 /* Resources */,
 				FDF7833325349BD900E072C7 /* Embed Frameworks */,
-				E6878226439D515B83A210A8 /* [CP] Embed Pods Frameworks */,
+				49CFC012164F4870293753B4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -405,7 +408,7 @@
 				FDC4E86024E2C36000392432 /* Sources */,
 				FDC4E86124E2C36000392432 /* Frameworks */,
 				FDC4E86224E2C36000392432 /* Resources */,
-				95BF638BA4B7A46E72A0C030 /* [CP] Embed Pods Frameworks */,
+				B593C8CAE2926D668B76A984 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -495,6 +498,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		49CFC012164F4870293753B4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GamePartner/Pods-GamePartner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GamePartner/Pods-GamePartner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GamePartner/Pods-GamePartner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		51037778AC996D23989EF28D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -561,7 +581,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		95BF638BA4B7A46E72A0C030 /* [CP] Embed Pods Frameworks */ = {
+		B593C8CAE2926D668B76A984 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -578,23 +598,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GamePartner-GamePartnerUITests/Pods-GamePartner-GamePartnerUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E6878226439D515B83A210A8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GamePartner/Pods-GamePartner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GamePartner/Pods-GamePartner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GamePartner/Pods-GamePartner-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -607,6 +610,7 @@
 				FD79FB0524FDEDB10073B16D /* RegisterAPIService.swift in Sources */,
 				FD5C431D24ED4D31000C2FE1 /* RegisterBasicVC.swift in Sources */,
 				FD20BB8F2535EC9B00B92AB8 /* FriendInfoSection.swift in Sources */,
+				FDA4FE99254FB8D600C41172 /* FriendDetailViewModel.swift in Sources */,
 				FD5C432224ED6DC5000C2FE1 /* MainVC.swift in Sources */,
 				FD9D2FD4253ED8EC00435955 /* FriendAPIService.swift in Sources */,
 				FDC4E84B24E2C35F00392432 /* ViewController.swift in Sources */,

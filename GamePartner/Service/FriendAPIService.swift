@@ -28,7 +28,8 @@ class FriendAPIService : NSObject{
                     let parseFriendList =
                         friendList["friendList"].arrayValue.map{
                             FriendModel(name:$0["nickName"].stringValue,sex:$0["sex"].stringValue,introduce: $0["introduce"].stringValue
-                                        ,favoritGame: $0["favoritGame"].stringValue,imgUrl: $0["imgPath"].stringValue, friendType: "friend")
+                                        ,favoritGame: $0["favoritGame"].stringValue,imgUrl: $0["imgPath"].stringValue, friendType: "friend"
+                                        ,age:$0["age"].stringValue + "세")
                             }
                     let sectionFriendList = FriendInfoSection(header: "친구리스트", items: parseFriendList)
                     
@@ -36,7 +37,8 @@ class FriendAPIService : NSObject{
                     let parseWantedToList = wantedToList.arrayValue.map{
                         FriendModel(name:$0["to"]["nickName"].stringValue,sex: $0["to"]["sex"].stringValue,
                                     introduce: $0["to"]["introduce"].stringValue,favoritGame: $0["to"]["favoritGame"].stringValue,
-                                    imgUrl: $0["to"]["imgPath"].stringValue,friendType: "wantedTo")
+                                    imgUrl: $0["to"]["imgPath"].stringValue,friendType: "wantedTo"
+                                    ,age:$0["to"]["age"].stringValue + "세")
                     }
                     let sectionWantedToList = FriendInfoSection(header:"친구 요청한 리스트",items: parseWantedToList)
                     
@@ -44,7 +46,8 @@ class FriendAPIService : NSObject{
                     let parseWantedFromList = wantedFromList.arrayValue.map{
                         FriendModel(name:$0["from"]["nickName"].stringValue,sex: $0["from"]["sex"].stringValue,
                                     introduce:$0["from"]["introduce"].stringValue,favoritGame:$0["from"]["favoritGame"].stringValue,
-                                    imgUrl: $0["from"]["imgPath"].stringValue,friendType: "wantedFrom")
+                                    imgUrl: $0["from"]["imgPath"].stringValue,friendType: "wantedFrom"
+                                    ,age:$0["from"]["age"].stringValue + "세")
                     }
                     let sectionWantedFromList = FriendInfoSection(header: "친구 요청받은 리스트", items: parseWantedFromList)
                     
@@ -52,6 +55,8 @@ class FriendAPIService : NSObject{
 
                     observer.onNext(sectionData)
                     observer.onCompleted()
+                    
+                    //print("call api")
                     
                 case .failure(let error):
                     observer.onError(error)

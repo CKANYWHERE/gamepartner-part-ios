@@ -15,6 +15,8 @@ target 'GamePartner' do
   pod 'Firebase/Auth'
   pod 'Firebase/Analytics'
   pod 'Kingfisher'
+  pod 'RxKingfisher'
+ 
   # Pods for GamePartner
 
   target 'GamePartnerTests' do
