@@ -15,12 +15,15 @@ import RxKingfisher
 
 class DetailFriendVC:UIViewController{
     
+
+
+  
     @IBOutlet weak var lblNickName: UILabel!
-    @IBOutlet weak var imgSexType: UIImageView!
     @IBOutlet weak var imgProfile: UIImageView!
     @IBOutlet weak var lblFavoritGame: UILabel!
-    @IBOutlet weak var lblIntroduce: UILabel!
+    @IBOutlet weak var imgSexType: UIImageView!
     @IBOutlet weak var lblAge: UILabel!
+    @IBOutlet weak var lblIntroduce: UILabel!
     
     let chatButton = UIButton()
     let acceptButton = UIButton()
@@ -29,7 +32,7 @@ class DetailFriendVC:UIViewController{
     
     var viewModel:FriendDetialViewModel!
     let disposeBag = DisposeBag()
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,11 +67,10 @@ class DetailFriendVC:UIViewController{
         friendInfo.friendType
             .subscribe(onNext: { type in
                 if type == "wantedFrom"{
-                    //self.btnChat.setTitle("친구수락", for: .normal)
+                    self.setDecideButton()
                 }
                 else if type == "wantedTo"{
-                    //self.btnChat.isEnabled = false
-                    //self.btnChat.isHidden = true
+                    self.setWaitLabel()
                 }
                 else if type == "friend"{
                     self.setChatButton()
@@ -77,10 +79,47 @@ class DetailFriendVC:UIViewController{
             })
             .disposed(by: disposeBag)
     
+        chatButton.rx.tap
+            .do(onNext: {
+                UIView.animate(withDuration: 0.2, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
+                    self.chatButton.alpha = 0.5
+                }, completion: nil)
+            })
+            .do(onNext: {
+                UIView.animate(withDuration: 0.2, delay: 0.0,options: UIView.AnimationOptions.curveEaseOut, animations: {
+                    self.chatButton.alpha = 1.0
+                }, completion: nil)
+            })
+            .bind(to: friendInfo.btnChatClicked)
+            .disposed(by: disposeBag)
         
-//        btnChat.rx.tap
-//            .bind(to: friendInfo.btnChatClicked)
-//            .disposed(by: disposeBag)
+        acceptButton.rx.tap
+            .do(onNext: {
+                UIView.animate(withDuration: 0.2, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
+                    self.acceptButton.alpha = 0.5
+                }, completion: nil)
+            })
+            .do(onNext: {
+                UIView.animate(withDuration: 0.2, delay: 0.0,options: UIView.AnimationOptions.curveEaseOut, animations: {
+                    self.acceptButton.alpha = 1.0
+                }, completion: nil)
+            })
+            .bind(to: friendInfo.btnAcceptClicked)
+            .disposed(by: disposeBag)
+            
+        declineButton.rx.tap
+            .do(onNext: {
+                UIView.animate(withDuration: 0.2, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
+                    self.declineButton.alpha = 0.5
+                }, completion: nil)
+            })
+            .do(onNext: {
+                UIView.animate(withDuration: 0.2, delay: 0.0,options: UIView.AnimationOptions.curveEaseOut, animations: {
+                    self.declineButton.alpha = 1.0
+                }, completion: nil)
+            })
+            .bind(to: friendInfo.btnDeclineCliked)
+            .disposed(by: disposeBag)
             
     }
     
@@ -88,26 +127,84 @@ class DetailFriendVC:UIViewController{
         chatButton.setTitle("채팅하기", for: .normal)
         chatButton.setTitleColor(.white, for:.normal)
         chatButton.backgroundColor = .systemBlue
+        chatButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        chatButton.layer.cornerRadius = 20
+    
         self.view.addSubview(chatButton)
         
         chatButton.translatesAutoresizingMaskIntoConstraints = false
         chatButton.centerXAnchor.constraint(equalTo:view.centerXAnchor)
                 .isActive = true
-        chatButton.centerYAnchor.constraint(equalTo:view.centerYAnchor)
+        chatButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
                 .isActive = true
-        chatButton.heightAnchor.constraint(equalToConstant: 200)
+        chatButton.heightAnchor.constraint(equalToConstant: 50)
                 .isActive = true
-        chatButton.widthAnchor.constraint(equalToConstant: 200)
+        chatButton.widthAnchor.constraint(equalToConstant: view.bounds.width - 20)
                 .isActive = true
+        
         
     }
     
     func setDecideButton(){
+        acceptButton.setTitle("수락하기", for: .normal)
+        acceptButton.setTitleColor(.white, for:.normal)
+        acceptButton.backgroundColor = .systemBlue
+        acceptButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        acceptButton.layer.cornerRadius = 20
+    
+        self.view.addSubview(acceptButton)
         
+        acceptButton.translatesAutoresizingMaskIntoConstraints = false
+        acceptButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 19)
+                .isActive = true
+        acceptButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
+                .isActive = true
+        acceptButton.heightAnchor.constraint(equalToConstant: 50)
+                .isActive = true
+        acceptButton.widthAnchor.constraint(equalToConstant: (view.bounds.width/2 - 30))
+                .isActive = true
+        
+        declineButton.setTitle("거절하기", for: .normal)
+        declineButton.setTitleColor(.white, for:.normal)
+        declineButton.backgroundColor = .systemPink
+        declineButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        declineButton.layer.cornerRadius = 20
+    
+        self.view.addSubview(declineButton)
+        
+        declineButton.translatesAutoresizingMaskIntoConstraints = false
+        declineButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -19)
+                .isActive = true
+        declineButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
+                .isActive = true
+        declineButton.heightAnchor.constraint(equalToConstant: 50)
+                .isActive = true
+        declineButton.widthAnchor.constraint(equalToConstant: (view.bounds.width/2 - 30))
+                .isActive = true
     }
     
     func setWaitLabel(){
+        waitLabel.text = "친구요청 대기중"
+        waitLabel.textColor = .white
+        waitLabel.backgroundColor = .systemBlue
+        waitLabel.font = UIFont.boldSystemFont(ofSize: 20)
         
+        waitLabel.layer.cornerRadius = 20
+        waitLabel.layer.masksToBounds = true
+        
+        waitLabel.textAlignment = .center
+        
+        self.view.addSubview(waitLabel)
+        
+        waitLabel.translatesAutoresizingMaskIntoConstraints = false
+        waitLabel.centerXAnchor.constraint(equalTo:view.centerXAnchor)
+                .isActive = true
+        waitLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
+                .isActive = true
+        waitLabel.heightAnchor.constraint(equalToConstant: 50)
+                .isActive = true
+        waitLabel.widthAnchor.constraint(equalToConstant: view.bounds.width - 10)
+                .isActive = true
     }
     
 }

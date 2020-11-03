@@ -19,6 +19,8 @@ protocol FriendDetialViewModelType {
     var friendType:Observable<String>{ get }
     
     var btnChatClicked:AnyObserver<Void>{ get }
+    var btnAcceptClicked:AnyObserver<Void>{ get }
+    var btnDeclineCliked:AnyObserver<Void>{ get }
     //var chatResult:Signal<Result<String>> { get }
 }
 
@@ -34,11 +36,15 @@ class FriendDetialViewModel : FriendDetialViewModelType{
     let friendType: Observable<String>
     
     let btnChatClicked: AnyObserver<Void>
+    let btnAcceptClicked: AnyObserver<Void>
+    let btnDeclineCliked: AnyObserver<Void>
 
     init(model Friend:FriendModel){
         //super.init()
         
         let chating = PublishSubject<Void>()
+        let decline = PublishSubject<Void>()
+        let accept = PublishSubject<Void>()
         
         imgUrlTxt = Observable.just(Friend.imgUrl ?? "")
             .observeOn(MainScheduler.instance)
@@ -55,20 +61,21 @@ class FriendDetialViewModel : FriendDetialViewModelType{
         friendType = Observable.just(Friend.friendType ?? "wantedTo")
             .observeOn(MainScheduler.instance)
         
-//        chating.withLatestFrom(friendType)
-//                .map({_ in ()})
-//            .subscribe(onNext: )
+        _ = chating.subscribe(onNext: { _ in
+            print("chat")
+        })
+        
+        _ = decline.subscribe(onNext: { _ in
+            print("decline")
+        })
+        
+        _ = accept.subscribe(onNext: { _ in
+            print("accept")
+        })
         
         btnChatClicked = chating.asObserver()
-        
-        
-        //btnChatClicked =
-            
-//            btnChatClicked.withLatestFrom(friendType)
-//            .do(onNext:{ type in
-//                print(type)
-//            })
-//
+        btnAcceptClicked = accept.asObserver()
+        btnDeclineCliked = decline.asObserver()
     }
     
 
