@@ -79,6 +79,15 @@ class DetailFriendVC:UIViewController{
             })
             .disposed(by: disposeBag)
     
+        
+        friendInfo.moveToMainPage
+            .asObservable()
+            .subscribe(onNext: {_ in
+                //print("move to main")
+                self.navigationController?.popToRootViewController(animated: true)
+            })
+            .disposed(by: disposeBag)
+        
         chatButton.rx.tap
             .do(onNext: {
                 UIView.animate(withDuration: 0.2, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
@@ -120,7 +129,7 @@ class DetailFriendVC:UIViewController{
             })
             .bind(to: friendInfo.btnDeclineCliked)
             .disposed(by: disposeBag)
-            
+        
     }
     
     func setChatButton(){

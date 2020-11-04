@@ -41,11 +41,7 @@ class MainVC: UIViewController, UIScrollViewDelegate{
             cell.imgSex?.image = element.imageSex
             
             cell.lblNickName?.text = element.nickName
-            
-            if element.sex == "W"{
-                cell.lblNickName?.textColor = .systemPink
-            }
-            
+
             cell.lblIntroduce?.text = element.introduce
             cell.lblGame?.text = element.favoritGame
             
@@ -72,9 +68,9 @@ class MainVC: UIViewController, UIScrollViewDelegate{
 //        tableView.refreshControl = UIRefreshControl()
         
 //
-//        let firstLoad = rx.viewWillAppear
-//            .take(1)
-//            .map { _ in () }
+        let firstLoad = rx.viewWillAppear
+            //.take(1)
+            .map { _ in () }
 //
 //        let reload = tableView.refreshControl?.rx
 //            .controlEvent(.valueChanged)
@@ -86,7 +82,7 @@ class MainVC: UIViewController, UIScrollViewDelegate{
 //            .bind(to: viewModel.fetchIndexApi)
 //            .disposed(by: disposeBag)
 //
-        Observable.just(())
+        Observable.merge(firstLoad)
             .bind(to: viewModel.fetchIndexApi)
             .disposed(by: disposeBag)
 
@@ -101,7 +97,7 @@ class MainVC: UIViewController, UIScrollViewDelegate{
         viewModel.fetchFriendList
             .bind(to: tableView.rx.items(dataSource:self.dataSource))
             .disposed(by: disposeBag)
-        
+       
         viewModel.activated
             .map({ $0 })
             .bind(to: spinner.rx.isHidden)

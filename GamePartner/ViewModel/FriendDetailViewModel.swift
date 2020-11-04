@@ -21,10 +21,13 @@ protocol FriendDetialViewModelType {
     var btnChatClicked:AnyObserver<Void>{ get }
     var btnAcceptClicked:AnyObserver<Void>{ get }
     var btnDeclineCliked:AnyObserver<Void>{ get }
+    
+    var moveToMainPage:Observable<Void> { get }
     //var chatResult:Signal<Result<String>> { get }
 }
 
 class FriendDetialViewModel : FriendDetialViewModelType{
+    
     var disposeBag = DisposeBag()
     
     let imgUrlTxt: Observable<String>
@@ -38,6 +41,7 @@ class FriendDetialViewModel : FriendDetialViewModelType{
     let btnChatClicked: AnyObserver<Void>
     let btnAcceptClicked: AnyObserver<Void>
     let btnDeclineCliked: AnyObserver<Void>
+    var moveToMainPage: Observable<Void>
 
     init(model Friend:FriendModel){
         //super.init()
@@ -61,21 +65,24 @@ class FriendDetialViewModel : FriendDetialViewModelType{
         friendType = Observable.just(Friend.friendType ?? "wantedTo")
             .observeOn(MainScheduler.instance)
         
-        _ = chating.subscribe(onNext: { _ in
-            print("chat")
-        })
+        _ = chating.subscribe(
+            onNext: { _ in
+                print("chat")
+            }).disposed(by: disposeBag)
         
         _ = decline.subscribe(onNext: { _ in
-            print("decline")
-        })
+            print("decline api call")
+        }).disposed(by: disposeBag)
         
         _ = accept.subscribe(onNext: { _ in
-            print("accept")
-        })
+            print("accept api call")
+        }).disposed(by: disposeBag)
         
         btnChatClicked = chating.asObserver()
         btnAcceptClicked = accept.asObserver()
         btnDeclineCliked = decline.asObserver()
+        
+        moveToMainPage = Observable.merge(accept,decline)
     }
     
 
