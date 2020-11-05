@@ -39,8 +39,8 @@ class DetailFriendVC:UIViewController{
         guard let friendInfo = viewModel else { return }
         
         friendInfo.imgUrlTxt
-            .subscribe(onNext: {url in
-                self.imgProfile.kf.setImage(with: URL(string: "https://storage.googleapis.com/gamepartner/" + url))
+            .subscribe(onNext: {[weak self] url in
+                self?.imgProfile.kf.setImage(with: URL(string: "https://storage.googleapis.com/gamepartner/" + url))
             })
             .disposed(by: disposeBag)
         
@@ -65,15 +65,15 @@ class DetailFriendVC:UIViewController{
             .disposed(by: disposeBag)
         
         friendInfo.friendType
-            .subscribe(onNext: { type in
+            .subscribe(onNext: {[weak self] type in
                 if type == "wantedFrom"{
-                    self.setDecideButton()
+                    self?.setDecideButton()
                 }
                 else if type == "wantedTo"{
-                    self.setWaitLabel()
+                    self?.setWaitLabel()
                 }
                 else if type == "friend"{
-                    self.setChatButton()
+                    self?.setChatButton()
                 }
                 
             })
@@ -82,49 +82,49 @@ class DetailFriendVC:UIViewController{
         
         friendInfo.moveToMainPage
             .asObservable()
-            .subscribe(onNext: {_ in
+            .subscribe(onNext: {[weak self] in
                 //print("move to main")
-                self.navigationController?.popToRootViewController(animated: true)
+                self?.navigationController?.popToRootViewController(animated: true)
             })
             .disposed(by: disposeBag)
         
         chatButton.rx.tap
-            .do(onNext: {
+            .do(onNext: {[weak self] in
                 UIView.animate(withDuration: 0.2, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
-                    self.chatButton.alpha = 0.5
+                    self?.chatButton.alpha = 0.5
                 }, completion: nil)
             })
-            .do(onNext: {
+            .do(onNext: {[weak self] in
                 UIView.animate(withDuration: 0.2, delay: 0.0,options: UIView.AnimationOptions.curveEaseOut, animations: {
-                    self.chatButton.alpha = 1.0
+                    self?.chatButton.alpha = 1.0
                 }, completion: nil)
             })
             .bind(to: friendInfo.btnChatClicked)
             .disposed(by: disposeBag)
         
         acceptButton.rx.tap
-            .do(onNext: {
+            .do(onNext: {[weak self] in
                 UIView.animate(withDuration: 0.2, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
-                    self.acceptButton.alpha = 0.5
+                    self?.acceptButton.alpha = 0.5
                 }, completion: nil)
             })
-            .do(onNext: {
+            .do(onNext: {[weak self] in
                 UIView.animate(withDuration: 0.2, delay: 0.0,options: UIView.AnimationOptions.curveEaseOut, animations: {
-                    self.acceptButton.alpha = 1.0
+                    self?.acceptButton.alpha = 1.0
                 }, completion: nil)
             })
             .bind(to: friendInfo.btnAcceptClicked)
             .disposed(by: disposeBag)
             
         declineButton.rx.tap
-            .do(onNext: {
+            .do(onNext: {[weak self] in
                 UIView.animate(withDuration: 0.2, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
-                    self.declineButton.alpha = 0.5
+                    self?.declineButton.alpha = 0.5
                 }, completion: nil)
             })
-            .do(onNext: {
+            .do(onNext: {[weak self] in
                 UIView.animate(withDuration: 0.2, delay: 0.0,options: UIView.AnimationOptions.curveEaseOut, animations: {
-                    self.declineButton.alpha = 1.0
+                    self?.declineButton.alpha = 1.0
                 }, completion: nil)
             })
             .bind(to: friendInfo.btnDeclineCliked)

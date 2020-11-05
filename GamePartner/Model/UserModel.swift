@@ -33,9 +33,9 @@ class UserModel : Object{
         self.nickName = nickName
     }
     
-    override class func primaryKey() -> String? {
-        return "id"
-    }
+//    override class func primaryKey() -> String? {
+//        return "id"
+//    }
     
     override class func indexedProperties() -> [String] {
         return ["id","nickName"]

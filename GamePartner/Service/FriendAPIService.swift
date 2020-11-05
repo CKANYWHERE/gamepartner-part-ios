@@ -15,6 +15,7 @@ class FriendAPIService : NSObject{
     static let shared = FriendAPIService()
     
     private var indexUrl = Util.mainUrl + Util.getIndexPageUrl
+    private var postInsertUrl = Util.mainUrl + Util.postInsertUrl
     
     func getIndexData(userId:String!) -> Observable<[FriendInfoSection]>{
         return Observable.create { (observer) -> Disposable in
@@ -66,5 +67,13 @@ class FriendAPIService : NSObject{
 
             return Disposables.create()
         }
+    }
+    
+    func postInsertData(toUser: String!, fromUser:String!) ->  Observable<Void>{
+        return Observable.create({ (observer) -> Disposable in
+            
+            
+            return Disposables.create()
+        })
     }
 }
