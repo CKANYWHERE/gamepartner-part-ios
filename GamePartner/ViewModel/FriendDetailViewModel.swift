@@ -90,14 +90,15 @@ class FriendDetialViewModel : FriendDetialViewModelType{
 //            print("accept api call")
 //        }).disposed(by: disposeBag)
         
+        
+        //요청할때 spinner 사용햐서 요청 끝나면 메인페이지로 가도록 수정해야함!
         _ = accept.flatMap{ _ -> Observable<Void> in
             //print("accept api call")
+            //print(Friend.userId)
             let realm = try! Realm()
             let users = realm.objects(UserModel.self)
             let user = users.first
-            var fromUser = ""
-            _ = self.introduceTxt.map { fromUser = $0 }
-            return FriendAPIService.shared.postInsertData(toUser: user?.id, fromUser: )
+            return FriendAPIService.shared.postInsertData(toUser: user?.id, fromUser: Friend.userId)
         }
         .subscribe(onNext:{ _ in ()})
         .disposed(by: disposeBag)
