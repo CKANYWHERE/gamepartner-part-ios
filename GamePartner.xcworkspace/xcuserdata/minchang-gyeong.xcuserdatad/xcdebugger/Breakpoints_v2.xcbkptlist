@@ -212,7 +212,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "7E5C824C-4242-4BFC-952A-BFBA7DCD9175 - b55af45fc314768a"
+                  uuid = "7E5C824C-4242-4BFC-952A-BFBA7DCD9175 - b55af45fc31474fb"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -222,12 +222,12 @@
                   urlString = "file:///Users/minchang-gyeong/Desktop/SwiftProject/gamepartner-part-ios/GamePartner/ViewModel/FriendViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
                   offsetFromSymbolStart = "3125">
                </Location>
                <Location
-                  uuid = "7E5C824C-4242-4BFC-952A-BFBA7DCD9175 - 6760cc7247c8d567"
+                  uuid = "7E5C824C-4242-4BFC-952A-BFBA7DCD9175 - 6760cc7247c8d716"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -237,8 +237,8 @@
                   urlString = "file:///Users/minchang-gyeong/Desktop/SwiftProject/gamepartner-part-ios/GamePartner/ViewModel/FriendViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
                   offsetFromSymbolStart = "49">
                </Location>
             </Locations>
@@ -436,7 +436,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "7FAB184A-DCD5-4C1E-8489-6AA4BF43E328 - 9e97e1dc441da317"
+                  uuid = "7FAB184A-DCD5-4C1E-8489-6AA4BF43E328 - 9e97e1dc441da336"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -446,12 +446,12 @@
                   urlString = "file:///Users/minchang-gyeong/Desktop/SwiftProject/gamepartner-part-ios/GamePartner/Service/FriendAPIService.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
                   offsetFromSymbolStart = "37">
                </Location>
                <Location
-                  uuid = "7FAB184A-DCD5-4C1E-8489-6AA4BF43E328 - ec8b3a5d1b2529f1"
+                  uuid = "7FAB184A-DCD5-4C1E-8489-6AA4BF43E328 - ec8b3a5d1b252812"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -461,8 +461,8 @@
                   urlString = "file:///Users/minchang-gyeong/Desktop/SwiftProject/gamepartner-part-ios/GamePartner/Service/FriendAPIService.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
                   offsetFromSymbolStart = "199">
                </Location>
             </Locations>
@@ -478,8 +478,8 @@
             filePath = "GamePartner/ViewModel/FriendDetailViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "init(model:)"
             landmarkType = "7">
          </BreakpointContent>

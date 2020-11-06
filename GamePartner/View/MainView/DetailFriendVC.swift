@@ -25,6 +25,7 @@ class DetailFriendVC:UIViewController{
     @IBOutlet weak var lblAge: UILabel!
     @IBOutlet weak var lblIntroduce: UILabel!
     
+   // let userIdCache = ""
     let chatButton = UIButton()
     let acceptButton = UIButton()
     let declineButton = UIButton()
@@ -37,6 +38,9 @@ class DetailFriendVC:UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let friendInfo = viewModel else { return }
+        
+        //friendInfo.userId
+          //  .bind(to: )
         
         friendInfo.imgUrlTxt
             .subscribe(onNext: {[weak self] url in

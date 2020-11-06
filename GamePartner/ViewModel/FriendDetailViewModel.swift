@@ -8,6 +8,7 @@
 import Foundation
 import RxCocoa
 import RxSwift
+import RealmSwift
 
 protocol FriendDetialViewModelType {
     var imgUrlTxt: Observable<String> { get }
@@ -17,6 +18,7 @@ protocol FriendDetialViewModelType {
     var introduceTxt: Observable<String> { get }
     var ageTxt:Observable<String>{ get }
     var friendType:Observable<String>{ get }
+    var userId:Observable<String>{ get }
     
     var btnChatClicked:AnyObserver<Void>{ get }
     var btnAcceptClicked:AnyObserver<Void>{ get }
@@ -37,6 +39,7 @@ class FriendDetialViewModel : FriendDetialViewModelType{
     let introduceTxt: Observable<String>
     let ageTxt: Observable<String>
     let friendType: Observable<String>
+    let userId: Observable<String>
     
     let btnChatClicked: AnyObserver<Void>
     let btnAcceptClicked: AnyObserver<Void>
@@ -50,6 +53,15 @@ class FriendDetialViewModel : FriendDetialViewModelType{
         let decline = PublishSubject<Void>()
         let accept = PublishSubject<Void>()
         
+        
+        btnChatClicked = chating.asObserver()
+        btnAcceptClicked = accept.asObserver()
+        btnDeclineCliked = decline.asObserver()
+        
+        moveToMainPage = Observable.merge(accept,decline)
+        
+        userId = Observable.just(Friend.userId ?? "")
+            .observeOn(MainScheduler.instance)
         imgUrlTxt = Observable.just(Friend.imgUrl ?? "")
             .observeOn(MainScheduler.instance)
         nickNameTxt = Observable.just(Friend.nickName ?? "")
@@ -74,15 +86,23 @@ class FriendDetialViewModel : FriendDetialViewModelType{
             print("decline api call")
         }).disposed(by: disposeBag)
         
-        _ = accept.subscribe(onNext: { _ in
-            print("accept api call")
-        }).disposed(by: disposeBag)
+//        _ = accept.subscribe(onNext: { _ in
+//            print("accept api call")
+//        }).disposed(by: disposeBag)
         
-        btnChatClicked = chating.asObserver()
-        btnAcceptClicked = accept.asObserver()
-        btnDeclineCliked = decline.asObserver()
+        _ = accept.flatMap{ _ -> Observable<Void> in
+            //print("accept api call")
+            let realm = try! Realm()
+            let users = realm.objects(UserModel.self)
+            let user = users.first
+            var fromUser = ""
+            _ = self.introduceTxt.map { fromUser = $0 }
+            return FriendAPIService.shared.postInsertData(toUser: user?.id, fromUser: )
+        }
+        .subscribe(onNext:{ _ in ()})
+        .disposed(by: disposeBag)
         
-        moveToMainPage = Observable.merge(accept,decline)
+        
     }
     
 
