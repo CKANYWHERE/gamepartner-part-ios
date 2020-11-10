@@ -26,32 +26,52 @@ class FriendAPIService : NSObject{
                     let model = JSON(json)
                     //친구목록, 요청받은 리스트 요청한 리스트들이 없을때 처리해야 하는 테이블뷰 필요!
                     let friendList = JSON(model["data"]["friendList"])
-                    let parseFriendList =
+                    var parseFriendList =
                         friendList["friendList"].arrayValue.map{
                             FriendModel(name:$0["nickName"].stringValue,sex:$0["sex"].stringValue,introduce: $0["introduce"].stringValue
                                         ,favoritGame: $0["favoritGame"].stringValue,imgUrl: $0["imgPath"].stringValue, friendType: "friend"
                                         ,age:$0["age"].stringValue + "세", userId: $0["userId"].stringValue)
+                            
                             }
+                    if parseFriendList.isEmpty{
+                        parseFriendList = [FriendModel(name:"아직 친구가 없어요 :(",sex: "M",
+                                    introduce:"",favoritGame:"친구찾기 탭에서 새로운 친구를 만나보아요!",
+                                    imgUrl: "nofriend",friendType: "friend"
+                                    ,age:"",userId:"")]
+                    }
                     let sectionFriendList = FriendInfoSection(header: "친구리스트", items: parseFriendList)
                     
                     let wantedToList = JSON(model["data"]["wantedToList"])
-                    let parseWantedToList = wantedToList.arrayValue.map{
+                    var parseWantedToList = wantedToList.arrayValue.map{
                         FriendModel(name:$0["to"]["nickName"].stringValue,sex: $0["to"]["sex"].stringValue,
                                     introduce: $0["to"]["introduce"].stringValue,favoritGame: $0["to"]["favoritGame"].stringValue,
                                     imgUrl: $0["to"]["imgPath"].stringValue,friendType: "wantedTo"
                                     ,age:$0["to"]["age"].stringValue + "세",userId: $0["to"]["userId"].stringValue)
                     }
+                    if parseWantedToList.isEmpty{
+                        parseWantedToList = [FriendModel(name:"아직 친구가 없어요 :(",sex: "M",
+                                    introduce:"",favoritGame:"친구찾기 탭에서 새로운 친구를 만나보아요!",
+                                    imgUrl: "nofriend",friendType: "friend"
+                                    ,age:"",userId:"")]
+                    }
                     let sectionWantedToList = FriendInfoSection(header:"친구 요청한 리스트",items: parseWantedToList)
                     
                     let wantedFromList = JSON(model["data"]["wantedFromList"])
-                    let parseWantedFromList = wantedFromList.arrayValue.map{
+                    var parseWantedFromList = wantedFromList.arrayValue.map{
                         FriendModel(name:$0["from"]["nickName"].stringValue,sex: $0["from"]["sex"].stringValue,
                                     introduce:$0["from"]["introduce"].stringValue,favoritGame:$0["from"]["favoritGame"].stringValue,
                                     imgUrl: $0["from"]["imgPath"].stringValue,friendType: "wantedFrom"
                                     ,age:$0["from"]["age"].stringValue + "세",userId: $0["from"]["userId"].stringValue)
                     }
-                    let sectionWantedFromList = FriendInfoSection(header: "친구 요청받은 리스트", items: parseWantedFromList)
+                    if parseWantedFromList.isEmpty {
+                        parseWantedFromList = [FriendModel(name:"새롭게 요청받은 친구가 없어요 :(",sex: "M",
+                                    introduce:"",favoritGame:"친구찾기 탭에서 새로운 친구를 만나보아요!",
+                                    imgUrl: "nofriend",friendType: "wantedFrom"
+                                    ,age:"",userId:"")]
+                    }
                     
+                    let sectionWantedFromList = FriendInfoSection(header: "친구 요청받은 리스트", items: parseWantedFromList)
+                        
                     let sectionData = [sectionWantedFromList,sectionWantedToList,sectionFriendList]
 
                     observer.onNext(sectionData)

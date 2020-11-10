@@ -17,7 +17,9 @@ class MainVC: UIViewController, UIScrollViewDelegate{
     let disposeBag = DisposeBag()
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    lazy var spinner = MyIndicator(frame:CGRect(x: 0, y: 0, width: 50, height: 50)
+                                   ,x: Int(view.frame.width)/2
+                                   ,y: Int(view.frame.height)/2)
     
     @objc func touchToPickPhoto(tapGestureRecognizer: UITapGestureRecognizer){
         let view = tapGestureRecognizer.view as! UIImageView
@@ -65,12 +67,16 @@ class MainVC: UIViewController, UIScrollViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.separatorColor = .clear
+        self.view.addSubview(self.spinner)
+
 //        tableView.refreshControl = UIRefreshControl()
         
 //
         let firstLoad = rx.viewWillAppear
             //.take(1)
             .map { _ in () }
+        
+        
 //
 //        let reload = tableView.refreshControl?.rx
 //            .controlEvent(.valueChanged)
@@ -91,7 +97,6 @@ class MainVC: UIViewController, UIScrollViewDelegate{
 //                _ = self?.viewModel.fetchFriendList
 //            })
 //            .disposed(by: disposeBag)
-
 //        tableView.rx.itemSelected
         
         viewModel.fetchFriendList
@@ -105,7 +110,9 @@ class MainVC: UIViewController, UIScrollViewDelegate{
         
         tableView.rx.modelSelected(FriendModel.self)
             .subscribe(onNext:{item in
-                self.performSegue(withIdentifier: "showDetailFriend", sender: item)
+                if item.userId != ""{
+                    self.performSegue(withIdentifier: "showDetailFriend", sender: item)
+                }
             })
             .disposed(by: disposeBag)
         

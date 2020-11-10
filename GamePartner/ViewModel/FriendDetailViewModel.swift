@@ -25,12 +25,15 @@ protocol FriendDetialViewModelType {
     var btnDeclineCliked:AnyObserver<Void>{ get }
     
     var moveToMainPage:Observable<Void> { get }
+    
+    var activated: Observable<Bool> { get }
     //var chatResult:Signal<Result<String>> { get }
 }
 
 class FriendDetialViewModel : FriendDetialViewModelType{
     
     var disposeBag = DisposeBag()
+    
     
     let imgUrlTxt: Observable<String>
     let nickNameTxt: Observable<String>
@@ -45,6 +48,8 @@ class FriendDetialViewModel : FriendDetialViewModelType{
     let btnAcceptClicked: AnyObserver<Void>
     let btnDeclineCliked: AnyObserver<Void>
     var moveToMainPage: Observable<Void>
+    
+    let activated: Observable<Bool>
 
     init(model Friend:FriendModel){
         //super.init()
@@ -52,13 +57,16 @@ class FriendDetialViewModel : FriendDetialViewModelType{
         let chating = PublishSubject<Void>()
         let decline = PublishSubject<Void>()
         let accept = PublishSubject<Void>()
-        
+        let paging = PublishSubject<Void>()
+        let loading = BehaviorRelay<Bool>(value: false)
         
         btnChatClicked = chating.asObserver()
         btnAcceptClicked = accept.asObserver()
         btnDeclineCliked = decline.asObserver()
-        
-        moveToMainPage = Observable.merge(accept,decline)
+        activated = loading.distinctUntilChanged()
+        moveToMainPage = paging.asObserver()
+        //moveToMainPage = Observable.merge(accept,decline)
+      
         
         userId = Observable.just(Friend.userId ?? "")
             .observeOn(MainScheduler.instance)
@@ -86,22 +94,26 @@ class FriendDetialViewModel : FriendDetialViewModelType{
             print("decline api call")
         }).disposed(by: disposeBag)
         
+        _ = paging
+            .do(onNext:{print("asdf")})
+            .bind(to: btnAcceptClicked)
+            .disposed(by: disposeBag)
 //        _ = accept.subscribe(onNext: { _ in
-//            print("accept api call")
+//            print("Accept api call")
 //        }).disposed(by: disposeBag)
         
-        
         //요청할때 spinner 사용햐서 요청 끝나면 메인페이지로 가도록 수정해야함!
-        _ = accept.flatMap{ _ -> Observable<Void> in
-            //print("accept api call")
-            //print(Friend.userId)
-            let realm = try! Realm()
-            let users = realm.objects(UserModel.self)
-            let user = users.first
-            return FriendAPIService.shared.postInsertData(toUser: user?.id, fromUser: Friend.userId)
-        }
-        .subscribe(onNext:{ _ in ()})
-        .disposed(by: disposeBag)
+        _ = accept
+            .do(onNext: {_ in loading.accept(false)})
+            .flatMap{ _ -> Observable<Void> in
+                    let realm = try! Realm()
+                    let users = realm.objects(UserModel.self)
+                    let user = users.first
+                    return FriendAPIService.shared.postInsertData(toUser: user?.id, fromUser: Friend.userId)
+                }
+            .do(onNext: {_ in loading.accept(true)})
+            .bind(to: paging)
+            .disposed(by: disposeBag)
         
         
     }

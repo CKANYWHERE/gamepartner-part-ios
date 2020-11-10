@@ -72,14 +72,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="20" sectionFooterHeight="20" translatesAutoresizingMaskIntoConstraints="NO" id="rN3-zu-nES">
-                                <rect key="frame" x="0.0" y="29" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="27" width="414" height="818"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" id="ocB-2c-cqs">
-                                    <rect key="frame" x="0.0" y="136" width="414" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="color" systemColor="linkColor"/>
-                                </activityIndicatorView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="80" id="j4i-lu-FjR" customClass="MainTableCell" customModule="GamePartner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="80"/>
@@ -153,7 +148,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="홈" id="xn9-Do-pZQ"/>
                     <connections>
-                        <outlet property="spinner" destination="ocB-2c-cqs" id="bcF-nK-xgw"/>
                         <outlet property="tableView" destination="rN3-zu-nES" id="B7C-lT-mFb"/>
                         <segue destination="hX6-If-Qj0" kind="push" identifier="showDetailFriend" id="1vM-vB-3rf"/>
                     </connections>
@@ -279,6 +273,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xGG-hb-RpM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4952.1739130434789" y="1775.8928571428571"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="iJ2-9h-AcO">
+            <objects>
+                <viewController id="KKD-0j-lsv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2cP-2m-9Ee">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="rOG-yT-jiY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IS7-Cm-4fn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3733" y="1767"/>
         </scene>
         <!--홈-->
         <scene sceneID="npY-1O-BRQ">
@@ -407,6 +416,68 @@
                     <view key="view" contentMode="scaleToFill" id="z0P-Rb-JBu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="20" sectionFooterHeight="20" translatesAutoresizingMaskIntoConstraints="NO" id="lm1-BW-KaV">
+                                <rect key="frame" x="0.0" y="39" width="414" height="818"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="boardtablecell" rowHeight="80" id="qOI-ip-zHs" customClass="BoardTableCell" customModule="GamePartner" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qOI-ip-zHs" id="64u-z6-ijG">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="129" verticalHuggingPriority="130" horizontalCompressionResistancePriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="8Y5-fh-Pjh">
+                                                    <rect key="frame" x="15.000000000000004" y="9.3333333333333321" width="61.333333333333343" height="61.333333333333343"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="8Y5-fh-Pjh" secondAttribute="height" multiplier="10:10" id="Epy-u3-Rkj"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요!!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMn-Mr-RHC">
+                                                    <rect key="frame" x="96.333333333333343" y="13" width="297.66666666666663" height="18"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <color key="textColor" name="AccentColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="리그오브레전드, 민창경, 25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysi-qo-f3O">
+                                                    <rect key="frame" x="96.333333333333343" y="36" width="297.66666666666663" height="14.666666666666664"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11월 10일 18시 3분" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ihh-Py-MCK">
+                                                    <rect key="frame" x="96.333333333333314" y="55.666666666666664" width="97" height="14.999999999999993"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ihh-Py-MCK" firstAttribute="leading" secondItem="8Y5-fh-Pjh" secondAttribute="trailing" constant="20" id="50l-4k-6gx"/>
+                                                <constraint firstItem="8Y5-fh-Pjh" firstAttribute="height" secondItem="64u-z6-ijG" secondAttribute="height" multiplier="0.765" id="B1g-fZ-PQA"/>
+                                                <constraint firstItem="jMn-Mr-RHC" firstAttribute="leading" secondItem="8Y5-fh-Pjh" secondAttribute="trailing" constant="20" id="C6y-7D-skN"/>
+                                                <constraint firstAttribute="trailing" secondItem="jMn-Mr-RHC" secondAttribute="trailing" constant="20" id="Hja-rz-1Xo"/>
+                                                <constraint firstItem="Ihh-Py-MCK" firstAttribute="top" secondItem="ysi-qo-f3O" secondAttribute="bottom" constant="5" id="I7B-nE-zO5"/>
+                                                <constraint firstItem="ysi-qo-f3O" firstAttribute="leading" secondItem="8Y5-fh-Pjh" secondAttribute="trailing" constant="20" id="SJH-E6-02P"/>
+                                                <constraint firstItem="ysi-qo-f3O" firstAttribute="centerX" secondItem="jMn-Mr-RHC" secondAttribute="centerX" id="Xnp-lj-ZeP"/>
+                                                <constraint firstItem="8Y5-fh-Pjh" firstAttribute="leading" secondItem="64u-z6-ijG" secondAttribute="leading" constant="15" id="b4x-0n-mxw"/>
+                                                <constraint firstItem="ysi-qo-f3O" firstAttribute="top" secondItem="jMn-Mr-RHC" secondAttribute="bottom" constant="5" id="dWa-Ds-Bqb"/>
+                                                <constraint firstItem="jMn-Mr-RHC" firstAttribute="centerY" secondItem="64u-z6-ijG" secondAttribute="centerY" constant="-18" id="iWc-Xu-ExR"/>
+                                                <constraint firstItem="8Y5-fh-Pjh" firstAttribute="centerY" secondItem="64u-z6-ijG" secondAttribute="centerY" id="ot5-Gw-LAh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imgView" destination="8Y5-fh-Pjh" id="szR-3t-JQh"/>
+                                            <outlet property="lblDate" destination="Ihh-Py-MCK" id="WrS-e8-aOr"/>
+                                            <outlet property="lblTitle" destination="jMn-Mr-RHC" id="wUV-sI-k7h"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="GdR-E3-j7K"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -414,7 +485,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="98L-jg-Qhx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3733" y="998"/>
+            <point key="canvasLocation" x="-3733.3333333333335" y="1006.4732142857142"/>
         </scene>
     </scenes>
     <resources>

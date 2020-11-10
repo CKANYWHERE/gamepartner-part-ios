@@ -14,9 +14,6 @@ import RxViewController
 import RxKingfisher
 
 class DetailFriendVC:UIViewController{
-    
-
-
   
     @IBOutlet weak var lblNickName: UILabel!
     @IBOutlet weak var imgProfile: UIImageView!
@@ -25,7 +22,9 @@ class DetailFriendVC:UIViewController{
     @IBOutlet weak var lblAge: UILabel!
     @IBOutlet weak var lblIntroduce: UILabel!
     
-   // let userIdCache = ""
+    lazy var spinner = MyIndicator(frame:CGRect(x: 0, y: 0, width: 50, height: 50)
+                                   ,x: Int(view.frame.width)/2
+                                   ,y: Int(view.frame.height)/2)
     let chatButton = UIButton()
     let acceptButton = UIButton()
     let declineButton = UIButton()
@@ -92,6 +91,11 @@ class DetailFriendVC:UIViewController{
             })
             .disposed(by: disposeBag)
         
+        friendInfo.activated
+            .map({ $0 })
+            .bind(to: spinner.rx.isHidden)
+            .disposed(by: disposeBag)
+        
         chatButton.rx.tap
             .do(onNext: {[weak self] in
                 UIView.animate(withDuration: 0.2, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
@@ -133,7 +137,7 @@ class DetailFriendVC:UIViewController{
             })
             .bind(to: friendInfo.btnDeclineCliked)
             .disposed(by: disposeBag)
-        
+       // friendInfo.btnDeclineCliked
     }
     
     func setChatButton(){
