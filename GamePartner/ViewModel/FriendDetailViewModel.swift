@@ -95,14 +95,13 @@ class FriendDetialViewModel : FriendDetialViewModelType{
         }).disposed(by: disposeBag)
         
         _ = paging
-            .do(onNext:{print("asdf")})
+            //.do(onNext:{print("asdf")})
             .bind(to: btnAcceptClicked)
             .disposed(by: disposeBag)
 //        _ = accept.subscribe(onNext: { _ in
 //            print("Accept api call")
 //        }).disposed(by: disposeBag)
         
-        //요청할때 spinner 사용햐서 요청 끝나면 메인페이지로 가도록 수정해야함!
         _ = accept
             .do(onNext: {_ in loading.accept(false)})
             .flatMap{ _ -> Observable<Void> in

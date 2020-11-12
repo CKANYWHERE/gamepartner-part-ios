@@ -408,7 +408,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "7D53528B-142A-45E1-A307-A2FF8BD0076D"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GamePartner/Service/FriendAPIService.swift"
@@ -418,54 +418,6 @@
             endingLineNumber = "20"
             landmarkName = "getIndexData(userId:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7FAB184A-DCD5-4C1E-8489-6AA4BF43E328"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GamePartner/Service/FriendAPIService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "getIndexData(userId:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "7FAB184A-DCD5-4C1E-8489-6AA4BF43E328 - 9e97e1dc441da336"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "GamePartner.FriendAPIService.getIndexData(userId: Swift.Optional&lt;Swift.String&gt;) -&gt; RxSwift.Observable&lt;Swift.Array&lt;GamePartner.FriendInfoSection&gt;&gt;"
-                  moduleName = "GamePartner"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/minchang-gyeong/Desktop/SwiftProject/gamepartner-part-ios/GamePartner/Service/FriendAPIService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "37">
-               </Location>
-               <Location
-                  uuid = "7FAB184A-DCD5-4C1E-8489-6AA4BF43E328 - ec8b3a5d1b252812"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (RxSwift.AnyObserver&lt;Swift.Array&lt;GamePartner.FriendInfoSection&gt;&gt;) -&gt; RxSwift.Disposable in GamePartner.FriendAPIService.getIndexData(userId: Swift.Optional&lt;Swift.String&gt;) -&gt; RxSwift.Observable&lt;Swift.Array&lt;GamePartner.FriendInfoSection&gt;&gt;"
-                  moduleName = "GamePartner"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/minchang-gyeong/Desktop/SwiftProject/gamepartner-part-ios/GamePartner/Service/FriendAPIService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "199">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

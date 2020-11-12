@@ -12,6 +12,7 @@ import RxSwift
 
 class BoardTableCell: UITableViewCell{
     @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var lblSubtitle: UILabel!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblDate: UILabel!
 }

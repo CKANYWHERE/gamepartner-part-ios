@@ -11,4 +11,5 @@ class Util {
     static var getUserIdUrl = "user/getUserId/" //user/getUserid/{userId}
     static var getIndexPageUrl = "index/getFriendInfo/" //index/getFriendInfo/{userId}
     static var insertFrined = "friendList/insertFriendList"
+    static var getBoardList = "board/getBoardList"
 }

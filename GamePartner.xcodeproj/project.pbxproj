@@ -17,6 +17,7 @@
 		FD3C7761255ACCFE005A12D6 /* BoardTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3C7760255ACCFE005A12D6 /* BoardTableCell.swift */; };
 		FD3C7763255ACD4F005A12D6 /* BoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3C7762255ACD4F005A12D6 /* BoardViewModel.swift */; };
 		FD3C7765255AD07A005A12D6 /* BoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3C7764255AD07A005A12D6 /* BoardModel.swift */; };
+		FD3C7767255D56B2005A12D6 /* BoardAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3C7766255D56B2005A12D6 /* BoardAPIService.swift */; };
 		FD3DF50824F0F31700EF8307 /* RegisterSexVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3DF50724F0F31700EF8307 /* RegisterSexVC.swift */; };
 		FD3DF50A24F10BD200EF8307 /* RegisterBirthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3DF50924F10BD200EF8307 /* RegisterBirthVC.swift */; };
 		FD3DF50E24F11DA900EF8307 /* RegisterDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3DF50D24F11DA900EF8307 /* RegisterDetailVC.swift */; };
@@ -104,6 +105,7 @@
 		FD3C7760255ACCFE005A12D6 /* BoardTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTableCell.swift; sourceTree = "<group>"; };
 		FD3C7762255ACD4F005A12D6 /* BoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewModel.swift; sourceTree = "<group>"; };
 		FD3C7764255AD07A005A12D6 /* BoardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardModel.swift; sourceTree = "<group>"; };
+		FD3C7766255D56B2005A12D6 /* BoardAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardAPIService.swift; sourceTree = "<group>"; };
 		FD3DF50724F0F31700EF8307 /* RegisterSexVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSexVC.swift; sourceTree = "<group>"; };
 		FD3DF50924F10BD200EF8307 /* RegisterBirthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBirthVC.swift; sourceTree = "<group>"; };
 		FD3DF50D24F11DA900EF8307 /* RegisterDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDetailVC.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 			children = (
 				FD79FB0424FDEDB10073B16D /* RegisterAPIService.swift */,
 				FD9D2FD3253ED8EC00435955 /* FriendAPIService.swift */,
+				FD3C7766255D56B2005A12D6 /* BoardAPIService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -641,6 +644,7 @@
 				FD3DF50824F0F31700EF8307 /* RegisterSexVC.swift in Sources */,
 				FDF92C3224F65429005EE293 /* String.swift in Sources */,
 				FDB4D90224EFF7080009776D /* UserModel.swift in Sources */,
+				FD3C7767255D56B2005A12D6 /* BoardAPIService.swift in Sources */,
 				FD3DF50E24F11DA900EF8307 /* RegisterDetailVC.swift in Sources */,
 				FD20BB8B2535DCA500B92AB8 /* FriendModel.swift in Sources */,
 				FDC4E84924E2C35F00392432 /* SceneDelegate.swift in Sources */,
