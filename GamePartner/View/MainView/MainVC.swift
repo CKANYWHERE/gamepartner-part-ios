@@ -69,35 +69,13 @@ class MainVC: UIViewController, UIScrollViewDelegate{
         tableView.separatorColor = .clear
         self.view.addSubview(self.spinner)
 
-//        tableView.refreshControl = UIRefreshControl()
-        
-//
+
         let firstLoad = rx.viewWillAppear
-            //.take(1)
             .map { _ in () }
         
-        
-//
-//        let reload = tableView.refreshControl?.rx
-//            .controlEvent(.valueChanged)
-//            .map { _ in () } ?? BehaviorSubject.just(())
-//            //.do(onNext: { _ in self.tableView.refreshControl?.endRefreshing()})
-//
-//
-//        Observable.merge([firstLoad, reload])
-//            .bind(to: viewModel.fetchIndexApi)
-//            .disposed(by: disposeBag)
-//
         Observable.merge(firstLoad)
             .bind(to: viewModel.fetchIndexApi)
             .disposed(by: disposeBag)
-
-//        tableView.refreshControl?.rx.controlEvent(.valueChanged)
-//            .bind(onNext: { [weak self] in
-//                _ = self?.viewModel.fetchFriendList
-//            })
-//            .disposed(by: disposeBag)
-//        tableView.rx.itemSelected
         
         viewModel.fetchFriendList
             .bind(to: tableView.rx.items(dataSource:self.dataSource))

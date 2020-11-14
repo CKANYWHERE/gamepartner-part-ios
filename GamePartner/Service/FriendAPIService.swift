@@ -16,6 +16,7 @@ class FriendAPIService : NSObject{
     
     private var indexUrl = Util.mainUrl + Util.getIndexPageUrl
     private var postInsertUrl = Util.mainUrl + Util.insertFrined
+    private var postWantedUrl = Util.mainUrl + Util.insertWanted
     
     func getIndexData(userId:String!) -> Observable<[FriendInfoSection]>{
         return Observable.create { (observer) -> Disposable in
@@ -101,6 +102,37 @@ class FriendAPIService : NSObject{
                     switch response.result {
                     case .success(let json):
                         let model = JSON(json)
+                        let postStats = model["message"].stringValue
+                        //print(model)
+                        if postStats == "insert_complete"{
+                            //observer.onNext(postStats)
+                            observer.onCompleted()
+                        }else{
+                            observer.onError(AFError.responseValidationFailed(reason: .dataFileNil))
+                        }
+                        
+                    case .failure(let error):
+                        observer.onError(error)
+                    }
+                }
+            
+            return Disposables.create()
+        })
+    }
+    
+    func postWanted(toUser: String!, fromUser:String!) ->  Observable<Void>{
+        return Observable.create({(observer) -> Disposable in
+            let params = [
+                "to":toUser,
+                "from":fromUser
+            ]
+            
+            AF.request(self.postWantedUrl, method: .post, parameters: params)
+                .responseData{ response in
+                    switch response.result {
+                    case .success(let json):
+                        let model = JSON(json)
+                        print(model)
                         let postStats = model["message"].stringValue
                         //print(model)
                         if postStats == "insert_complete"{

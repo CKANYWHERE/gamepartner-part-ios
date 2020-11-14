@@ -28,7 +28,9 @@ class DetailFriendVC:UIViewController{
     let chatButton = UIButton()
     let acceptButton = UIButton()
     let declineButton = UIButton()
+    let sendFriendButton = UIButton()
     let waitLabel = UILabel()
+    let alertView = UIAlertController()
     
     var viewModel:FriendDetialViewModel!
     let disposeBag = DisposeBag()
@@ -77,6 +79,9 @@ class DetailFriendVC:UIViewController{
                 }
                 else if type == "friend"{
                     self?.setChatButton()
+                }
+                else if type == "sendWantTo"{
+                    self?.setSendFriendButton()
                 }
                 
             })
@@ -137,7 +142,48 @@ class DetailFriendVC:UIViewController{
             })
             .bind(to: friendInfo.btnDeclineCliked)
             .disposed(by: disposeBag)
+        
+        sendFriendButton.rx.tap
+            .do(onNext: {[weak self] in
+                UIView.animate(withDuration: 0.2, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
+                    self?.sendFriendButton.alpha = 0.5
+                }, completion: nil)
+            })
+            .do(onNext: {[weak self] in
+                UIView.animate(withDuration: 0.2, delay: 0.0,options: UIView.AnimationOptions.curveEaseOut, animations: {
+                    self?.sendFriendButton.alpha = 1.0
+                }, completion: nil)
+            })
+            .bind(to: friendInfo.btnSendClicked)
+            .disposed(by: disposeBag)
        // friendInfo.btnDeclineCliked
+    }
+    
+    func setSendFriendButton(){
+        sendFriendButton.setTitle("친구요청 보내기", for: .normal)
+        sendFriendButton.setTitleColor(.white, for:.normal)
+        sendFriendButton.setImage(#imageLiteral(resourceName: "sendicon.png"),for:.normal)
+        sendFriendButton.imageView?.contentMode = .scaleAspectFit
+        //button.contentHorizontalAlignment = .center
+        sendFriendButton.semanticContentAttribute = .forceRightToLeft
+        sendFriendButton.backgroundColor = .systemBlue
+        sendFriendButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        sendFriendButton.layer.cornerRadius = 20
+    
+        
+        self.view.addSubview(sendFriendButton)
+        
+        sendFriendButton.translatesAutoresizingMaskIntoConstraints = false
+        sendFriendButton.centerXAnchor.constraint(equalTo:view.centerXAnchor)
+                .isActive = true
+        sendFriendButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
+                .isActive = true
+        sendFriendButton.heightAnchor.constraint(equalToConstant: 50)
+                .isActive = true
+        sendFriendButton.widthAnchor.constraint(equalToConstant: view.bounds.width - 20)
+                .isActive = true
+        
+        
     }
     
     func setChatButton(){

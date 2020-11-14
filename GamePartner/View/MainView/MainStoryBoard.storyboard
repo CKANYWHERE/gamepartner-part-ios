@@ -272,22 +272,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xGG-hb-RpM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4952.1739130434789" y="1775.8928571428571"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="iJ2-9h-AcO">
-            <objects>
-                <viewController id="KKD-0j-lsv" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2cP-2m-9Ee">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="rOG-yT-jiY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IS7-Cm-4fn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3733" y="1767"/>
+            <point key="canvasLocation" x="-4396" y="1811"/>
         </scene>
         <!--홈-->
         <scene sceneID="npY-1O-BRQ">
@@ -485,13 +470,17 @@
                     <navigationItem key="navigationItem" title="친구찾기" id="chf-sT-n07"/>
                     <connections>
                         <outlet property="tableView" destination="lm1-BW-KaV" id="xLa-DO-9yK"/>
+                        <segue destination="hX6-If-Qj0" kind="showDetail" identifier="showDetailFriend" id="Ht7-iM-0zK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="98L-jg-Qhx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3733.3333333333335" y="1006.4732142857142"/>
+            <point key="canvasLocation" x="-3733" y="1014"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="1vM-vB-3rf"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="gamecontroller.fill" catalog="system" width="128" height="80"/>
         <image name="gear" catalog="system" width="128" height="119"/>

@@ -23,6 +23,7 @@ protocol FriendDetialViewModelType {
     var btnChatClicked:AnyObserver<Void>{ get }
     var btnAcceptClicked:AnyObserver<Void>{ get }
     var btnDeclineCliked:AnyObserver<Void>{ get }
+    var btnSendClicked:AnyObserver<Void>{ get }
     
     var moveToMainPage:Observable<Void> { get }
     
@@ -47,9 +48,11 @@ class FriendDetialViewModel : FriendDetialViewModelType{
     let btnChatClicked: AnyObserver<Void>
     let btnAcceptClicked: AnyObserver<Void>
     let btnDeclineCliked: AnyObserver<Void>
+    let btnSendClicked: AnyObserver<Void>
     var moveToMainPage: Observable<Void>
     
     let activated: Observable<Bool>
+
 
     init(model Friend:FriendModel){
         //super.init()
@@ -58,11 +61,13 @@ class FriendDetialViewModel : FriendDetialViewModelType{
         let decline = PublishSubject<Void>()
         let accept = PublishSubject<Void>()
         let paging = PublishSubject<Void>()
+        let sending = PublishSubject<Void>()
         let loading = BehaviorRelay<Bool>(value: false)
         
         btnChatClicked = chating.asObserver()
         btnAcceptClicked = accept.asObserver()
         btnDeclineCliked = decline.asObserver()
+        btnSendClicked = sending.asObserver()
         activated = loading.distinctUntilChanged()
         moveToMainPage = paging.asObserver()
         //moveToMainPage = Observable.merge(accept,decline)
@@ -95,12 +100,8 @@ class FriendDetialViewModel : FriendDetialViewModelType{
         }).disposed(by: disposeBag)
         
         _ = paging
-            //.do(onNext:{print("asdf")})
             .bind(to: btnAcceptClicked)
             .disposed(by: disposeBag)
-//        _ = accept.subscribe(onNext: { _ in
-//            print("Accept api call")
-//        }).disposed(by: disposeBag)
         
         _ = accept
             .do(onNext: {_ in loading.accept(false)})
@@ -114,7 +115,18 @@ class FriendDetialViewModel : FriendDetialViewModelType{
             .bind(to: paging)
             .disposed(by: disposeBag)
         
-        
+        _ = sending
+            .do(onNext: {_ in loading.accept(false)})
+            .flatMap{ _ -> Observable<Void> in
+                    let realm = try! Realm()
+                    let users = realm.objects(UserModel.self)
+                    let user = users.first
+                    return FriendAPIService.shared.postWanted(toUser: user?.id, fromUser: Friend.userId)
+                }
+            .map({$0})
+            .do(onNext: {_ in loading.accept(true)})
+            .subscribe(onNext:{ _ in print("asdf")})
+            .disposed(by: disposeBag)
     }
     
 

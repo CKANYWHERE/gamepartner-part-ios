@@ -16,9 +16,10 @@ struct BoardModel {
     let age:Int
     var date:String
     let title:String
+    let sex:String
     
     init(imgPath:String, userId:String, favoritGame:String, nickName:String, age:Int
-         , date:String, boardOid:String, title:String) {
+         , date:String, boardOid:String, title:String, sex:String) {
         self.nickName = nickName
         self.userId = userId
         self.favoritGame = favoritGame
@@ -27,5 +28,6 @@ struct BoardModel {
         self.date = date
         self.boardOid = boardOid
         self.title = title
+        self.sex = sex
     }
 }

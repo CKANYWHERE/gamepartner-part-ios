@@ -26,10 +26,11 @@ class BoardAPIService : NSObject{
                         BoardModel(imgPath: $0["register"]["imgPath"].stringValue,
                                    userId: $0["register"]["userId"].stringValue, favoritGame:$0["register"]["favoritGame"].stringValue,
                                    nickName: $0["register"]["nickName"].stringValue, age: $0["register"]["age"].intValue
-                                   , date: $0["registerDate"].stringValue, boardOid: $0["_id"].stringValue,title: $0["title"].stringValue)
+                                   , date: $0["registerDate"].stringValue, boardOid: $0["_id"].stringValue,title: $0["title"].stringValue
+                                   ,sex: $0["register"]["sex"].stringValue)
                     }
                     
-                    print(boardList)
+                    //print(boardList)
                     
                     observer.onNext(boardList)
                     observer.onCompleted()
