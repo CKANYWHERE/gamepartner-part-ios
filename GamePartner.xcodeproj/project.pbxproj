@@ -25,6 +25,7 @@
 		FD4A11DD255670290054EF81 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4A11DC255670290054EF81 /* IndicatorView.swift */; };
 		FD4A1BE52501255200DDB235 /* RegisterCompleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4A1BE42501255200DDB235 /* RegisterCompleteVC.swift */; };
 		FD4A3E07252DAAD6008C3E45 /* MainStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5C431F24ED6D8E000C2FE1 /* MainStoryBoard.storyboard */; };
+		FD5082D92562ACA400F3B5A7 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5082D82562ACA400F3B5A7 /* SettingVC.swift */; };
 		FD5C431D24ED4D31000C2FE1 /* RegisterBasicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5C431C24ED4D31000C2FE1 /* RegisterBasicVC.swift */; };
 		FD5C432224ED6DC5000C2FE1 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5C432124ED6DC5000C2FE1 /* MainVC.swift */; };
 		FD79FB0524FDEDB10073B16D /* RegisterAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD79FB0424FDEDB10073B16D /* RegisterAPIService.swift */; };
@@ -114,6 +115,7 @@
 		FD3DF50D24F11DA900EF8307 /* RegisterDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDetailVC.swift; sourceTree = "<group>"; };
 		FD4A11DC255670290054EF81 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		FD4A1BE42501255200DDB235 /* RegisterCompleteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCompleteVC.swift; sourceTree = "<group>"; };
+		FD5082D82562ACA400F3B5A7 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		FD5C431C24ED4D31000C2FE1 /* RegisterBasicVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBasicVC.swift; sourceTree = "<group>"; };
 		FD5C431F24ED6D8E000C2FE1 /* MainStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainStoryBoard.storyboard; sourceTree = "<group>"; };
 		FD5C432124ED6DC5000C2FE1 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				FD5C432124ED6DC5000C2FE1 /* MainVC.swift */,
 				FDA4FE96254EBEFC00C41172 /* DetailFriendVC.swift */,
 				FD3C775E255ACC11005A12D6 /* BoardListVC.swift */,
+				FD5082D82562ACA400F3B5A7 /* SettingVC.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -631,6 +634,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDA4FE97254EBEFC00C41172 /* DetailFriendVC.swift in Sources */,
+				FD5082D92562ACA400F3B5A7 /* SettingVC.swift in Sources */,
 				FD20BB942535FCF200B92AB8 /* MainTableCell.swift in Sources */,
 				FD79FB0524FDEDB10073B16D /* RegisterAPIService.swift in Sources */,
 				FD5C431D24ED4D31000C2FE1 /* RegisterBasicVC.swift in Sources */,

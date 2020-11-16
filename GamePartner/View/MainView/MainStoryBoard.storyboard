@@ -344,18 +344,74 @@
         <!--설정-->
         <scene sceneID="vlg-hx-4Ax">
             <objects>
-                <viewController id="MAQ-td-FTV" sceneMemberID="viewController">
+                <viewController id="MAQ-td-FTV" customClass="SettingVC" customModule="GamePartner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LNv-cR-kxk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yue-gK-vk1">
+                                <rect key="frame" x="0.0" y="88" width="414" height="187"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="187" id="fAG-Nm-3lN"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxX-Mb-VYf">
+                                <rect key="frame" x="172" y="300" width="70" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="이용약관"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gC-t4-9b8">
+                                <rect key="frame" x="133" y="356" width="148" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="개인정보 취급 방침"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8r-Jz-uP7">
+                                <rect key="frame" x="135.66666666666666" y="412" width="142.99999999999997" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="오픈소스 라이센스"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근 업데이트 일자 2020-11-20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gc1-Ml-r6g">
+                                <rect key="frame" x="96" y="727" width="222" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gamepartner V1.0.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Yi-Kx-UAs">
+                                <rect key="frame" x="97" y="673" width="220" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" name="AccentColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="RPv-oF-BSg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="i8r-Jz-uP7" firstAttribute="centerX" secondItem="LNv-cR-kxk" secondAttribute="centerX" id="77J-nb-8Hf"/>
+                            <constraint firstItem="lxX-Mb-VYf" firstAttribute="centerX" secondItem="LNv-cR-kxk" secondAttribute="centerX" id="9eK-YY-1A2"/>
+                            <constraint firstItem="yue-gK-vk1" firstAttribute="centerX" secondItem="LNv-cR-kxk" secondAttribute="centerX" id="BPQ-a2-gXn"/>
+                            <constraint firstItem="yue-gK-vk1" firstAttribute="top" secondItem="RPv-oF-BSg" secondAttribute="top" id="G5B-i2-hrg"/>
+                            <constraint firstItem="gc1-Ml-r6g" firstAttribute="centerX" secondItem="LNv-cR-kxk" secondAttribute="centerX" id="God-Sk-gr4"/>
+                            <constraint firstItem="lxX-Mb-VYf" firstAttribute="top" secondItem="yue-gK-vk1" secondAttribute="bottom" constant="25" id="HEK-rT-ITC"/>
+                            <constraint firstItem="4gC-t4-9b8" firstAttribute="top" secondItem="lxX-Mb-VYf" secondAttribute="bottom" constant="20" id="MVX-ew-JaR"/>
+                            <constraint firstItem="0Yi-Kx-UAs" firstAttribute="centerX" secondItem="LNv-cR-kxk" secondAttribute="centerX" id="UTb-ZO-PcS"/>
+                            <constraint firstItem="4gC-t4-9b8" firstAttribute="centerX" secondItem="LNv-cR-kxk" secondAttribute="centerX" id="VuI-0U-4YY"/>
+                            <constraint firstItem="gc1-Ml-r6g" firstAttribute="top" secondItem="0Yi-Kx-UAs" secondAttribute="bottom" constant="25" id="aBF-Lh-udd"/>
+                            <constraint firstItem="yue-gK-vk1" firstAttribute="leading" secondItem="RPv-oF-BSg" secondAttribute="leading" id="hU0-LB-IF1"/>
+                            <constraint firstItem="i8r-Jz-uP7" firstAttribute="top" secondItem="4gC-t4-9b8" secondAttribute="bottom" constant="20" id="mKG-Vg-heh"/>
+                            <constraint firstItem="RPv-oF-BSg" firstAttribute="bottom" secondItem="gc1-Ml-r6g" secondAttribute="bottom" constant="65" id="wJv-M3-RCG"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="설정" id="CDZ-vh-Rai"/>
+                    <connections>
+                        <outlet property="btnOpenSource" destination="i8r-Jz-uP7" id="2H5-vy-VQf"/>
+                        <outlet property="btnPrivateInfo" destination="4gC-t4-9b8" id="VqE-si-beH"/>
+                        <outlet property="btnUsing" destination="lxX-Mb-VYf" id="rZN-6J-cA2"/>
+                        <outlet property="imgView" destination="yue-gK-vk1" id="2Qc-kW-HDP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Xb-Rl-ASG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1404" y="998"/>
+            <point key="canvasLocation" x="-1404.3478260869567" y="997.76785714285711"/>
         </scene>
         <!--설정-->
         <scene sceneID="wWA-PE-ee8">
