@@ -125,7 +125,7 @@ class FriendDetialViewModel : FriendDetialViewModelType{
                 }
             .map({$0})
             .do(onNext: {_ in loading.accept(true)})
-            .subscribe(onNext:{ _ in print("asdf")})
+            .subscribe()
             .disposed(by: disposeBag)
     }
     

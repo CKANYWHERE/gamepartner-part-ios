@@ -7,20 +7,55 @@
 
 import Foundation
 import UIKit
+import RxCocoa
+import RxSwift
 
 class SendBoardView: UIViewController, UITextFieldDelegate{
     
+    let viewModel = BoardViewModel()
+    var disposeBag = DisposeBag()
     var lblTitle = UILabel()
     var txtContent = UITextField()
     var subView = UIView()
     var btnCancle = UIButton()
     var sendMessage = UIButton()
+    lazy var spinner = MyIndicator(frame:CGRect(x: 0, y: 0, width: 50, height: 50)
+                                   ,x: Int(view.frame.width)/2
+                                   ,y: Int(view.frame.height)/2)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         btnCancle.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
         setViewUI()
+        
+        sendMessage.rx.tap
+            .do(onNext: {[weak self] in
+                UIView.animate(withDuration: 0.2, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
+                    self?.sendMessage.alpha = 0.5
+                }, completion: nil)
+            })
+            .do(onNext: {[weak self] in
+                UIView.animate(withDuration: 0.2, delay: 0.0,options: UIView.AnimationOptions.curveEaseOut, animations: {
+                    self?.sendMessage.alpha = 1.0
+                }, completion: nil)
+            })
+            .bind(to: viewModel.btnSendCliked)
+            .disposed(by: disposeBag)
+        
+        viewModel.activated
+            .bind(to: spinner.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        viewModel.titleTxt
+            .bind(to: txtContent.rx.value)
+            .disposed(by: disposeBag)
+        
+        txtContent.rx.controlEvent([.editingChanged])
+               .asObservable().subscribe({ [weak self] _ in
+                    self?.viewModel.titleTxt.accept(self?.txtContent.text! ?? "안녕하세요")
+               }).disposed(by: disposeBag)
+        
     }
     
     @objc func dismissView(){
@@ -68,11 +103,6 @@ class SendBoardView: UIViewController, UITextFieldDelegate{
                 .isActive = true
         
         txtContent.delegate = self
-        txtContent.isEnabled = true
-        txtContent.isUserInteractionEnabled = true
-        txtContent.allowsEditingTextAttributes = true
-        txtContent.layer.cornerRadius = 20
-        txtContent.layer.masksToBounds = true
         txtContent.backgroundColor = .systemGray4
         txtContent.borderStyle = .roundedRect
         txtContent.text = "안녕하세요!"
@@ -111,14 +141,13 @@ class SendBoardView: UIViewController, UITextFieldDelegate{
         sendMessage.setTitleColor(.white, for:.normal)
         sendMessage.setImage(#imageLiteral(resourceName: "sendicon.png"),for:.normal)
         sendMessage.imageView?.contentMode = .scaleAspectFit
-        //button.contentHorizontalAlignment = .center
         sendMessage.semanticContentAttribute = .forceRightToLeft
         sendMessage.backgroundColor = .systemBlue
         sendMessage.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         sendMessage.layer.cornerRadius = 20
     
         
-        self.subView.addSubview(sendMessage)
+        self.view.addSubview(sendMessage)
         
         sendMessage.translatesAutoresizingMaskIntoConstraints = false
         sendMessage.centerXAnchor.constraint(equalTo:view.centerXAnchor)

@@ -13,5 +13,6 @@ class Util {
     static var insertFrined = "friendList/insertFriendList"
     static var getBoardList = "board/getBoardList"
     static var insertWanted = "wantedList/insertList"
+    static var insertBoard = "board/insertBoard"
     
 }

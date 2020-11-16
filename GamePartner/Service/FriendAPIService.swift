@@ -132,7 +132,6 @@ class FriendAPIService : NSObject{
                     switch response.result {
                     case .success(let json):
                         let model = JSON(json)
-                        print(model)
                         let postStats = model["message"].stringValue
                         //print(model)
                         if postStats == "insert_complete"{

@@ -14,6 +14,7 @@ class BoardAPIService : NSObject{
     static let shared = BoardAPIService()
         
     private var getBoardListUrl = Util.mainUrl + Util.getBoardList
+    private var insertBoardUrl = Util.mainUrl + Util.insertBoard
     
     func getBoardListData() -> Observable<[BoardModel]>{
         return Observable.create { (observer) -> Disposable in
@@ -39,6 +40,43 @@ class BoardAPIService : NSObject{
                     observer.onError(error)
                 }
             }
+            return Disposables.create()
+        }
+    }
+    
+    func insertBoard(title:String, userId:String, sex:String,
+                     favoritGame:String, nickName:String, imgPath:String, regsterDate:String, age:String) -> Observable<Void>{
+        let params = [
+            "title":title,
+            "userId":userId,
+            "sex":sex,
+            "favoritGame":favoritGame,
+            "nickName":nickName,
+            "imgPath":imgPath,
+            "registerDate":regsterDate,
+            "age":age
+        ]
+        return Observable.create{ (observer) -> Disposable in
+            AF.request(self.insertBoardUrl, method: .post,parameters: params).responseData{
+                response in
+                switch response.result{
+                case .success(let json):
+                    let model = JSON(json)
+                    let postStats = model["message"].stringValue
+                    //print(model)
+                    if postStats == "insert_complete"{
+                        //observer.onNext(postStats)
+                        observer.onCompleted()
+                    }else{
+                        observer.onError(AFError.responseValidationFailed(reason: .dataFileNil))
+                    }
+                
+                case .failure(let error):
+                    observer.onError(error)
+                }
+                
+            }
+            
             return Disposables.create()
         }
     }
