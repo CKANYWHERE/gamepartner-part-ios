@@ -97,7 +97,8 @@ class DetailFriendVC:UIViewController{
             .disposed(by: disposeBag)
         
         friendInfo.activated
-            .map({ $0 })
+            .asObservable()
+            .observeOn(MainScheduler.instance)
             .bind(to: spinner.rx.isHidden)
             .disposed(by: disposeBag)
         

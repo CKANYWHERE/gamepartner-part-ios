@@ -9,6 +9,7 @@ import Foundation
 import RxCocoa
 import RxSwift
 import RealmSwift
+import Firebase
 
 protocol FriendDetialViewModelType {
     var imgUrlTxt: Observable<String> { get }
@@ -34,6 +35,7 @@ protocol FriendDetialViewModelType {
 class FriendDetialViewModel : FriendDetialViewModelType{
     
     var disposeBag = DisposeBag()
+    var db = Database.database().reference()
     
     
     let imgUrlTxt: Observable<String>
@@ -68,7 +70,7 @@ class FriendDetialViewModel : FriendDetialViewModelType{
         btnAcceptClicked = accept.asObserver()
         btnDeclineCliked = decline.asObserver()
         btnSendClicked = sending.asObserver()
-        activated = loading.distinctUntilChanged()
+        activated = loading.asObservable()
         moveToMainPage = paging.asObserver()
         //moveToMainPage = Observable.merge(accept,decline)
       
@@ -105,6 +107,13 @@ class FriendDetialViewModel : FriendDetialViewModelType{
         
         _ = accept
             .do(onNext: {_ in loading.accept(false)})
+            .map({_ in
+                    let realm = try! Realm()
+                    let users = realm.objects(UserModel.self)
+                    let user = users.first
+                    self.saveChatRoom(firstUserId: user?.id, secondUserId: Friend.userId
+                                       , firstUserImgPath: user?.id, secondUserImgPath: Friend.imgUrl)
+            })
             .flatMap{ _ -> Observable<Void> in
                     let realm = try! Realm()
                     let users = realm.objects(UserModel.self)
@@ -129,5 +138,15 @@ class FriendDetialViewModel : FriendDetialViewModelType{
             .disposed(by: disposeBag)
     }
     
-
+    func saveChatRoom(firstUserId:String!, secondUserId:String!, firstUserImgPath:String!,secondUserImgPath:String!){
+        let identifier = UUID()
+        let roomId = identifier.uuidString
+        db.child(roomId).setValue(["firstUserId":firstUserId,"secondUserId":secondUserId
+                                       ,"firstUserImgPath":firstUserImgPath,"secondUserImgPath":secondUserImgPath])
+        let realm = try! Realm()
+        try! realm.write{
+            realm.add(ChatRoomModel(firstUserId: firstUserId, secondtUserId: secondUserId
+                                    , firstUserImgPath: firstUserImgPath, secondUserImgPath: secondUserImgPath, roomId: roomId))
+        }
+    }
 }

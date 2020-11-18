@@ -10,6 +10,7 @@ import RxSwift
 import RxDataSources
 import RxViewController
 import Kingfisher
+import RealmSwift
 
 class MainVC: UIViewController, UIScrollViewDelegate{
     
@@ -68,7 +69,6 @@ class MainVC: UIViewController, UIScrollViewDelegate{
         super.viewDidLoad()
         tableView.separatorColor = .clear
         self.view.addSubview(self.spinner)
-
 
         let firstLoad = rx.viewWillAppear
             .map { _ in () }

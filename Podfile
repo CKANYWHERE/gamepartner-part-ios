@@ -14,6 +14,7 @@ target 'GamePartner' do
   pod 'SwiftyJSON'
   pod 'Firebase/Auth'
   pod 'Firebase/Analytics'
+  pod 'Firebase/Database'
   pod 'Kingfisher'
   pod 'RxKingfisher'
  

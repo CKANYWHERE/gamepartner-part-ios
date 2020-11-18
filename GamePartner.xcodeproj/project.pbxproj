@@ -26,6 +26,7 @@
 		FD4A1BE52501255200DDB235 /* RegisterCompleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4A1BE42501255200DDB235 /* RegisterCompleteVC.swift */; };
 		FD4A3E07252DAAD6008C3E45 /* MainStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5C431F24ED6D8E000C2FE1 /* MainStoryBoard.storyboard */; };
 		FD5082D92562ACA400F3B5A7 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5082D82562ACA400F3B5A7 /* SettingVC.swift */; };
+		FD5082DB2565677200F3B5A7 /* ChatRoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5082DA2565677200F3B5A7 /* ChatRoomModel.swift */; };
 		FD5C431D24ED4D31000C2FE1 /* RegisterBasicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5C431C24ED4D31000C2FE1 /* RegisterBasicVC.swift */; };
 		FD5C432224ED6DC5000C2FE1 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5C432124ED6DC5000C2FE1 /* MainVC.swift */; };
 		FD79FB0524FDEDB10073B16D /* RegisterAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD79FB0424FDEDB10073B16D /* RegisterAPIService.swift */; };
@@ -116,6 +117,7 @@
 		FD4A11DC255670290054EF81 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		FD4A1BE42501255200DDB235 /* RegisterCompleteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCompleteVC.swift; sourceTree = "<group>"; };
 		FD5082D82562ACA400F3B5A7 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		FD5082DA2565677200F3B5A7 /* ChatRoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomModel.swift; sourceTree = "<group>"; };
 		FD5C431C24ED4D31000C2FE1 /* RegisterBasicVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBasicVC.swift; sourceTree = "<group>"; };
 		FD5C431F24ED6D8E000C2FE1 /* MainStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainStoryBoard.storyboard; sourceTree = "<group>"; };
 		FD5C432124ED6DC5000C2FE1 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 				FD20BB8A2535DCA500B92AB8 /* FriendModel.swift */,
 				FD20BB8E2535EC9B00B92AB8 /* FriendInfoSection.swift */,
 				FD3C7764255AD07A005A12D6 /* BoardModel.swift */,
+				FD5082DA2565677200F3B5A7 /* ChatRoomModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -644,6 +647,7 @@
 				FD5C432224ED6DC5000C2FE1 /* MainVC.swift in Sources */,
 				FD9D2FD4253ED8EC00435955 /* FriendAPIService.swift in Sources */,
 				FDC4E84B24E2C35F00392432 /* ViewController.swift in Sources */,
+				FD5082DB2565677200F3B5A7 /* ChatRoomModel.swift in Sources */,
 				FDC4E84724E2C35F00392432 /* AppDelegate.swift in Sources */,
 				FDF92C2D24F3D529005EE293 /* RegisterPictureVC.swift in Sources */,
 				FD4A1BE52501255200DDB235 /* RegisterCompleteVC.swift in Sources */,
