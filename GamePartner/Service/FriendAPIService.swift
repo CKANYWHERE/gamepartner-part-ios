@@ -31,7 +31,7 @@ class FriendAPIService : NSObject{
                         friendList["friendList"].arrayValue.map{
                             FriendModel(name:$0["nickName"].stringValue,sex:$0["sex"].stringValue,introduce: $0["introduce"].stringValue
                                         ,favoritGame: $0["favoritGame"].stringValue,imgUrl: $0["imgPath"].stringValue, friendType: "friend"
-                                        ,age:$0["age"].stringValue + "세", userId: $0["userId"].stringValue)
+                                        ,age:$0["age"].stringValue + "세", userId: $0["userId"].stringValue, cellPhone: $0["cellPhone"].stringValue)
                             
                             }
                     if parseFriendList.isEmpty{

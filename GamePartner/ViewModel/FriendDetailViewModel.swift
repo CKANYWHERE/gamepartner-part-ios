@@ -9,6 +9,7 @@ import Foundation
 import RxCocoa
 import RxSwift
 import RealmSwift
+import MessageUI
 import Firebase
 
 protocol FriendDetialViewModelType {
@@ -24,7 +25,7 @@ protocol FriendDetialViewModelType {
     var btnChatClicked:AnyObserver<Void>{ get }
     var btnAcceptClicked:AnyObserver<Void>{ get }
     var btnDeclineCliked:AnyObserver<Void>{ get }
-    var btnSendClicked:AnyObserver<Void>{ get }
+    var btnDialClicked:AnyObserver<Void>{ get }
     
     var moveToMainPage:Observable<Void> { get }
     
@@ -50,7 +51,7 @@ class FriendDetialViewModel : FriendDetialViewModelType{
     let btnChatClicked: AnyObserver<Void>
     let btnAcceptClicked: AnyObserver<Void>
     let btnDeclineCliked: AnyObserver<Void>
-    let btnSendClicked: AnyObserver<Void>
+    let btnDialClicked: AnyObserver<Void>
     var moveToMainPage: Observable<Void>
     
     let activated: Observable<Bool>
@@ -64,13 +65,14 @@ class FriendDetialViewModel : FriendDetialViewModelType{
         let accept = PublishSubject<Void>()
         let paging = PublishSubject<Void>()
         let sending = PublishSubject<Void>()
+        let dialing = PublishSubject<Void>()
         let loading = BehaviorRelay<Bool>(value: false)
         
         btnChatClicked = chating.asObserver()
         btnAcceptClicked = accept.asObserver()
         btnDeclineCliked = decline.asObserver()
-        btnSendClicked = sending.asObserver()
-        activated = loading.asObservable()
+        btnDialClicked = dialing.asObserver()
+        activated = loading.distinctUntilChanged()
         moveToMainPage = paging.asObserver()
         //moveToMainPage = Observable.merge(accept,decline)
       
@@ -92,14 +94,28 @@ class FriendDetialViewModel : FriendDetialViewModelType{
         friendType = Observable.just(Friend.friendType ?? "wantedTo")
             .observeOn(MainScheduler.instance)
         
-        _ = chating.subscribe(
-            onNext: { _ in
-                print("chat")
+        _ = dialing.subscribe(onNext:{ _ in
+                //print("btnDial")
+                if let url = NSURL(string: "tel://\(String(describing: Friend.cellPhone))"),
+                   UIApplication.shared.canOpenURL(url as URL) {
+                    UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
+                }
             }).disposed(by: disposeBag)
         
-        _ = decline.subscribe(onNext: { _ in
-            print("decline api call")
-        }).disposed(by: disposeBag)
+        _ = chating.subscribe(onNext: { _ in
+            }).disposed(by: disposeBag)
+        
+        _ = decline
+            .do(onNext: {_ in loading.accept(false)})
+            .flatMap{ _ -> Observable<Void> in
+                    let realm = try! Realm()
+                    let users = realm.objects(UserModel.self)
+                    let user = users.first
+                    return FriendAPIService.shared.postInsertData(toUser: user?.id, fromUser: Friend.userId)
+                }
+            .do(onNext: {_ in loading.accept(true)})
+            .bind(to: paging)
+            .disposed(by: disposeBag)
         
         _ = paging
             .bind(to: btnAcceptClicked)
@@ -107,13 +123,6 @@ class FriendDetialViewModel : FriendDetialViewModelType{
         
         _ = accept
             .do(onNext: {_ in loading.accept(false)})
-            .map({_ in
-                    let realm = try! Realm()
-                    let users = realm.objects(UserModel.self)
-                    let user = users.first
-                    self.saveChatRoom(firstUserId: user?.id, secondUserId: Friend.userId
-                                       , firstUserImgPath: user?.id, secondUserImgPath: Friend.imgUrl)
-            })
             .flatMap{ _ -> Observable<Void> in
                     let realm = try! Realm()
                     let users = realm.objects(UserModel.self)
@@ -138,15 +147,5 @@ class FriendDetialViewModel : FriendDetialViewModelType{
             .disposed(by: disposeBag)
     }
     
-    func saveChatRoom(firstUserId:String!, secondUserId:String!, firstUserImgPath:String!,secondUserImgPath:String!){
-        let identifier = UUID()
-        let roomId = identifier.uuidString
-        db.child(roomId).setValue(["firstUserId":firstUserId,"secondUserId":secondUserId
-                                       ,"firstUserImgPath":firstUserImgPath,"secondUserImgPath":secondUserImgPath])
-        let realm = try! Realm()
-        try! realm.write{
-            realm.add(ChatRoomModel(firstUserId: firstUserId, secondtUserId: secondUserId
-                                    , firstUserImgPath: firstUserImgPath, secondUserImgPath: secondUserImgPath, roomId: roomId))
-        }
-    }
+  
 }

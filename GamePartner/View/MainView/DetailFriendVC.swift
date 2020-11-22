@@ -7,6 +7,7 @@
 
 
 import UIKit
+import MessageUI
 import RxCocoa
 import RxSwift
 import RxDataSources
@@ -26,6 +27,7 @@ class DetailFriendVC:UIViewController{
                                    ,x: Int(view.frame.width)/2
                                    ,y: Int(view.frame.height)/2)
     let chatButton = UIButton()
+    let dialButton = UIButton()
     let acceptButton = UIButton()
     let declineButton = UIButton()
     let sendFriendButton = UIButton()
@@ -39,9 +41,6 @@ class DetailFriendVC:UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let friendInfo = viewModel else { return }
-        
-        //friendInfo.userId
-          //  .bind(to: )
         
         friendInfo.imgUrlTxt
             .subscribe(onNext: {[weak self] url in
@@ -97,8 +96,7 @@ class DetailFriendVC:UIViewController{
             .disposed(by: disposeBag)
         
         friendInfo.activated
-            .asObservable()
-            .observeOn(MainScheduler.instance)
+            .map({ $0 })
             .bind(to: spinner.rx.isHidden)
             .disposed(by: disposeBag)
         
@@ -155,10 +153,28 @@ class DetailFriendVC:UIViewController{
                     self?.sendFriendButton.alpha = 1.0
                 }, completion: nil)
             })
-            .bind(to: friendInfo.btnSendClicked)
+            .subscribe(onNext: {[weak self] in
+                let composeViewController = MFMessageComposeViewController()
+                self?.present(composeViewController, animated: true, completion:nil)
+            })
             .disposed(by: disposeBag)
-       // friendInfo.btnDeclineCliked
+        
+        dialButton.rx.tap
+            .do(onNext: {[weak self] in
+                UIView.animate(withDuration: 0.2, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
+                    self?.dialButton.alpha = 0.5
+                }, completion: nil)
+            })
+            .do(onNext: {[weak self] in
+                UIView.animate(withDuration: 0.2, delay: 0.0,options: UIView.AnimationOptions.curveEaseOut, animations: {
+                    self?.dialButton.alpha = 1.0
+                }, completion: nil)
+            })
+            .bind(to: friendInfo.btnDialClicked)
+            .disposed(by: disposeBag)
+       
     }
+    
     
     func setSendFriendButton(){
         sendFriendButton.setTitle("친구요청 보내기", for: .normal)
@@ -188,7 +204,7 @@ class DetailFriendVC:UIViewController{
     }
     
     func setChatButton(){
-        chatButton.setTitle("채팅하기", for: .normal)
+        chatButton.setTitle("메시지 보내기", for: .normal)
         chatButton.setTitleColor(.white, for:.normal)
         chatButton.backgroundColor = .systemBlue
         chatButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
@@ -197,15 +213,32 @@ class DetailFriendVC:UIViewController{
         self.view.addSubview(chatButton)
         
         chatButton.translatesAutoresizingMaskIntoConstraints = false
-        chatButton.centerXAnchor.constraint(equalTo:view.centerXAnchor)
+        chatButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 19)
                 .isActive = true
         chatButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
                 .isActive = true
         chatButton.heightAnchor.constraint(equalToConstant: 50)
                 .isActive = true
-        chatButton.widthAnchor.constraint(equalToConstant: view.bounds.width - 20)
+        chatButton.widthAnchor.constraint(equalToConstant: (view.bounds.width/2 - 30))
                 .isActive = true
         
+        dialButton.setTitle("전화하기", for: .normal)
+        dialButton.setTitleColor(.white, for:.normal)
+        dialButton.backgroundColor = .systemPink
+        dialButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        dialButton.layer.cornerRadius = 20
+    
+        self.view.addSubview(dialButton)
+        
+        dialButton.translatesAutoresizingMaskIntoConstraints = false
+        dialButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -19)
+                .isActive = true
+        dialButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
+                .isActive = true
+        dialButton.heightAnchor.constraint(equalToConstant: 50)
+                .isActive = true
+        dialButton.widthAnchor.constraint(equalToConstant: (view.bounds.width/2 - 30))
+                .isActive = true
         
     }
     
