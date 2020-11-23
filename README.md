@@ -12,10 +12,12 @@
 
   메인 화면   
 
-  ![gamepartner1](/Users/minchang-gyeong/Desktop/gamepartner1.png)
+  ![gamepartner1](https://github.com/CKANYWHERE/gamepartner-part-ios/blob/main/gamepartner1.png)
 
-  친구 찾기 화면![gamepartner2](/Users/minchang-gyeong/Desktop/gamepartner2.png)
+  친구 찾기 화면   
+
+  ![gamepartner2](https://github.com/CKANYWHERE/gamepartner-part-ios/blob/main/gamepartner2.png)
 
   설정 화면 및 서버에서 데이터 받아올 때 처리   
 
-![gamepartner3](/Users/minchang-gyeong/Desktop/gamepartner3.png)
+  ![gamepartner3](https://github.com/CKANYWHERE/gamepartner-part-ios/blob/main/gamepartner3.png)
