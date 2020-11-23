@@ -16,5 +16,6 @@
 
   친구 찾기 화면![gamepartner2](/Users/minchang-gyeong/Desktop/gamepartner2.png)
 
-  설정 화면 및 서버에서 데이터 받아올 때 처리![스크린샷 2020-11-23 오후 9.50.08](/Users/minchang-gyeong/Library/Application Support/typora-user-images/스크린샷 2020-11-23 오후 9.50.08.png)
+  설정 화면 및 서버에서 데이터 받아올 때 처리   
 
+![gamepartner3](/Users/minchang-gyeong/Desktop/gamepartner3.png)
