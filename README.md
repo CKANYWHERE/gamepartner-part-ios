@@ -21,3 +21,7 @@
   설정 화면 및 서버에서 데이터 받아올 때 처리   
 
   ![gamepartner3](https://github.com/CKANYWHERE/gamepartner-part-ios/blob/main/gamepartner3.png)
+
+    회원가입 화면   
+    ![gamepartner5](https://github.com/CKANYWHERE/gamepartner-part-ios/blob/main/gamepartner5.png)   
+    ![gamepartner6](https://github.com/CKANYWHERE/gamepartner-part-ios/blob/main/gamepartner6.png)
